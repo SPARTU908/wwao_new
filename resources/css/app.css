@@ -1,0 +1,212 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.logo-wrap {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-icon {
+    width: 55px;
+    height: 55px;
+    background: #ff6a00;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    margin-right: 12px;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.logo-main {
+    font-size: 22px;
+    font-weight: bold;
+    color: #111;
+    text-transform: uppercase;
+}
+
+.logo-main strong {
+    color: #ff6a00;
+}
+
+.logo-sub {
+    font-size: 22px;
+    color: #ff6a00;
+    font-weight: 500;
+}
+
+.founder-message-section {
+  padding: 60px 20px;
+  background: #fff8f0; 
+  color: #333;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+.container-msg {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.section-title span {
+  color: #ff6a00; /* accent color */
+}
+
+.section-subtitle {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.message-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.message-text {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #333;
+}
+
+.volunteer-section {
+  padding: 80px 0;
+  background: #fff;
+}
+
+.section-header h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: black;
+}
+
+.section-header p {
+  color: #777;
+  margin-bottom: 40px;
+}
+
+.volunteer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.volunteer-card {
+  text-align: left;
+}
+
+.image-box {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-box img {
+  width: 100%;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 102, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.image-box:hover .overlay {
+  opacity: 1;
+}
+
+.social-icons i {
+  color: #fff;
+  margin: 0 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.volunteer-card h4 {
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+.volunteer-card span {
+  color: #ff6600;
+  font-size: 14px;
+}
+.contact-section {
+    background-color: #f8f9fa;
+}
+
+.contact-form-wrapper {
+    background: #ffffff;
+}
+
+.contact-form-wrapper h3 {
+    font-weight: 600;
+}
+
+.form-control {
+    height: 45px;
+    border-radius: 4px;
+}
+
+textarea.form-control {
+    height: auto;
+}
+
+.btn-primary {
+    background-color: #0d6efd;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #084298;
+}
+
+/* Remove Google top bar */
+.goog-te-banner-frame {
+    display: none !important;
+}
+
+body {
+    top: 0 !important;
+}
+
+/* Hide Google branding text */
+.goog-logo-link {
+    display: none !important;
+}
+
+.goog-te-gadget {
+    font-size: 0;
+}
+
+.goog-te-gadget select {
+    font-size: 14px;
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+

@@ -1,0 +1,529 @@
+.elementor-section-wrap .elementor-section,
+.elementor-column-gap-default>.elementor-column>.elementor-element-populated{
+	padding:0px !important;	
+}
+.admin-bar .mainmenu-area.stricky-fixed{
+	top:32px;	
+}
+.top-bar .social-icons ul li a:hover,
+.footer-widget .social li a:hover{
+	color: #fff !important;
+    background: #f14b05 !important;	
+}
+.single-team-member .img-box img{
+	position:relative;
+	width:100%;	
+}
+/************* breadcumb Style ***************/
+.breadcumb li{
+	position:relative;
+	padding-right:10px;
+	margin-right:10px;	
+	color:#222E35;
+	font-size:15px;
+}
+.breadcumb li:before{
+	font: normal normal normal 15px/1 FontAwesome;
+	content: "\f105";
+	color: #eb5310;
+	position:absolute;
+	right:-3px;
+	top:4px;
+}
+.breadcumb li:last-child:before{
+	display:none;	
+}
+.breadcumb li a{
+	position:relative;
+	color: #eb5310;
+	font-size:15px;	
+}
+
+/************* pagination Style ***************/
+.pagination{
+	position:relative;
+	display: block;
+	text-align:center;
+}
+.pagination li{
+	position: relative;
+	list-style-type:none;
+    display: inline-block;
+    float: none;
+    margin: 3px;
+    border: none !important;
+}
+.pagination li a, .pagination li span{
+	position:relative;
+	color: #505050;
+    font-size: 14px;
+    padding: 7px 15px;
+    min-width: 40px;
+    text-align: center;
+    display: inline-block;
+    border: 1px solid #eb5310 !important;
+}
+.pagination li a:focus, .pagination li a:hover, .pagination li span:focus, .pagination li span:hover, .pagination li span.current{
+	background: #eb5310;
+    color: #ffffff;
+	border-color: #eb5310;
+}
+
+.home-appointment-form.volunteer-profile .form-grp .single-form input, .home-appointment-form.volunteer-profile .form-grp .select-input + .ui-selectmenu-button span.ui-selectmenu-text{
+	display:block;	
+}
+
+
+.single-blog-post .date-box .inner{
+	width: 90px !important;
+}
+
+.features-section{
+	z-index:1;
+}
+.featured-causes.style-two{
+	z-index:1;	
+}
+.feature-block .icon{
+	bottom:-10px !important;
+}
+.features-section .feature-block .inner-box .icon:before{
+	font-size: 60px !important;
+	margin-bottom:0px !important;
+}
+.event .event-content .event-held li{
+	margin-right:10px;	
+}
+
+.elementor-lightbox .elementor-lightbox-item,
+body.admin-bar .dialog-lightbox-widget{
+	display:none !important;	
+}
+
+.how-can-help .icon span{
+    font-size: 65px;
+    line-height: 65px;
+    margin-bottom: 25px;
+    color: #ec5c1c;
+} 
+/************* Footer Widget Style ***************/
+
+.footer-widget .social-icons{
+	margin-top: 30px;
+	display: flex;
+}
+.footer-widget{
+	position:relative;	
+}
+.footer-widget ul,
+.footer-widget ol{
+	position:relative;	
+}
+.footer-widget ul li,
+.footer-widget ol li{
+	position: relative;
+    margin-bottom: 18px;
+	display:inline-block;
+	width:49%;
+}
+.footer-widget ul li:last-child,
+.footer-widget ol li:last-child{
+	margin-bottom:0px;
+}
+.footer-widget ul li ul li,
+.footer-widget ol li ol li{
+	margin-bottom:0px;
+	margin-top:18px;
+}
+
+.footer-widget ul li a,
+.footer-widget ol li a{
+	position: relative;
+    color: #C9C9C9;
+    font-size: 14px;
+    display: inline-block;
+    -webkit-transition: all 300ms ease;
+    -ms-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    transition: all 300ms ease;	
+}
+.footer-widget ul li a:hover,
+.footer-widget ol li a:hover{
+	color: #eb5310;	
+}
+.footer-widget h3.title{
+	margin-bottom:60px;	
+}
+.footer-widget .contact li,
+.footer-widget .social li,
+.footer-widget.latest-post ul li{
+	width:auto;	
+}
+
+
+.newsletter.style-two form .mc4wp-form-fields{
+	position:relative;
+	display:flex;
+	flex-wrap:wrap;
+	width:100%;
+	align-items: center;
+}
+
+.faq-home hr{
+	margin-bottom:90px !important;	
+}
+.newsletter .thm-btn{
+	padding: 16px 35px;	
+}
+.blog-details .comment-form{
+	margin-top:70px;	
+}
+.blog-details .comment-form h2{
+	margin-bottom:5px;	
+}
+.blog-details .comment-form h2 small a{
+	position:relative;
+	color: #23282A;
+	font-size: 20px;
+	display:block;
+	text-transform: capitalize;
+	font-weight: 600;
+	margin-bottom:5px;		
+}
+.charity-comment-item .charity-comment-item {
+	margin-left:80px;	
+}
+.blog-details .comment-box{
+	margin-bottom:0px;	
+	margin-top:70px;
+}
+
+
+/************** Blog Widget Style ***************/
+.widget{
+	position:relative;	
+	margin-bottom:50px;
+}
+.widget h3,
+.widget .wp-block-search .wp-block-search__label,
+.widget .wp-block-group__inner-container h2{
+	font-size: 24px;
+    font-weight: 600;
+    color: #3F3E3E;
+    text-transform: capitalize;
+    margin-bottom: 20px;	
+}
+.widget ul,
+.widget ol{
+	position:relative;	
+	margin:0px;
+	padding:0px;
+}
+.widget ul li,
+.widget ol li{
+	position: relative;
+	list-style-type:none;
+    padding: 0px 0px 12px 25px;
+	margin-bottom:12px;
+    border-bottom: 1px solid #e8e8e8;	
+}
+.widget ul li:last-child,
+.widget ol li:last-child{
+	margin-bottom:0px;
+	padding-bottom:0px;
+	border-bottom:none;
+}
+.widget ul li ul li,
+.widget ol li ol li{
+	margin-bottom:0px;
+	padding-bottom:0px;
+	border-bottom:none;
+	margin-top:12px;
+	padding-top:12px;
+	border-top:1px solid #e8e8e8;
+}
+.widget ul li:before,
+.widget ol li:before{
+	content: '';
+    width: 10px;
+    height: 2px;
+    display: block;
+    background: #E3E3E3;
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+.widget ul li a,
+.widget ol  li a{
+	position: relative;
+    color: #9C9C9C;
+    font-size: 14px;
+    display: inline-block;
+    -webkit-transition: all 300ms ease;
+    -ms-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    transition: all 300ms ease;	
+}
+.widget ul li a:hover,
+.widget ol li a:hover{
+	color: #eb5310;	
+}
+.widget .tagcloud a{
+	display: inline-block;
+    border: 1px solid #F1F1F1;
+    font-size: 14px !important;
+    border-radius: 30px;
+    color: #BABABA;
+    padding: 5px 23px;
+    transition: all .3s ease;
+	list-style: none;
+    margin-right: 3px;
+    margin-bottom: 12px	
+}
+.widget .tagcloud a:hover{
+	background: #eb5310;
+    border-color: #eb5310;
+    color: #fff;	
+}
+.single-sidebar-widget.popular-post ul li{
+	padding-left:0px;	
+}
+.single-sidebar-widget.popular-post ul li:before{
+	display:none;	
+}
+.single-sidebar-widget.popular-post ul li .img-box .inner-box{
+	height: 70px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;	
+}
+.single-sidebar-widget.popular-post ul li .content-box a{
+	display:block;	
+}
+.single-sidebar-widget.popular-post ul li .content-box h4{
+	font-size:18px;	
+}
+
+/*************************Charity Campaign Style****************************/
+
+.campaign-summary .campaign-donation{
+	float: inherit;
+}
+.single-campaign .campaign-description{
+	font-size:16px;
+	font-weight:normal;	
+	line-height: 30px;
+	position: relative;
+    margin: 0px;
+    transition: all 500ms ease;	
+}
+.campaign-summary{
+	margin:2em 0em;	
+}
+.campaign-template-default .blog-detail .inner-box .image{
+	position: relative;
+    overflow: hidden;
+    border-radius: 120px 120px 0px 0px;
+}
+.campaign-template-default .blog-detail .inner-box .post-share-options .social-box li a:hover{
+	background-color: #f65024;	
+}
+.campaign-summary .campaign-figures .amount, .campaign-summary .campaign-raised .amount,
+.donors-count,
+.campaign-summary .donors-count,
+.time-left{
+	color: #f65024 !important;	
+}
+
+.charitable-form-field input, .charitable-form-field select, .charitable-form-field textarea {
+    position: relative;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.case-details-content .content-two .video-inner .video-box a{
+	line-height:110px;	
+}
+.single-campaign .blog-details-content .content-three{
+	padding-bottom: 0px;
+    border-bottom: 0px;
+}
+.single-blog-post .content-box .content span{
+	font-size:16px;
+}
+
+/*************************Event Style****************************/
+.tribe-events-event-meta:before, .tribe-events-event-meta~div:not(.tribe-events-event-meta):not(.event-tickets){
+	border-top:0px;	
+}
+.single-tribe_events .tribe-events-event-meta {
+    position:relative;
+}
+.tribe-events-meta-group .tribe-events-single-section-title{
+	margin:30px 0px 15px;	
+}
+.tribe-events-event-meta .tribe-events-meta-group ul dt{
+	margin:30px 0px 15px;	
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size:18px;
+}
+.tribe-events-event-meta .tribe-events-meta-group ul dd a{
+	margin-bottom:10px;	
+}
+.tribe-events-event-meta .column, .tribe-events-event-meta .tribe-events-meta-group {
+    box-sizing: border-box;
+    display: inline-block;
+    float: left;
+    margin: 0px;
+    padding: 0px;
+    text-align: left;
+    vertical-align: top;
+    width: 50%;
+    zoom: 1;
+}
+.tribe-events-event-meta .column, .tribe-events-event-meta .tribe-events-meta-group ul{
+	position:relative;
+	margin:0px;
+	padding:0px;	
+}
+.tribe-events-event-meta .column, .tribe-events-event-meta .tribe-events-meta-group ul li{
+	position:relative;
+	list-style-type:none;
+	margin-bottom:10px;
+} 
+.tribe-events-single-section .list li span.icon{
+	font-weight:bold;
+	font-size:14px;
+	margin-right:8px;	
+}
+.tribe-events-single-section .tribe-events-event-categories a{
+	color:#000000;
+	font:16px;
+	display:inline-block;
+}
+.single-tribe_events .tribe-events-cal-links{
+	margin:40px 0px 40px;	
+}
+.single-tribe_events .tribe-events-cal-links .tribe-events-button,
+.charitable-submit-field .button,
+.campaign-summary .campaign-donation .donate-button{
+	position: relative;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: middle;
+    font-size: 14px;
+    line-height: 25px;
+    font-weight: 700;
+    background-color: #252525;
+    color: #ffffff;
+    text-align: center;
+    text-transform: uppercase;
+    border: 2px solid #252525;
+    border-radius: 30px;
+    padding: 12.5px 31px;
+    z-index: 1;
+    transition: all 500ms ease;
+	background-image:none;
+	margin-right:20px;
+}
+.campaign-summary .campaign-donation .donate-button{
+	display:block;	
+}
+.single-tribe_events .tribe-events-cal-links .tribe-events-button:hover,
+.charitable-submit-field .button:hover,
+.campaign-summary .campaign-donation .donate-button:hover{
+	color: #ffffff;
+    background-color: #eb5310;
+    border-color: #eb5310;
+}
+#tribe-events-pg-template {
+    margin: 0 auto;
+    max-width: inherit;
+    padding: 0px !important;
+}
+.tribe-events-meta-group .tribe-events-single-section-title{
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size:18px;
+}
+.event-details-content .upper-box .image-box{
+	margin-bottom:25px !important;	
+}
+
+.event-details{
+	padding:110px 0px;
+}
+.tribe-events-event-meta .tribe-events-meta-group ul li .tribe-events-abbr{
+	border-bottom:0px;
+}
+.tribe-events-event-meta .tribe-events-meta-group.tribe-events-meta-group-gmap{
+	display:none;	
+}
+.event-details .event .event-title {
+    color: #000000;
+    text-transform: uppercase;
+    transition: all .3s ease;
+    font-weight: 600;
+}
+/*** 
+
+====================================================================
+	404 Section
+====================================================================
+
+***/
+
+.error-section{
+	position:relative;
+	padding:80px 0px;
+	background:#ffffff;
+}
+
+.error-section .error-text .medium-text{
+	position:relative;
+	font-size:72px;
+	line-height:1.2em;
+	margin-bottom:-10px;
+}
+
+.error-section .error-text{
+	position:relative;
+	display:inline-block;
+	max-width:450px;	
+}
+
+.error-section .error-text .bigger-font{
+	position:relative;
+	font-size:200px;
+	line-height:1.2em;
+	color:#25292f;
+	margin-bottom:20px;
+	font-weight:800;
+	border-bottom:1px solid #e0e0e0;
+}
+
+.error-section .error-text h3{
+	position:relative;
+	font-size:36px;
+	line-height:1.2em;
+	margin-bottom:30px;
+	color:#333;
+}
+
+.error-section .error-text .text{
+	position:relative;
+	font-size:16px;
+	margin-bottom:40px;
+}
+
+.error-section .theme-btn{
+	padding-left:25px;
+	padding-right:25px;	
+}
+.charitable-form-fields .charitable-fieldset .charitable-form-header{
+	color: #333;
+}
+.charitable-form-fields .charitable-form-field label{
+	color: #333;
+}
