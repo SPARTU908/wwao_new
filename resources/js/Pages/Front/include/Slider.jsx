@@ -63,7 +63,8 @@ const Slider = () => {
                                             zIndex: "6",
                                             backgroundColor: "#f14b05",
                                             fontFamily: "Raleway",
-                                            textTransform: "uppercase",
+                                            // textTransform: "uppercase",
+                                            fontFamily: "Noto Sans Devanagari",
                                         }}
                                     >
                             सशक्त करे  • शिक्षित करें • उन्नति करें                             

@@ -1,8 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "./include/Header";
 import Footer from "./include/Footer";
+import axios from "axios";
 
 const Contact = () => {
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+    });
+
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value,
+        });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            await axios.post("http://localhost:8000/api/contact", formData);
+            alert("Message sent successfully!");
+
+            setFormData({
+                name: "",
+                email: "",
+                subject: "",
+                message: "",
+            });
+        } catch (error) {
+            console.error(error);
+            alert("Failed to send message");
+        }
+    };
+
     return (
         <div>
             <Header />
@@ -13,20 +47,14 @@ const Contact = () => {
                         <div className="col-md-12 sec-title colored text-center">
                             <h2>Contact</h2>
                             <ul className="breadcumb">
-                                <li>
-                                    <a href="../index.html">Home</a>
-                                </li>
+                                <li><a href="/">Home</a></li>
                                 <li>Contact</li>
                             </ul>
-                            <span className="decor">
-                                <span className="inner"></span>
-                            </span>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Contact Form Section */}
             <section className="contact-section py-5">
                 <div className="container">
                     <div className="row justify-content-center">
@@ -34,13 +62,16 @@ const Contact = () => {
                             <div className="contact-form-wrapper shadow p-4 rounded">
                                 <h3 className="text-center mb-4">Get in Touch</h3>
 
-                                <form>
+                                <form onSubmit={handleSubmit}>
                                     <div className="row">
                                         <div className="col-md-6 mb-3">
                                             <input
                                                 type="text"
                                                 className="form-control"
                                                 placeholder="Your Name"
+                                                name="name"
+                                                value={formData.name}
+                                                onChange={handleChange}
                                                 required
                                             />
                                         </div>
@@ -50,6 +81,9 @@ const Contact = () => {
                                                 type="email"
                                                 className="form-control"
                                                 placeholder="Your Email"
+                                                name="email"
+                                                value={formData.email}
+                                                onChange={handleChange}
                                                 required
                                             />
                                         </div>
@@ -60,6 +94,9 @@ const Contact = () => {
                                             type="text"
                                             className="form-control"
                                             placeholder="Subject"
+                                            name="subject"
+                                            value={formData.subject}
+                                            onChange={handleChange}
                                             required
                                         />
                                     </div>
@@ -69,6 +106,9 @@ const Contact = () => {
                                             className="form-control"
                                             rows="5"
                                             placeholder="Your Message"
+                                            name="message"
+                                            value={formData.message}
+                                            onChange={handleChange}
                                             required
                                         ></textarea>
                                     </div>
@@ -79,6 +119,7 @@ const Contact = () => {
                                         </button>
                                     </div>
                                 </form>
+
                             </div>
                         </div>
                     </div>

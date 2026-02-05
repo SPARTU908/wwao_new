@@ -8,9 +8,21 @@ use Inertia\Inertia;
 
 class ContactController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+     public function store(Request $request)
+    {
+        $validated = $request->validate([
+            'name'    => 'required|string|max:255',
+            'email'   => 'required|email|max:255',
+            'subject' => 'required|string|max:255',
+            'message' => 'required|string',
+        ]);
+
+        Contact::create($validated);
+
+        return response()->json([
+            'message' => 'Message sent successfully'
+        ], 201);
+    }
     public function index()
     {
       return Inertia::render('Front/Contact');
@@ -21,16 +33,13 @@ class ContactController extends Controller
      */
     public function create()
     {
-        //
+       return Inertia::render('Front/Contact');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-        //
-    }
+   
 
     /**
      * Display the specified resource.
