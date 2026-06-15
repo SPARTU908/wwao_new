@@ -1,87 +1,54 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import GoogleTranslate from "./GoogleTranslate";
-import LanguageSwitcher from "./LanguageSwitcher";
+import { Link } from "@inertiajs/react";
 
-const Header = () => {
+const Header = ({ Chapter_menu = [] }) => {
+    const [mobileOpen, setMobileOpen] = useState(false);
+
     return (
         <div>
-            <section className="top-bar">
-                <div className="container clearfix">
-                    <div className="left-text pull-left">
+            <div className="top-bar">
+                <div className="container top-bar-inner">
+                    {/* Left */}
+                    <div className="top-left">
                         <p>
-                            <div className="top-bar">
-                                <LanguageSwitcher />
-                                {/* <span className="top-text">
-                                    Devkhat (Devghat), Naugrah, Chandauli (U.P)
-                                </span> */}
-                            </div>
-                            <GoogleTranslate />
+                            <span>Support Us :</span> wwaorg@gmail.com
                         </p>
                     </div>
-                    {/* <!-- /.left-text --> */}
-                    <div className="social-icons pull-right">
-                        <ul>
-                            <li>
-                                <a
-                                    href="https://www.facebook.com/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    style={{
-                                        backgroundColor: "rgba(0, 0, 0, 0)",
-                                        color: "rgb(164, 164, 164)",
-                                    }}
-                                >
-                                    <i className="fa fa-facebook"></i>
-                                </a>
-                            </li>
 
-                            <li>
-                                <a
-                                    href="https://www.linkedin.com/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    style={{
-                                        backgroundColor: "rgba(0, 0, 0, 0)",
-                                        color: "rgb(164, 164, 164)",
-                                    }}
-                                >
-                                    <i className="fa fa-linkedin"></i>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a
-                                    href="https://www.skype.com/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    style={{
-                                        backgroundColor: "rgba(0, 0, 0, 0)",
-                                        color: "rgb(164, 164, 164)",
-                                    }}
-                                >
-                                    <i className="fa fa-skype"></i>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a
-                                    href="https://www.twitter.com/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    style={{
-                                        backgroundColor: "rgba(0, 0, 0, 0)",
-                                        color: "rgb(164, 164, 164)",
-                                    }}
-                                >
-                                    <i className="fa fa-twitter"></i>
-                                </a>
-                            </li>
-                        </ul>
+                    {/* Right */}
+                    <div className="top-right">
+                        <a
+                            href="https://www.facebook.com/"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <i className="fa fa-facebook"></i>
+                        </a>
+                        <a
+                            href="https://www.linkedin.com/"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <i className="fa fa-linkedin"></i>
+                        </a>
+                        <a
+                            href="https://www.twitter.com/"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <i className="fa fa-twitter"></i>
+                        </a>
+                        <a
+                            href="https://www.instagram.com/"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <i className="fa fa-instagram"></i>
+                        </a>
                     </div>
-                    {/* <!-- /.social-icons --> */}
                 </div>
-            </section>
-
+            </div>
             <header className="header">
                 <div className="container clearfix">
                     <div className="logo pull-left">
@@ -91,19 +58,38 @@ const Header = () => {
                             className="logo-wrap"
                         >
                             <img
-                                src="front/wwao-logo.jpeg"
+                                src="/front/wwao-logo.jpeg"
                                 alt="World Women Awakening Organization"
                                 className="logo-img"
                                 width={100}
                                 height={100}
                             />
 
-                            <div className="logo-text">
-                                <span className="logo-main">
-                                    WORLD  <strong>WOMEN</strong>
-                                </span>
-                                <span className="logo-sub">Awakening Organization</span>
-                            </div>
+                         <div className="logo-text-row">
+    
+    {/* English */}
+    <div className="logo-text english">
+        <span className="logo-main">
+            World <strong>Women </strong>
+        </span>
+        <span className="logo-sub">
+            Awakening Organisation
+        </span>
+    </div>
+
+    {/* Hindi */}
+    <div className="logo-text hindi">
+        <span className="logo-main">
+            विश्व <strong>नारी </strong>
+        </span>
+        <span className="logo-sub">
+            अभ्युदय संगठन
+        </span>
+    </div>
+
+</div>
+
+                       
                         </a>
                     </div>
                     <div className="header-right-info pull-right clearfix">
@@ -115,7 +101,9 @@ const Header = () => {
                             </div>
                             <div className="content">
                                 <h3>EMAIL</h3>
-                                <p>companyname@mail.com</p>{" "}
+                                <p>
+                                    <b>wwaorg@gmail.com </b>
+                                </p>{" "}
                             </div>
                         </div>
 
@@ -128,19 +116,14 @@ const Header = () => {
                             <div className="content">
                                 <h3>Call Now</h3>
                                 <p>
-                                    <b>(732) 803-010-03</b>
+                                    <b>+91 78979 92917</b>
                                 </p>{" "}
                             </div>
                         </div>
-                        <div className="single-header-info">
-                            {/* <!-- Modal: donate now Starts --> */}
-                            <a
-                                className="thm-btn"
-                                data-toggle="modal"
-                                href="campaigns/charity-for-education/donate/index.html"
-                            >
-                                Donate Now
-                            </a>
+                        <div className="single-header-info translate-center">
+                            <div className="translate-wrapper">
+                                <GoogleTranslate />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -157,7 +140,7 @@ const Header = () => {
                                 >
                                     <a
                                         title="Home"
-                                        href="#"
+                                        href="/"
                                         data-toggle="dropdown1"
                                         className="hvr-underline-from-left1"
                                         aria-expanded="false"
@@ -166,399 +149,75 @@ const Header = () => {
                                     >
                                         Home
                                     </a>
-                                    {/* <ul role="menu" className="submenu"> */}
-                                    {/* <li
-                                                id="menu-item-75"
-                                                className="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-12 current_page_item menu-item-75 active"
-                                            >
-                                                <a
-                                                    title="Home One"
-                                                    href="index.html"
-                                                >
-                                                    Home One
-                                                </a>
-                                            </li> */}
-                                    {/* <li
-                                                id="menu-item-77"
-                                                className="menu-item menu-item-type-post_type menu-item-object-page menu-item-77"
-                                            >
-                                                <a
-                                                    title="Home Two"
-                                                    href="home-two/index.html"
-                                                >
-                                                    Home Two
-                                                </a>
-                                            </li> */}
-                                    {/* <li
-                                                id="menu-item-76"
-                                                className="menu-item menu-item-type-post_type menu-item-object-page menu-item-76"
-                                            >
-                                                <a
-                                                    title="Home Three"
-                                                    href="home-three/index.html"
-                                                >
-                                                    Home Three
-                                                </a>
-                                            </li> */}
-                                    {/* <li
-                                                id="menu-item-74"
-                                                className="menu-item menu-item-type-post_type menu-item-object-page menu-item-74"
-                                            >
-                                                <a
-                                                    title="Home Foure"
-                                                    href="home-four/index.html"
-                                                >
-                                                    Home Foure
-                                                </a>
-                                            </li> */}
-                                    {/* </ul> */}
                                 </li>
                                 <li
                                     id="menu-item-59"
                                     className="menu-item menu-item-type-post_type menu-item-object-page menu-item-59"
                                 >
-                                    <a
-                                        title="About"
+                                    <Link
                                         href="/about"
                                         className="hvr-underline-from-left1"
-                                        data-scroll
-                                        data-options="easing: easeOutQuart"
                                     >
                                         About
-                                    </a>
+                                    </Link>
                                 </li>
-                                <li
-                                    id="menu-item-83"
-                                    className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-83 dropdown"
-                                >
+                                <li className="menu-item menu-item-has-children dropdown">
                                     <a
-                                        title="Causes"
-                                        href="/chapters"
-                                        data-toggle="dropdown1"
+                                        title="Chapters"
+                                        href="#"
+                                        data-toggle="dropdown"
                                         className="hvr-underline-from-left1"
-                                        aria-expanded="false"
-                                        data-scroll
-                                        data-options="easing: easeOutQuart"
                                     >
                                         Chapters
                                     </a>
-                                    {/* <ul role="menu" className="submenu"> */}
-                                    {/* <li
-                                                id="menu-item-63"
-                                                className="menu-item menu-item-type-post_type menu-item-object-page menu-item-63"
-                                            >
-                                                <a
-                                                    title="Causes Grid View"
-                                                    href="causes-grid/index.html"
+
+                                    <ul className="submenu">
+                                        {Chapter_menu.map((menu) => (
+                                            <li key={menu.id}>
+                                                <Link
+                                                    href={`/chapters/${menu.id}`}
                                                 >
-                                                    Causes Grid View
-                                                </a>
-                                            </li> */}
-                                    {/* <li
-                                                id="menu-item-64"
-                                                className="menu-item menu-item-type-post_type menu-item-object-page menu-item-64"
-                                            >
-                                                <a
-                                                    title="Causes List View"
-                                                    href="causes-list/index.html"
-                                                >
-                                                    Causes List View
-                                                </a>
-                                            </li> */}
-                                    {/* <li
-                                                id="menu-item-1365"
-                                                className="menu-item menu-item-type-custom menu-item-object-custom menu-item-1365"
-                                            >
-                                                <a
-                                                    title="Causes Single"
-                                                    href="campaigns/charity-for-education-7/index.html"
-                                                >
-                                                    Causes Single
-                                                </a>
-                                            </li> */}
-                                    {/* </ul> */}
+                                                    {menu.Chapter_Name}
+                                                </Link>
+                                            </li>
+                                        ))}
+                                    </ul>
                                 </li>
                                 <li
                                     id="menu-item-84"
                                     className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-84 dropdown"
                                 >
-                                    <a
-                                        title="Events"
+                                    <Link
                                         href="/contact"
-                                        data-toggle="dropdown1"
                                         className="hvr-underline-from-left1"
-                                        aria-expanded="false"
-                                        data-scroll
-                                        data-options="easing: easeOutQuart"
                                     >
-                                        Contact Us
-                                    </a>
-                                    {/* <ul role="menu" className="submenu">
-                                            <li
-                                                id="menu-item-68"
-                                                className="menu-item menu-item-type-post_type menu-item-object-page menu-item-68"
-                                            >
-                                                <a
-                                                    title="Event Grid View"
-                                                    href="events-grid/index.html"
-                                                >
-                                                    Event Grid View
-                                                </a>
-                                            </li>
-                                            <li
-                                                id="menu-item-69"
-                                                className="menu-item menu-item-type-post_type menu-item-object-page menu-item-69"
-                                            >
-                                                <a
-                                                    title="Events List View"
-                                                    href="events-list/index.html"
-                                                >
-                                                    Events List View
-                                                </a>
-                                            </li>
-                                            <li
-                                                id="menu-item-1374"
-                                                className="menu-item menu-item-type-custom menu-item-object-custom menu-item-1374"
-                                            >
-                                                <a
-                                                    title="Event Details"
-                                                    href="event/charity-for-education-2/index.html"
-                                                >
-                                                    Event Details
-                                                </a>
-                                            </li>
-                                        </ul> */}
+                                        Join Us
+                                    </Link>
                                 </li>
-                                {/* <li
-                                        id="menu-item-85"
-                                        className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-85 dropdown"
-                                    >
-                                        <a
-                                            title="Volunteer"
-                                            href="#"
-                                            data-toggle="dropdown1"
-                                            className="hvr-underline-from-left1"
-                                            aria-expanded="false"
-                                            data-scroll
-                                            data-options="easing: easeOutQuart"
-                                        >
-                                            Volunteer
-                                        </a>
-                                        <ul role="menu" className="submenu">
-                                            <li
-                                                id="menu-item-80"
-                                                className="menu-item menu-item-type-post_type menu-item-object-page menu-item-80"
-                                            >
-                                                <a
-                                                    title="Volunteer Style One"
-                                                    href="volunteer-style-one/index.html"
-                                                >
-                                                    Volunteer Style One
-                                                </a>
-                                            </li>
-                                            <li
-                                                id="menu-item-81"
-                                                className="menu-item menu-item-type-post_type menu-item-object-page menu-item-81"
-                                            >
-                                                <a
-                                                    title="Volunteer Style Two"
-                                                    href="volunteer-style-two/index.html"
-                                                >
-                                                    Volunteer Style Two
-                                                </a>
-                                            </li>
-                                            <li
-                                                id="menu-item-79"
-                                                className="menu-item menu-item-type-post_type menu-item-object-page menu-item-79"
-                                            >
-                                                <a
-                                                    title="Volunteer  Profile"
-                                                    href="volunteer-profile/index.html"
-                                                >
-                                                    Volunteer Profile
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li> */}
-                                {/* <li
-                                        id="menu-item-86"
-                                        className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-86 dropdown"
-                                    >
-                                        <a
-                                            title="Gallery"
-                                            href="#"
-                                            data-toggle="dropdown1"
-                                            className="hvr-underline-from-left1"
-                                            aria-expanded="false"
-                                            data-scroll
-                                            data-options="easing: easeOutQuart"
-                                        >
-                                            Gallery
-                                        </a>
-                                        <ul role="menu" className="submenu">
-                                            <li
-                                                id="menu-item-71"
-                                                className="menu-item menu-item-type-post_type menu-item-object-page menu-item-71"
-                                            >
-                                                <a
-                                                    title="Gallery Style One"
-                                                    href="gallery-style-one/index.html"
-                                                >
-                                                    Gallery Style One
-                                                </a>
-                                            </li>
-                                            <li
-                                                id="menu-item-73"
-                                                className="menu-item menu-item-type-post_type menu-item-object-page menu-item-73"
-                                            >
-                                                <a
-                                                    title="Gallery Style Two"
-                                                    href="gallery-style-two/index.html"
-                                                >
-                                                    Gallery Style Two
-                                                </a>
-                                            </li>
-                                            <li
-                                                id="menu-item-72"
-                                                className="menu-item menu-item-type-post_type menu-item-object-page menu-item-72"
-                                            >
-                                                <a
-                                                    title="Gallery Style Three"
-                                                    href="gallery-style-three/index.html"
-                                                >
-                                                    Gallery Style Three
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li> */}
-                                {/* <li
-                                        id="menu-item-87"
-                                        className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-87 dropdown"
-                                    >
-                                        <a
-                                            title="Pages"
-                                            href="#"
-                                            data-toggle="dropdown1"
-                                            className="hvr-underline-from-left1"
-                                            aria-expanded="false"
-                                            data-scroll
-                                            data-options="easing: easeOutQuart"
-                                        >
-                                            Pages
-                                        </a>
-                                        <ul role="menu" className="submenu">
-                                            <li
-                                                id="menu-item-70"
-                                                className="menu-item menu-item-type-post_type menu-item-object-page menu-item-70"
-                                            >
-                                                <a
-                                                    title="Our Faqs"
-                                                    href="faq/index.html"
-                                                >
-                                                    Our Faqs
-                                                </a>
-                                            </li>
-                                            <li
-                                                id="menu-item-1380"
-                                                className="menu-item menu-item-type-custom menu-item-object-custom menu-item-1380"
-                                            >
-                                                <a
-                                                    title="Donation"
-                                                    href="campaigns/charity-for-education/donate/index.html"
-                                                >
-                                                    Donation
-                                                </a>
-                                            </li>
-                                            <li
-                                                id="menu-item-1375"
-                                                className="menu-item menu-item-type-custom menu-item-object-custom menu-item-1375"
-                                            >
-                                                <a
-                                                    title="Error Page"
-                                                    href="index55a5.html?p=123456"
-                                                >
-                                                    Error Page
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li> */}
-                                {/* <li
-                                        id="menu-item-88"
-                                        className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-88 dropdown"
-                                    >
-                                        <a
-                                            title="Blog"
-                                            href="#"
-                                            data-toggle="dropdown1"
-                                            className="hvr-underline-from-left1"
-                                            aria-expanded="false"
-                                            data-scroll
-                                            data-options="easing: easeOutQuart"
-                                        >
-                                            Blog
-                                        </a>
-                                        <ul role="menu" className="submenu">
-                                            <li
-                                                id="menu-item-61"
-                                                className="menu-item menu-item-type-post_type menu-item-object-page menu-item-61"
-                                            >
-                                                <a
-                                                    title="Blog Style One"
-                                                    href="blog-style-one/index.html"
-                                                >
-                                                    Blog Style One
-                                                </a>
-                                            </li>
-                                            <li
-                                                id="menu-item-62"
-                                                className="menu-item menu-item-type-post_type menu-item-object-page menu-item-62"
-                                            >
-                                                <a
-                                                    title="Blog Style Two"
-                                                    href="blog-style-two/index.html"
-                                                >
-                                                    Blog Style Two
-                                                </a>
-                                            </li>
-                                            <li
-                                                id="menu-item-1294"
-                                                className="menu-item menu-item-type-custom menu-item-object-custom menu-item-1294"
-                                            >
-                                                <a
-                                                    title="Blog Details"
-                                                    href="2022/03/aliquam-nibh-velit-faucibus/index.html"
-                                                >
-                                                    Blog Details
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li> */}
-                                {/* <li
-                                        id="menu-item-65"
-                                        className="menu-item menu-item-type-post_type menu-item-object-page menu-item-65"
-                                    >
-                                        <a
-                                            title="Contact"
-                                            href="contact/index.html"
-                                            className="hvr-underline-from-left1"
-                                            data-scroll
-                                            data-options="easing: easeOutQuart"
-                                        >
-                                            Contact
-                                        </a>
-                                    </li> */}
                             </ul>
                         </div>
+
                         <div className="nav-footer">
-                            <button className="mobile-nav-toggler">
+                            <button
+                                className="mobile-nav-toggler"
+                                onClick={() => setMobileOpen(true)}
+                            >
                                 <i className="fa fa-bars"></i>
                             </button>
                         </div>
                     </div>
                     <div className="navbar-right-info pull-right">
                         <div className="search-box">
-                            <div className="search-btn">
-                                <i className="fa fa-search"></i>
+                            <div
+                                className="donate-btn-wrapper"
+                                style={{ marginRight: "15px" }}
+                            >
+                                <a
+                                    className="thm-btn"
+                                    href="/donate"
+                                >
+                                    Donate Now
+                                </a>
                             </div>
                             <div className="search-form-area">
                                 <form
@@ -579,6 +238,119 @@ const Header = () => {
                     </div>
                 </div>
             </nav>
+
+            <div className={`mobile-menu ${mobileOpen ? "active" : ""}`}>
+                <div
+                    className="menu-backdrop"
+                    onClick={() => setMobileOpen(false)}
+                ></div>
+
+                <nav className="menu-box">
+                    <div
+                        className="close-btn"
+                        onClick={() => setMobileOpen(false)}
+                    >
+                        <span className="icon flaticon-remove"></span>
+                    </div>
+                    <div className="nav-logo">
+                        <a href="index.html" title="Charity Home">
+                            <img
+                                src="/front/wwao-logo.jpeg"
+                                alt="logo"
+                                className="logo-img"
+                                width={100}
+                                height={100}
+                            />
+                        </a>
+                    </div>
+
+                    <div className="menu-outer">
+                        <ul>
+                            <li>
+                                <Link href="/">Home</Link>
+                            </li>
+                            <li>
+                                <Link href="/about">About</Link>
+                            </li>
+
+                            <li>
+                                <span>Chapters</span>
+                                <ul className="submenu">
+                                    {Chapter_menu.map((menu) => (
+                                        <li key={menu.id}>
+                                            <Link href={`/chapters/${menu.id}`}>
+                                                {menu.Chapter_Name}
+                                            </Link>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </li>
+
+                            <li>
+                                <Link href="/contact">Join Us</Link>
+                            </li>
+                        </ul>
+                    </div>
+
+                    {/* Social Links */}
+                    <div className="social-links">
+                        <ul className="clearfix">
+                            <li>
+                                <a
+                                    href="https://www.facebook.com/"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    style={{
+                                        backgroundColor: "rgba(0, 0, 0, 0)",
+                                        color: "rgb(164, 164, 164)",
+                                    }}
+                                >
+                                    <span className="fa fa-facebook"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="https://www.linkedin.com/"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    style={{
+                                        backgroundColor: "rgba(0, 0, 0, 0)",
+                                        color: "rgb(164, 164, 164)",
+                                    }}
+                                >
+                                    <span className="fa fa-linkedin"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="https://www.skype.com/"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    style={{
+                                        backgroundColor: "rgba(0, 0, 0, 0)",
+                                        color: "rgb(164, 164, 164)",
+                                    }}
+                                >
+                                    <span className="fa fa-skype"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="https://www.twitter.com/"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    style={{
+                                        backgroundColor: "rgba(0, 0, 0, 0)",
+                                        color: "rgb(164, 164, 164)",
+                                    }}
+                                >
+                                    <span className="fa fa-twitter"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
         </div>
     );
 };

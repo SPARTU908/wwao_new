@@ -1,0 +1,54 @@
+/* Remove Google top banner completely */
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+
+body {
+  top: 0px !important;
+}
+
+/* Hide Google text + branding */
+.goog-logo-link,
+.goog-te-gadget span {
+  display: none !important;
+}
+
+.goog-te-gadget {
+  font-size: 0px !important;
+}
+
+/* Main container */
+#google_translate_element {
+  display: flex;
+  align-items: center;
+}
+
+/* Style dropdown */
+.goog-te-combo {
+  padding: 6px 14px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  background-color: #f93213;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Hover */
+.goog-te-combo:hover {
+  border-color: #ff3c1f;
+}
+
+/* Focus */
+.goog-te-combo:focus {
+  outline: none;
+  border-color: #ff3c1f;
+  box-shadow: 0 0 0 2px rgba(255, 60, 31, 0.2);
+}
+
+
+
+
+

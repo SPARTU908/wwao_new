@@ -1,148 +1,152 @@
 import React from "react";
-import Slider from "./include/Slider";
+import { Link } from "@inertiajs/react";
+import Sliders from "../Front/include/Slider";
 import Footer from "./include/Footer";
+import AutoSliderSection from "./include/AutoSliderSection";
 // import Preloader from "./include/Preloader";
-import sansthapakPhoto from "../../../../public/front/avatar.png";
-import Header from "./include/Header";
-import GoogleTranslate from "./include/GoogleTranslate";
-import LanguageSwitcher from "./include/LanguageSwitcher";
+import { usePage } from "@inertiajs/react";
 
-const Home = () => {
+import Header from "./include/Header";
+import worldthinking from "../../../../public/front/assets/world-thinking-day.png";
+import womenday from "../../../../public/front/assets/women-day.jfif";
+import sita from "../../../../public/front/assets/sita-navami.jpeg";
+import grahani from "../../../../public/front/assets/grahani.jpg";
+import balidan from "../../../../public/front/assets/balidan.jfif";
+import env from "../../../../public/front/assets/env.jpg";
+import independence from "../../../../public/front/assets/independence.png";
+import rakshabandhan from "../../../../public/front/assets/rakshabandhan.jfif";
+import teacher from "../../../../public/front/assets/teacher.jfif";
+import hindi from "../../../../public/front/assets/hindi.jfif";
+import cleaning from "../../../../public/front/assets/cleaning.jfif";
+import van from "../../../../public/front/assets/van.jpg";
+import yatra from "../../../../public/front/assets/yatra.jfif";
+import wwao from "../../../../public/front/rani.jpeg";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+
+const Home = ({ Chapter_menu }) => {
     const message = (
-        <p className="message-text">
-            हम महिलाओं को शिक्षा, कौशल विकास और नेतृत्व के अवसर प्रदान करते हैं।
-            <br />
-            सशक्त महिलाएँ ही सशक्त समाज और उज्ज्वल भविष्य का निर्माण करती हैं।
-            <br />
-            हम समान अधिकार, अवसर और सम्मान के लिए निरंतर प्रयासरत हैं।
-            <br />
-            महिलाओं की जागरूकता और आत्मविश्वास ही समाज में सकारात्मक बदलाव लाते
-            हैं।
-            <br />
-            हम हर महिला की क्षमता को पहचानकर उसे आगे बढ़ने का मंच प्रदान करते
-            हैं।
-            <br />
-            जागृत और सशक्त महिलाएँ ही एक मजबूत और समृद्ध समाज का निर्माण करती
-            हैं।
-        </p>
+        <div className="dhyeya-geet-container">
+            <p className="message-text">
+                जागो मातृशक्ति तुम जागो, जागो मातृशक्ति तुम जागो,
+                <br />
+                जागो माता जागो, जागो बेटी जागो, जागो बहना जागो,
+                <br />
+                अरे जागो सखियों जागो,
+                <br />
+                <br />
+                शक्ति स्वरूपा, नेह मण्डिता, निज स्वरूप दर्शाओ।
+                <br />
+                जागो मातृशक्ति.......... तुम जागो।
+                <br />
+                <br />
+                भटक रहे हम मृग तृष्णा में, शूल भरे हैं सब राहों पे,
+                <br />
+                तिमिरावृत्त यह धरा हो रही, अनाचार की हवा बह रही,
+                <br />
+                प्रखर शक्ति की गागर लेकर, नई ज्योति ढुलकाओ।
+                <br />
+                जागो मातृशक्ति.......... तुम जागो।
+                <br />
+                <br />
+                वीर शिवा का रूप दिखाने, जीजाबाई बन जाना है,
+                <br />
+                नवयुग के संचालन में, लक्ष्मीबाई बन आना है,
+                <br />
+                नव-निर्माण हेतु विश्व के, नव अभियान चलाओ।
+                <br />
+                जागो मातृशक्ति.......... तुम जागो।
+                <br />
+                <br />
+                भौतिकता की अंध पिपासा, निर्बलजन की घोर हताशा,
+                <br />
+                स्वार्थ लोभ का विकट तमाशा, अबला जन में व्याप्त निराशा,
+                <br />
+                एक साथ दुर्गा, लक्ष्मी बन, सारे क्लेश मिटाओ।
+                <br />
+                <br />
+                जागो माता जागो, जागो बेटी जागो, जागो बहना जागो,
+                <br />
+                अरे जागो सखियों जागो,
+                <br />
+                <br />
+                शक्ति स्वरूपा नेह मण्डिता, निज स्वरूप दर्शाओ।
+                <br />
+                जागो मातृशक्ति तुम जागो, जागो जागो जागो...।।
+            </p>
+
+            <p className="author-text">
+                — स्व. वीर बाल वर्मा <br />
+                (पूर्व प्राचार्य, आर्य महिला इंटर कॉलेज, लौहराबीर, वाराणसी,
+                उत्तर प्रदेश)
+            </p>
+        </div>
     );
 
-    const volunteers = [
-        {
-            name: "Ashikur Rahman",
-            role: "Businessman",
-            image: "/front/avatar.png",
-        },
-        {
-            name: "Luke Fray",
-            role: "Businessman",
-            image: "/front/avatar.png",
-        },
-        {
-            name: "John Peter",
-            role: "Businessman",
-            image: "/front/avatar.png",
-        },
-        {
-            name: "Muhibbur Rashid",
-            role: "Businessman",
-            image: "/front/avatar.png",
-        },
+    const { members = [], mediaCoverage = [], chapters = [] } = usePage().props;
+    console.log(usePage().props);
+    const nationalMembers = (members || []).filter(
+        (m) => m.category === "national_member",
+    );
+
+    const executive = (members || []).filter((m) => m.category === "executive");
+
+    const salhakar = (members || []).filter((m) => m.category === "salhakar");
+
+    const settings = {
+        dots: false,
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        speed: 800,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: false,
+        vertical: true,
+        verticalSwiping: true,
+    };
+
+    const rashtriyaImages = [
+        "/front/slider/s1.jpeg",
+        "/front/slider/s2.jpeg",
+        "/front/slider/s3.jpeg",
+        "/front/slider/s4.jpeg",
+        "/front/slider/s5.jpeg",
+
+        "/front/slider/s6.jpeg",
+        "/front/slider/s7.jpeg",
+        "/front/slider/s8.jpeg",
+        "/front/slider/s9.jpeg",
+        "/front/slider/s10.jpeg",
+        "/front/slider/s11.jpeg",
     ];
+
+    const seminarImages = [
+        "/front/slider/f1.jpeg",
+        "/front/slider/f2.jpeg",
+        "/front/slider/f3.jpeg",
+        "/front/slider/f4.jpeg",
+        "/front/slider/f5.jpeg",
+    ];
+
     return (
         <div>
-            {/* <Preloader/> */}
-            {/* <LanguageSwitcher /> */}
-            <GoogleTranslate />
+            {/* <Preloader /> */}
+
+            {/* <div className="translate-wrapper">
+ 
+  <GoogleTranslate />
+</div> */}
             <div className="page-wrapper">
-                <Header />
-
-                <div className="mobile-menu">
-                    <div className="menu-backdrop"></div>
-                    <div className="close-btn">
-                        <span className="icon flaticon-remove"></span>
-                    </div>
-
-                    <nav className="menu-box">
-                        <div className="nav-logo">
-                            <a href="index.html" title="Charity Home">
-                                <img
-                                    src="wp-content/uploads/2022/03/dark-loogo.png"
-                                    alt="logo"
-                                />
-                            </a>
-                        </div>
-                        <div className="menu-outer">
-                            {/* <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--> */}
-                        </div>
-                        {/* <!--Social Links--> */}
-                        <div className="social-links">
-                            <ul className="clearfix">
-                                <li>
-                                    <a
-                                        href="https://www.facebook.com/"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        style={{
-                                            backgroundColor: "rgba(0, 0, 0, 0)",
-                                            color: "rgb(164, 164, 164)",
-                                        }}
-                                    >
-                                        <span className="fa fa-facebook"></span>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a
-                                        href="https://www.linkedin.com/"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        style={{
-                                            backgroundColor: "rgba(0, 0, 0, 0)",
-                                            color: "rgb(164, 164, 164)",
-                                        }}
-                                    >
-                                        <span className="fa fa-linkedin"></span>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a
-                                        href="https://www.skype.com/"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        style={{
-                                            backgroundColor: "rgba(0, 0, 0, 0)",
-                                            color: "rgb(164, 164, 164)",
-                                        }}
-                                    >
-                                        <span className="fa fa-skype"></span>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a
-                                        href="https://www.twitter.com/"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        style={{
-                                            backgroundColor: "rgba(0, 0, 0, 0)",
-                                            color: "rgb(164, 164, 164)",
-                                        }}
-                                    >
-                                        <span className="fa fa-twitter"></span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
+                <Header Chapter_menu={Chapter_menu} />
 
                 <div
                     data-elementor-type="wp-page"
                     data-elementor-id="12"
                     className="elementor elementor-12"
                 >
+                    {/* Slider-section */}
                     <section
                         className="elementor-section elementor-top-section elementor-element elementor-element-dd52cd3 elementor-section-full_width elementor-section-height-default elementor-section-height-default"
                         data-id="dd52cd3"
@@ -161,12 +165,13 @@ const Home = () => {
                                         data-element_type="widget"
                                         data-widget_type="slider_revolution.default"
                                     >
-                                        <Slider />
+                                        <Sliders />
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </section>
+                    {/* Slider-section-ends */}
 
                     <section
                         className="elementor-section elementor-top-section elementor-element elementor-element-cf69220 elementor-section-full_width elementor-section-height-default elementor-section-height-default"
@@ -188,120 +193,7 @@ const Home = () => {
                                     >
                                         <div className="elementor-widget-container">
                                             <section className="call-to-action">
-                                                <div className="container-fluid">
-                                                    {/* <div className="row no-gutters">
-                                                        <div
-                                                            className="call-to-action-corner col-lg-4"
-                                                            // style="background-image: url(wp-content/uploads/2021/12/left-box-bg.jpg);"
-                                                        >
-                                                            <div className="single-call-to-action">
-                                                                <div className="icon-box">
-                                                                    <div className="inner-box">
-                                                                        <i className="icon flaticon-coin-1"></i>
-                                                                    </div>
-                                                                </div>
-
-                                                                <div className="content-box">
-                                                                    <h3>
-                                                                        Donation
-                                                                    </h3>{" "}
-                                                                    <p>
-                                                                        There
-                                                                        are many
-                                                                        variations
-                                                                        of lorem{" "}
-                                                                        <br />
-                                                                        passagei
-                                                                        of Lorem
-                                                                        Ipsum
-                                                                        availabl{" "}
-                                                                    </p>{" "}
-                                                                    <a
-                                                                        href="campaigns/charity-for-education/donate/index.html"
-                                                                        className="thm-btn inverse"
-                                                                    >
-                                                                        Donate
-                                                                        Now
-                                                                    </a>{" "}
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div
-                                                            className="call-to-action-center col-lg-4"
-                                                            // style="background-image: url(wp-content/uploads/2021/12/center-box-bg.jpg);"
-                                                        >
-                                                            <div className="single-call-to-action">
-                                                                <div className="icon-box">
-                                                                    <div className="inner-box">
-                                                                        <i className="icon flaticon-users"></i>
-                                                                    </div>
-                                                                </div>
-
-                                                                <div className="content-box">
-                                                                    <h3>
-                                                                        Volunteer
-                                                                    </h3>{" "}
-                                                                    <p>
-                                                                        Vivamus
-                                                                        sed
-                                                                        pretium
-                                                                        elit,
-                                                                        quis
-                                                                        luctus{" "}
-                                                                        <br />
-                                                                        urna
-                                                                        Curabitur
-                                                                        id
-                                                                        tempus
-                                                                        massa{" "}
-                                                                    </p>{" "}
-                                                                    <a
-                                                                        href="volunteer-style-one/index.html"
-                                                                        className="thm-btn inverse"
-                                                                    >
-                                                                        Join Now
-                                                                    </a>{" "}
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div
-                                                            className="call-to-action-corner col-lg-4"
-                                                            // style="background-image: url(wp-content/uploads/2021/12/right-box-bg.jpg);"
-                                                        >
-                                                            <div className="single-call-to-action">
-                                                                <div className="icon-box">
-                                                                    <div className="inner-box">
-                                                                        <i className="icon flaticon-heart-2"></i>
-                                                                    </div>
-                                                                </div>
-
-                                                                <div className="content-box">
-                                                                    <h3>
-                                                                        Fundraise
-                                                                    </h3>{" "}
-                                                                    <p>
-                                                                        Curabitur
-                                                                        elementum
-                                                                        euismod
-                                                                        mi{" "}
-                                                                        <br />{" "}
-                                                                        Vivamus
-                                                                        massa
-                                                                        augue
-                                                                        vio{" "}
-                                                                    </p>{" "}
-                                                                    <a
-                                                                        href="campaigns/charity-for-education/donate/index.html"
-                                                                        className="thm-btn inverse"
-                                                                    >
-                                                                        Read
-                                                                        More
-                                                                    </a>{" "}
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div> */}
-                                                </div>
+                                                <div className="container-fluid"></div>
                                             </section>
                                         </div>
                                     </div>
@@ -334,9 +226,14 @@ const Home = () => {
                                                     <div className="row">
                                                         <div className="col-sm-12 col-md-12 col-lg-6 md-col6-center">
                                                             <h4 className="sec-color text-uppercase double-line line-left">
-                                                                Upcoming Event
+                                                                राष्ट्रीय
+                                                                कार्यक्रम
                                                             </h4>{" "}
-                                                            <div className="bx-event-carousel">
+                                                            <Slider
+                                                                {...settings}
+                                                                className="bx-event-carousel"
+                                                            >
+                                                                {/* Evemt-1 */}
                                                                 <div className="event">
                                                                     <div className="row">
                                                                         <div className="col-sm-4">
@@ -347,10 +244,11 @@ const Home = () => {
                                                                                         decoding="async"
                                                                                         width="180"
                                                                                         height="120"
-                                                                                        src="wp-content/uploads/2022/03/2-4-180x120.jpg"
+                                                                                        src={
+                                                                                            worldthinking
+                                                                                        }
                                                                                         className="full-width wp-post-image"
                                                                                         alt=""
-                                                                                        srcset="https://fastwpdemo.com/demo/charityhome/wp-content/uploads/2022/03/2-4-180x120.jpg 180w, https://fastwpdemo.com/demo/charityhome/wp-content/uploads/2022/03/2-4-358x240.jpg 358w"
                                                                                         sizes="auto, (max-width: 180px) 100vw, 180px"
                                                                                     />{" "}
                                                                                 </div>
@@ -367,119 +265,52 @@ const Home = () => {
                                                                         <div className="col-sm-8">
                                                                             <div className="event-content">
                                                                                 <h5 className="event-title">
-                                                                                    <a href="event/charity-for-education/index.html">
-                                                                                        राष्ट्रीय
-                                                                                        चिंतन-
+                                                                                    <a href="event/charity-for-education-5/index.html">
+                                                                                        राष्ट्रीय-चिंतन
                                                                                         दिवस
                                                                                     </a>
                                                                                 </h5>
-                                                                                <ul className="event-held list-inline">
-                                                                                    <li className="text-555">
-                                                                                        <i className="fa fa-clock-o"></i>{" "}
-                                                                                        09:00
-                                                                                        AM
-                                                                                        -
-                                                                                        03:00
-                                                                                        PM
-                                                                                    </li>
-                                                                                    <li className="text-555">
-                                                                                        {" "}
-                                                                                        <i className="fa fa-map-marker"></i>{" "}
-                                                                                    </li>
-                                                                                </ul>
+                                                                                <ul className="event-held list-inline"></ul>
                                                                                 <p>
-                                                                                    कार्यकारी
-                                                                                    महिलाओं
-                                                                                    के
-                                                                                    साथ
-                                                                                    होने
-                                                                                    वाले
-                                                                                    यौन
-                                                                                    उत्पीड़न
-                                                                                    के
-                                                                                    कारण
-                                                                                    व
-                                                                                    निवारण
-                                                                                    के
-                                                                                    उपाय
-                                                                                </p>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="event">
-                                                                    <div className="row">
-                                                                        <div className="col-sm-4">
-                                                                            <div className="event-thumb">
-                                                                                <div className="thumb">
-                                                                                    <img
-                                                                                        loading="lazy"
-                                                                                        decoding="async"
-                                                                                        width="180"
-                                                                                        height="120"
-                                                                                        src="wp-content/uploads/2022/03/1-4-180x120.jpg"
-                                                                                        className="full-width wp-post-image"
-                                                                                        alt=""
-                                                                                        srcset="https://fastwpdemo.com/demo/charityhome/wp-content/uploads/2022/03/1-4-180x120.jpg 180w, https://fastwpdemo.com/demo/charityhome/wp-content/uploads/2022/03/1-4-358x240.jpg 358w"
-                                                                                        sizes="auto, (max-width: 180px) 100vw, 180px"
-                                                                                    />{" "}
-                                                                                </div>
-                                                                                <ul className="event-date">
-                                                                                    <li className="date">
-                                                                                        08
-                                                                                    </li>
-                                                                                    <li className="month">
-                                                                                        मार्च
-                                                                                    </li>
-                                                                                </ul>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div className="col-sm-8">
-                                                                            <div className="event-content">
-                                                                                <h5 className="event-title">
-                                                                                    <a href="event/charity-for-education-6/index.html">
-                                                                                        अंतर्राष्ट्रीय
-                                                                                        नारी-
-                                                                                        दिवस
-                                                                                    </a>
-                                                                                </h5>
-                                                                                <ul className="event-held list-inline">
-                                                                                    <li className="text-555">
-                                                                                        <i className="fa fa-clock-o"></i>{" "}
-                                                                                        10:00
-                                                                                        AM
-                                                                                        -
-                                                                                        03:00
-                                                                                        PM
-                                                                                    </li>
-                                                                                    <li className="text-555">
-                                                                                        {" "}
-                                                                                        <i className="fa fa-map-marker"></i>{" "}
-                                                                                    </li>
-                                                                                </ul>
-                                                                                <p>
-                                                                                    विविध
-                                                                                    क्षेत्रों
-                                                                                    में
-                                                                                    अग्रणी
-                                                                                    महिलाओं
-                                                                                    का
-                                                                                    सम्मान,
-                                                                                    मौखिक
-                                                                                    व
-                                                                                    लिखित
-                                                                                    प्रतियोगिताएँ,
-                                                                                    नारी
-                                                                                    सशक्तिकरण
+                                                                                    सामाजिक-आर्थिक
+                                                                                    चुनौतियों
+                                                                                    और
+                                                                                    राष्ट्रहित
+                                                                                    से
+                                                                                    जुड़े
+                                                                                    मुद्दों
                                                                                     पर
-                                                                                    वक्तव्य
-                                                                                    /
-                                                                                    संगोष्ठी
+                                                                                    विचार
+                                                                                    करने,
+                                                                                    सकारात्मक
+                                                                                    सोच
+                                                                                    विकसित
+                                                                                    करने
+                                                                                    और
+                                                                                    सद्भाव
+                                                                                    का
+                                                                                    विकास
+                                                                                    करने
+                                                                                    हेतु
+                                                                                    प्रतिवर्ष
+                                                                                    18
+                                                                                    फरवरी
+                                                                                    को
+                                                                                    विश्व
+                                                                                    नारी
+                                                                                    अभ्युदय
+                                                                                    संगठन
+                                                                                    "राष्ट्रीय-चिंतन
+                                                                                    दिवस"
+                                                                                    मनाता
+                                                                                    है।
                                                                                 </p>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
+
+                                                                {/* Event-2 */}
                                                                 <div className="event">
                                                                     <div className="row">
                                                                         <div className="col-sm-4">
@@ -490,108 +321,20 @@ const Home = () => {
                                                                                         decoding="async"
                                                                                         width="180"
                                                                                         height="120"
-                                                                                        src="wp-content/uploads/2022/03/4-2-180x120.jpg"
+                                                                                        src={
+                                                                                            sita
+                                                                                        }
                                                                                         className="full-width wp-post-image"
                                                                                         alt=""
-                                                                                        srcset="https://fastwpdemo.com/demo/charityhome/wp-content/uploads/2022/03/4-2-180x120.jpg 180w, https://fastwpdemo.com/demo/charityhome/wp-content/uploads/2022/03/4-2-358x240.jpg 358w"
                                                                                         sizes="auto, (max-width: 180px) 100vw, 180px"
                                                                                     />{" "}
                                                                                 </div>
                                                                                 <ul className="event-date">
                                                                                     <li className="date">
-                                                                                        24/25
-                                                                                    </li>
-                                                                                    <li className="month">
                                                                                         अप्रैल
                                                                                     </li>
-                                                                                </ul>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div className="col-sm-8">
-                                                                            <div className="event-content">
-                                                                                <h5 className="event-title">
-                                                                                    <a href="event/charity-for-education-5/index.html">
-                                                                                        सीता-
-                                                                                        महोत्सव
-                                                                                        सीता
-                                                                                        नवमी
-                                                                                        पर
-                                                                                    </a>
-                                                                                </h5>
-                                                                                <ul className="event-held list-inline">
-                                                                                    <li className="text-555">
-                                                                                        <i className="fa fa-clock-o"></i>{" "}
-                                                                                        10:00
-                                                                                        AM
-                                                                                        -
-                                                                                        03:00
-                                                                                        PM
-                                                                                    </li>
-                                                                                    <li className="text-555">
-                                                                                        {" "}
-                                                                                        <i className="fa fa-map-marker"></i>{" "}
-                                                                                    </li>
-                                                                                </ul>
-                                                                                {/* <p>
-                                                                                    Donation
-                                                                                    There
-                                                                                    are
-                                                                                    many
-                                                                                    variations
-                                                                                    of
-                                                                                    lorem
-                                                                                    passagei
-                                                                                    of
-                                                                                    Lorem
-                                                                                    Ipsum
-                                                                                    availabl
-                                                                                    Donate
-                                                                                    Now
-                                                                                    Volunteer
-                                                                                    Vivamus
-                                                                                    sed
-                                                                                    pretium
-                                                                                    elit,
-                                                                                    quis
-                                                                                    luctus
-                                                                                    urna
-                                                                                    Curabitur
-                                                                                    id
-                                                                                    tempus
-                                                                                    massa
-                                                                                    Join
-                                                                                    Now
-                                                                                    Fundraise
-                                                                                    Curabitur
-                                                                                    ...
-                                                                                </p> */}
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="event">
-                                                                    <div className="row">
-                                                                        <div className="col-sm-4">
-                                                                            <div className="event-thumb">
-                                                                                <div className="thumb">
-                                                                                    <img
-                                                                                        loading="lazy"
-                                                                                        decoding="async"
-                                                                                        width="180"
-                                                                                        height="120"
-                                                                                        src="wp-content/uploads/2022/03/3-4-180x120.jpg"
-                                                                                        className="full-width wp-post-image"
-                                                                                        alt=""
-                                                                                        srcset="https://fastwpdemo.com/demo/charityhome/wp-content/uploads/2022/03/3-4-180x120.jpg 180w, https://fastwpdemo.com/demo/charityhome/wp-content/uploads/2022/03/3-4-358x240.jpg 358w"
-                                                                                        sizes="auto, (max-width: 180px) 100vw, 180px"
-                                                                                    />{" "}
-                                                                                </div>
-                                                                                <ul className="event-date">
-                                                                                    <li className="date">
-                                                                                        15
-                                                                                    </li>
                                                                                     <li className="month">
-                                                                                        मई
+                                                                                        माह
                                                                                     </li>
                                                                                 </ul>
                                                                             </div>
@@ -600,69 +343,57 @@ const Home = () => {
                                                                             <div className="event-content">
                                                                                 <h5 className="event-title">
                                                                                     <a href="event/charity-for-education-2/index.html">
-                                                                                        ग्रहणी
-                                                                                        विकास
-                                                                                        व
-                                                                                        ग्रामीण
-                                                                                        विकास
-                                                                                        के
-                                                                                        कार्य
+                                                                                        सीता
+                                                                                        महोत्सव,
+                                                                                        नवमी
                                                                                     </a>
                                                                                 </h5>
-                                                                                <ul className="event-held list-inline">
-                                                                                    <li className="text-555">
-                                                                                        <i className="fa fa-clock-o"></i>{" "}
-                                                                                        10:00
-                                                                                        AM
-                                                                                        -
-                                                                                        04:00
-                                                                                        PM
-                                                                                    </li>
-                                                                                    <li className="text-555">
-                                                                                        {" "}
-                                                                                        <i className="fa fa-map-marker"></i>{" "}
-                                                                                        69
-                                                                                        Newyork
-                                                                                        City.
-                                                                                    </li>
-                                                                                </ul>
-                                                                                {/* <p>
-                                                                                    Donation
-                                                                                    There
-                                                                                    are
-                                                                                    many
-                                                                                    variations
-                                                                                    of
-                                                                                    lorem
-                                                                                    passagei
-                                                                                    of
-                                                                                    Lorem
-                                                                                    Ipsum
-                                                                                    availabl
-                                                                                    Donate
-                                                                                    Now
-                                                                                    Volunteer
-                                                                                    Vivamus
-                                                                                    sed
-                                                                                    pretium
-                                                                                    elit,
-                                                                                    quis
-                                                                                    luctus
-                                                                                    urna
-                                                                                    Curabitur
-                                                                                    id
-                                                                                    tempus
-                                                                                    massa
-                                                                                    Join
-                                                                                    Now
-                                                                                    Fundraise
-                                                                                    Curabitur
-                                                                                    ...
-                                                                                </p> */}
+                                                                                <ul className="event-held list-inline"></ul>
+                                                                                <p>
+                                                                                    अप्रैल
+                                                                                    माह
+                                                                                    की
+                                                                                    नवमी
+                                                                                    को
+                                                                                    माता
+                                                                                    सीता
+                                                                                    पृथ्वी
+                                                                                    से
+                                                                                    प्रकट
+                                                                                    हुई
+                                                                                    थीं।
+                                                                                    अतः
+                                                                                    त्याग,
+                                                                                    पवित्रता,
+                                                                                    समर्पण
+                                                                                    और
+                                                                                    नारी
+                                                                                    शक्ति
+                                                                                    के
+                                                                                    प्रतीक
+                                                                                    के
+                                                                                    रूप
+                                                                                    में
+                                                                                    विश्व
+                                                                                    नारी
+                                                                                    अभ्युदय
+                                                                                    संगठन
+                                                                                    अप्रैल
+                                                                                    माह
+                                                                                    की
+                                                                                    नवमी
+                                                                                    के
+                                                                                    दिन
+                                                                                    "सीता-महोत्सव"
+                                                                                    मनाता
+                                                                                    है।
+                                                                                </p>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
+
+                                                                {/* Event-3 */}
                                                                 <div className="event">
                                                                     <div className="row">
                                                                         <div className="col-sm-4">
@@ -673,10 +404,11 @@ const Home = () => {
                                                                                         decoding="async"
                                                                                         width="180"
                                                                                         height="120"
-                                                                                        src="wp-content/uploads/2022/03/2-4-180x120.jpg"
+                                                                                        src={
+                                                                                            wwao
+                                                                                        }
                                                                                         className="full-width wp-post-image"
                                                                                         alt=""
-                                                                                        srcset="https://fastwpdemo.com/demo/charityhome/wp-content/uploads/2022/03/2-4-180x120.jpg 180w, https://fastwpdemo.com/demo/charityhome/wp-content/uploads/2022/03/2-4-358x240.jpg 358w"
                                                                                         sizes="auto, (max-width: 180px) 100vw, 180px"
                                                                                     />{" "}
                                                                                 </div>
@@ -694,54 +426,376 @@ const Home = () => {
                                                                             <div className="event-content">
                                                                                 <h5 className="event-title">
                                                                                     <a href="event/charity-for-education-3/index.html">
-                                                                                        बलिदान-
-                                                                                        दिवस
+                                                                                        प्रेरणा-दिवस
                                                                                     </a>
                                                                                 </h5>
-                                                                                <ul className="event-held list-inline">
-                                                                                    <li className="text-555">
-                                                                                        <i className="fa fa-clock-o"></i>{" "}
-                                                                                        11:00
-                                                                                        AM
-                                                                                        -
-                                                                                        02:00
-                                                                                        PM
-                                                                                    </li>
-                                                                                    <li className="text-555">
-                                                                                        {" "}
-                                                                                        <i className="fa fa-map-marker"></i>{" "}
-                                                                                    </li>
-                                                                                </ul>
+                                                                                <ul className="event-held list-inline"></ul>
                                                                                 <p>
-                                                                                    फैंसी
-                                                                                    ड्रेस
-                                                                                    प्रतियोगिता/
-                                                                                    वीर
-                                                                                    रस
-                                                                                    प्रधान
-                                                                                    कविता
-                                                                                    पाठ/
-                                                                                    गायन
-                                                                                    प्रतियोगिता/
-                                                                                    देश-भक्ति
-                                                                                    गीत
-                                                                                    प्रतियोगिता,
-                                                                                    लेखन
-                                                                                    प्रतियोगिता,
-                                                                                    नाटक
-                                                                                    /
-                                                                                    नृत्य
-                                                                                    नाटिका
+                                                                                    भारत
+                                                                                    की
+                                                                                    स्वतंत्रता,
+                                                                                    अखंडता
+                                                                                    और
+                                                                                    रक्षा
+                                                                                    के
+                                                                                    लिए
+                                                                                    झांसी
+                                                                                    की
+                                                                                    रानी
+                                                                                    महारानी
+                                                                                    लक्ष्मीबाई
+                                                                                    ने
+                                                                                    17
+                                                                                    जून,
+                                                                                    1858
+                                                                                    को
+                                                                                    ग्वालियर
+                                                                                    के
+                                                                                    पास
+                                                                                    कोटा
+                                                                                    की
+                                                                                    सराय
+                                                                                    में
+                                                                                    अंग्रेजों
+                                                                                    से
+                                                                                    लड़ते
+                                                                                    हुए
+                                                                                    वीरगति
+                                                                                    को
+                                                                                    प्राप्त
+                                                                                    की
+                                                                                    थी।
+                                                                                    विश्व
+                                                                                    नारी
+                                                                                    अभ्युदय
+                                                                                    संगठन
+                                                                                    ने
+                                                                                    महारानी
+                                                                                    लक्ष्मीबाई
+                                                                                    को
+                                                                                    अपना
+                                                                                    आदर्श
+                                                                                    घोषित
+                                                                                    किया
+                                                                                    है।
+                                                                                    अतः
+                                                                                    उन्हें
+                                                                                    सच्ची
+                                                                                    श्रद्धांजलि
+                                                                                    अर्पित
+                                                                                    करने
+                                                                                    हेतु
+                                                                                    विश्व
+                                                                                    नारी
+                                                                                    अभ्युदय
+                                                                                    संगठन
+                                                                                    प्रतिवर्ष
+                                                                                    17
+                                                                                    जून
+                                                                                    को
+                                                                                    "प्रेरणा-दिवस"
+                                                                                    के
+                                                                                    रूप
+                                                                                    में
+                                                                                    मनाता
+                                                                                    है।
                                                                                 </p>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                            </div>
+
+                                                                {/* Event-4 */}
+                                                                <div className="event">
+                                                                    <div className="row">
+                                                                        <div className="col-sm-4">
+                                                                            <div className="event-thumb">
+                                                                                <div className="thumb">
+                                                                                    <img
+                                                                                        loading="lazy"
+                                                                                        decoding="async"
+                                                                                        width="180"
+                                                                                        height="120"
+                                                                                        src={
+                                                                                            wwao
+                                                                                        }
+                                                                                        className="full-width wp-post-image"
+                                                                                        alt=""
+                                                                                        sizes="auto, (max-width: 180px) 100vw, 180px"
+                                                                                    />{" "}
+                                                                                </div>
+                                                                                <ul className="event-date">
+                                                                                    <li className="date">
+                                                                                        15
+                                                                                    </li>
+                                                                                    <li className="month">
+                                                                                        अगस्त
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div className="col-sm-8">
+                                                                            <div className="event-content">
+                                                                                <h5 className="event-title">
+                                                                                    <a href="event/charity-for-education-3/index.html">
+                                                                                        शहादत
+                                                                                        और
+                                                                                        श्रद्धांजलि
+                                                                                        दिवस
+                                                                                    </a>
+                                                                                </h5>
+                                                                                <ul className="event-held list-inline"></ul>
+                                                                                <p>
+                                                                                    भारत
+                                                                                    की
+                                                                                    स्वतंत्रता
+                                                                                    तथा
+                                                                                    सुरक्षा
+                                                                                    के
+                                                                                    लिए
+                                                                                    अपने
+                                                                                    प्राणों
+                                                                                    की
+                                                                                    आहुति
+                                                                                    देने
+                                                                                    वाले
+                                                                                    अमर
+                                                                                    शहीदों
+                                                                                    की
+                                                                                    शहादत
+                                                                                    को
+                                                                                    श्रद्धांजलि
+                                                                                    देने
+                                                                                    स्वरूप
+                                                                                    विश्व
+                                                                                    नारी
+                                                                                    अभ्युदय
+                                                                                    संगठन
+                                                                                    "शहादत
+                                                                                    और
+                                                                                    श्रद्धांजलि-दिवस"
+                                                                                    मनाता
+                                                                                    है।{" "}
+                                                                                </p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                {/* Event-5 */}
+                                                                <div className="event">
+                                                                    <div className="row">
+                                                                        <div className="col-sm-4">
+                                                                            <div className="event-thumb">
+                                                                                <div className="thumb">
+                                                                                    <img
+                                                                                        loading="lazy"
+                                                                                        decoding="async"
+                                                                                        width="180"
+                                                                                        height="120"
+                                                                                        src={
+                                                                                            wwao
+                                                                                        }
+                                                                                        className="full-width wp-post-image"
+                                                                                        alt=""
+                                                                                        sizes="auto, (max-width: 180px) 100vw, 180px"
+                                                                                    />{" "}
+                                                                                </div>
+                                                                                <ul className="event-date">
+                                                                                    <li className="date">
+                                                                                        15-17
+                                                                                    </li>
+                                                                                    <li className="month">
+                                                                                        नवंबर
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div className="col-sm-8">
+                                                                            <div className="event-content">
+                                                                                <h5 className="event-title">
+                                                                                    <a href="event/charity-for-education-3/index.html">
+                                                                                        स्थापना-दिवस
+                                                                                    </a>
+                                                                                </h5>
+                                                                                <ul className="event-held list-inline"></ul>
+                                                                                <p>
+                                                                                    2008-9
+                                                                                    में
+                                                                                    15
+                                                                                    से
+                                                                                    17
+                                                                                    नवंबर
+                                                                                    तक
+                                                                                    माननीय
+                                                                                    इंद्रेश
+                                                                                    भाईजी
+                                                                                    के
+                                                                                    मार्गदर्शन
+                                                                                    में
+                                                                                    वाराणसी
+                                                                                    में
+                                                                                    विश्व
+                                                                                    नारी
+                                                                                    अभ्युदय
+                                                                                    संगठन
+                                                                                    का
+                                                                                    त्रिदिवसीय
+                                                                                    सम्मेलन
+                                                                                    संपन्न
+                                                                                    हुआ
+                                                                                    था।
+                                                                                    तब
+                                                                                    से
+                                                                                    प्रतिवर्ष
+                                                                                    15
+                                                                                    से
+                                                                                    17
+                                                                                    नवंबर
+                                                                                    तक
+                                                                                    विश्व
+                                                                                    नारी
+                                                                                    अभ्युदय
+                                                                                    संगठन
+                                                                                    "स्थापना-
+                                                                                    दिवस"
+                                                                                    मनाता
+                                                                                    है।
+                                                                                </p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                {/* Event-6 */}
+                                                                <div className="event">
+                                                                    <div className="row">
+                                                                        <div className="col-sm-4">
+                                                                            <div className="event-thumb">
+                                                                                <div className="thumb">
+                                                                                    <img
+                                                                                        loading="lazy"
+                                                                                        decoding="async"
+                                                                                        width="180"
+                                                                                        height="120"
+                                                                                        src={
+                                                                                            wwao
+                                                                                        }
+                                                                                        className="full-width wp-post-image"
+                                                                                        alt=""
+                                                                                        sizes="auto, (max-width: 180px) 100vw, 180px"
+                                                                                    />{" "}
+                                                                                </div>
+                                                                                <ul className="event-date">
+                                                                                    <li className="date"></li>
+                                                                                    <li className="month"></li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div className="col-sm-8">
+                                                                            <div className="event-content">
+                                                                                <h5 className="event-title">
+                                                                                    <a href="event/charity-for-education-3/index.html">
+                                                                                        राष्ट्रीय
+                                                                                        महासम्मेलन
+                                                                                        तथा
+                                                                                        स्मारिका
+                                                                                        का
+                                                                                        प्रकाशन-
+                                                                                    </a>
+                                                                                </h5>
+                                                                                <ul className="event-held list-inline"></ul>
+                                                                                <p>
+                                                                                    विश्व
+                                                                                    नारी
+                                                                                    अभ्युदय
+                                                                                    संगठन
+                                                                                    द्वारा
+                                                                                    5
+                                                                                    वर्ष
+                                                                                    के
+                                                                                    अंतराल
+                                                                                    में
+                                                                                    एक
+                                                                                    राष्ट्रीय
+                                                                                    महासम्मेलन
+                                                                                    तथा
+                                                                                    स्मारिका
+                                                                                    निकाली
+                                                                                    जाती
+                                                                                    है।
+                                                                                </p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                {/* Event-7 */}
+                                                                <div className="event">
+                                                                    <div className="row">
+                                                                        <div className="col-sm-4">
+                                                                            <div className="event-thumb">
+                                                                                <div className="thumb">
+                                                                                    <img
+                                                                                        loading="lazy"
+                                                                                        decoding="async"
+                                                                                        width="180"
+                                                                                        height="120"
+                                                                                        src={
+                                                                                            yatra
+                                                                                        }
+                                                                                        className="full-width wp-post-image"
+                                                                                        alt=""
+                                                                                        sizes="auto, (max-width: 180px) 100vw, 180px"
+                                                                                    />{" "}
+                                                                                </div>
+                                                                                <ul className="event-date">
+                                                                                    <li className="date"></li>
+                                                                                    <li className="month"></li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div className="col-sm-8">
+                                                                            <div className="event-content">
+                                                                                <h5 className="event-title">
+                                                                                    <a href="event/charity-for-education-3/index.html">
+                                                                                        तीर्थ
+                                                                                        यात्रा
+                                                                                    </a>
+                                                                                </h5>
+                                                                                <ul className="event-held list-inline"></ul>
+                                                                                <p>
+                                                                                    विश्व
+                                                                                    नारी
+                                                                                    अभ्युदय
+                                                                                    संगठन
+                                                                                    द्वारा
+                                                                                    समय
+                                                                                    -समय
+                                                                                    पर
+                                                                                    आपसी
+                                                                                    प्रेम-सौहार्द
+                                                                                    बनाए
+                                                                                    रखने
+                                                                                    हेतु
+                                                                                    तीर्थ
+                                                                                    यात्रा
+                                                                                    का
+                                                                                    आयोजन
+                                                                                    किया
+                                                                                    जाता
+                                                                                    है।
+                                                                                </p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </Slider>
                                                         </div>
+
                                                         <div className="col-sm-12 col-md-12 col-lg-6 md-col6-center m-topm50">
                                                             <h4 className="sec-color text-uppercase double-line line-left">
-                                                                About
+                                                                हमारे बारे में
                                                             </h4>
                                                             <div className="featured-causes">
                                                                 <div className="row">
@@ -752,45 +806,12 @@ const Home = () => {
                                                                                 decoding="async"
                                                                                 width="260"
                                                                                 height="385"
-                                                                                src="wp-content/uploads/2022/03/2-4-260x385.jpg"
+                                                                                src={
+                                                                                    wwao
+                                                                                }
                                                                                 className="full-width wp-post-image"
                                                                                 alt=""
                                                                             />{" "}
-                                                                            <div className="causes-progress">
-                                                                                <div className="progress-item">
-                                                                                    <div
-                                                                                        className="progress"
-                                                                                        data-value="40"
-                                                                                    >
-                                                                                        <div
-                                                                                            className="progress-bar"
-                                                                                            role="progressbar"
-                                                                                            aria-valuenow="40"
-                                                                                            aria-valuemin="0"
-                                                                                            aria-valuemax="100"
-                                                                                        >
-                                                                                            <div className="value-holder">
-                                                                                                <span className="value"></span>
-
-                                                                                                %
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <ul className="list-inline">
-                                                                                    <li className="text-thm">
-                                                                                        <span className="amount">
-                                                                                            &#036;3,720.00
-                                                                                        </span>{" "}
-                                                                                        donated
-                                                                                        of{" "}
-                                                                                        <span className="goal-amount">
-                                                                                            &#036;9,300.00
-                                                                                        </span>{" "}
-                                                                                        goal
-                                                                                    </li>
-                                                                                </ul>
-                                                                            </div>
                                                                         </div>
                                                                     </div>
                                                                     <div className="col-sm-6">
@@ -948,93 +969,6 @@ const Home = () => {
                                                                                 करती
                                                                                 हैं।
                                                                             </p>
-                                                                            {/* <a
-                                                                                className="thm-btn btn-xs"
-                                                                                href="campaigns/charity-for-education/donate/index.html"
-                                                                            >
-                                                                                Donate
-                                                                                Now
-                                                                            </a> */}
-                                                                            {/* <a
-                                                                                className="thm-btn inverse btn-xs"
-                                                                                href="campaigns/charity-for-education/index.html"
-                                                                            >
-                                                                                Read
-                                                                                More
-                                                                            </a> */}
-                                                                            {/* <h6>
-                                                                                Help
-                                                                                us
-                                                                                by
-                                                                                share:
-                                                                            </h6> */}
-                                                                            {/* <ul className="social">
-                                                                                <li>
-                                                                                    <a
-                                                                                        href="https://www.facebook.com/"
-                                                                                        style={{
-                                                                                            backgroundColor:
-                                                                                                "rgba(0, 0, 0, 0)",
-                                                                                            color: "rgb(235, 83, 16)",
-                                                                                        }}
-                                                                                        target="_blank"
-                                                                                    >
-                                                                                        <i className="fa fa-facebook"></i>
-                                                                                    </a>
-                                                                                </li>
-                                                                                <li>
-                                                                                    <a
-                                                                                        href="https://www.linkedin.com/"
-                                                                                        style={{
-                                                                                            backgroundColor:
-                                                                                                "rgba(0, 0, 0, 0)",
-                                                                                            color: "rgb(235, 83, 16)",
-                                                                                        }}
-                                                                                        target="_blank"
-                                                                                    >
-                                                                                        <i className="fa fa-linkedin"></i>
-                                                                                    </a>
-                                                                                </li>
-                                                                                <li>
-                                                                                    <a
-                                                                                        href="https://www.pinterest.com/"
-                                                                                        style={{
-                                                                                            backgroundColor:
-                                                                                                "rgba(0, 0, 0, 0)",
-                                                                                            color: "rgb(235, 83, 16)",
-                                                                                        }}
-                                                                                        target="_blank"
-                                                                                    >
-                                                                                        <i className="fa fa-pinterest"></i>
-                                                                                    </a>
-                                                                                </li>
-                                                                                <li>
-                                                                                    <a
-                                                                                        href="https://www.skype.com/"
-                                                                                        style={{
-                                                                                            backgroundColor:
-                                                                                                "rgba(0, 0, 0, 0)",
-                                                                                            color: "rgb(235, 83, 16)",
-                                                                                        }}
-                                                                                        target="_blank"
-                                                                                    >
-                                                                                        <i className="fa fa-skype"></i>
-                                                                                    </a>
-                                                                                </li>
-                                                                                <li>
-                                                                                    <a
-                                                                                        href="https://www.twitter.com/"
-                                                                                        style={{
-                                                                                            backgroundColor:
-                                                                                                "rgba(0, 0, 0, 0)",
-                                                                                            color: "rgb(235, 83, 16)",
-                                                                                        }}
-                                                                                        target="_blank"
-                                                                                    >
-                                                                                        <i className="fa fa-twitter"></i>
-                                                                                    </a>
-                                                                                </li>
-                                                                            </ul> */}
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1050,27 +984,32 @@ const Home = () => {
                         </div>
                     </section>
 
-                    {/* sansthapak ki lekhniya */}
+                    {/* dheye geet */}
                     <section className="founder-message-section">
                         <div className="container-msg">
-                            <h2 className="section-title">
-                                संस्थापक के <span>लेखनी</span>
-                            </h2>
-                            <p className="section-subtitle">
-                                संस्थापक की प्रेरणादायक सोच
-                            </p>
+                            <div className="section-header">
+                                <h2>ध्येय गीत</h2>
+
+                                <div className="sec-title colored text-center">
+                                    <span className="decor">
+                                        <span className="inner"></span>
+                                    </span>
+                                </div>
+                                <div className="audio-card">
+                                    <p className="audio-title">
+                                        🎵 ध्येय गीत सुनें
+                                    </p>
+
+                                    <audio controls>
+                                        <source
+                                            src="/audio/geet.mpeg"
+                                            type="audio/mpeg"
+                                        />
+                                    </audio>
+                                </div>
+                            </div>
 
                             <div className="message-wrapper">
-                                <div className="photo-container">
-                                    <img
-                                        src={sansthapakPhoto}
-                                        alt="Sansthapak"
-                                        className="sansthapak-photo"
-                                        width={100}
-                                        height={100}
-                                    />
-                                </div>
-
                                 <div className="message-card">
                                     <p className="message-text">{message}</p>
                                 </div>
@@ -1080,33 +1019,121 @@ const Home = () => {
 
                     {/* end */}
 
-                    {/* committee member */}
                     <section className="volunteer-section">
                         <div className="container">
                             <div className="section-header">
-                                <h2>राष्ट्रीय समिति के सदस्य</h2>
-                                <p>
-                                    Lorem ipsum is a dummy text it will use for
-                                    subtitle here
-                                </p>
+                                <h2>राष्ट्रीय सदस्य 2025-2027</h2>
+                                <div className="sec-title colored text-center">
+                                    <span className="decor">
+                                        <span className="inner"></span>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div className="container">
+                                {/* Single person full width row */}
+                                <div className="row mb-4 justify-content-center text-center">
+                                    <div className="col-md-4">
+                                        <div className="member-image">
+                                            <img
+                                                src="/front/indresh2.png"
+                                                alt="श्री इंद्रेश जी"
+                                                className="img-fluid"
+                                            />
+                                        </div>
+                                        <div className="member-card">
+                                            <h4>माननीय इंद्रेश जी</h4>
+                                            <span>
+                                                संस्थापक संरक्षक (WWAO) ,सदस्य
+                                                केंद्रीय कारिणी
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Grid for remaining people */}
+                                <div className="row">
+                                    {nationalMembers.map((member, index) => (
+                                        <div
+                                            className="col-md-4 col-sm-6 mb-4 text-center"
+                                            key={member.id || index}
+                                        >
+                                            <div className="member-image">
+                                                <img
+                                                    src={`/storage/${member.image}`}
+                                                    alt={member.name}
+                                                    className="img-fluid"
+                                                />
+                                            </div>
+
+                                            <div className="member-card">
+                                                <h4>{member.name}</h4>
+                                                <span>{member.city}</span>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                            {/* Executive Section */}
+                            <div className="section-header">
+                                <h2>राष्ट्रीय स्तर पर क्षेत्रीय कार्यकारिणी</h2>
+                                <div className="sec-title colored text-center">
+                                    <span className="decor">
+                                        <span className="inner"></span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div className="volunteer-grid-1">
+                                {executive.map((member, index) => (
+                                    <div
+                                        className="volunteer-card"
+                                        key={member.id || index}
+                                    >
+                                        <div className="image-box">
+                                            <img
+                                                src={`/storage/${member.image}`}
+                                                alt={member.name}
+                                            />
+                                        </div>
+
+                                        <h4>{member.name}</h4>
+                                        <span>{member.designation}</span>
+                                        <br />
+                                        <span>{member.mobile}</span>
+                                    </div>
+                                ))}
+                            </div>
+
+                            {/* Rashtriya Salhakar Section */}
+                            <div
+                                className="section-header"
+                                style={{ marginTop: "40px" }}
+                            >
+                                <h2> राष्ट्रीय सलाहकार</h2>
+                                <div className="sec-title colored text-center">
+                                    <span className="decor">
+                                        <span className="inner"></span>
+                                    </span>
+                                </div>
                             </div>
 
                             <div className="volunteer-grid">
-                                {volunteers.map((v, index) => (
-                                    <div className="volunteer-card" key={index}>
+                                {salhakar.map((member, index) => (
+                                    <div
+                                        className="volunteer-card"
+                                        key={member.id || index}
+                                    >
                                         <div className="image-box">
-                                            <img src={v.image} alt={v.name} />
-                                            <div className="overlay">
-                                                <div className="social-icons">
-                                                    <i className="fab fa-facebook-f"></i>
-                                                    <i className="fab fa-google-plus-g"></i>
-                                                    <i className="fab fa-linkedin-in"></i>
-                                                    <i className="fab fa-twitter"></i>
-                                                </div>
-                                            </div>
+                                            <img
+                                                src={`/storage/${member.image}`}
+                                                alt={member.name}
+                                            />
                                         </div>
-                                        <h4>{v.name}</h4>
-                                        <span>{v.role}</span>
+
+                                        <h4>{member.name}</h4>
+                                        <span>{member.designation}</span>
+                                        <br />
+                                        <span>{member.mobile}</span>
                                     </div>
                                 ))}
                             </div>
@@ -1115,6 +1142,7 @@ const Home = () => {
                     {/* end */}
 
                     <section
+                        id="chapters"
                         className="elementor-section elementor-top-section elementor-element elementor-element-ee59e78 elementor-section-full_width elementor-section-height-default elementor-section-height-default"
                         data-id="ee59e78"
                         data-element_type="section"
@@ -1133,300 +1161,62 @@ const Home = () => {
                                         data-widget_type="charityhome_recent_causes.default"
                                     >
                                         <div className="elementor-widget-container">
-                                            <section className="recent-causes sec-padding ">
+                                            <section className=" sec-padding founder-message-section ">
                                                 <div className="container">
-                                                    <div className="sec-title text-center">
-                                                        <h2>Chapters</h2>{" "}
-                                                        {/* <p>
-                                                            Lorem ipsum is a
-                                                            dummy text it will
-                                                            use for subtitle
-                                                            here
-                                                        </p>{" "} */}
-                                                        <span className="decor">
-                                                            <span className="inner"></span>
-                                                        </span>
+                                                    <div className="section-header">
+                                                        <h2>चैप्टर्स</h2>
+                                                        <div className="sec-title colored text-center">
+                                                            <span className="decor">
+                                                                <span className="inner"></span>
+                                                            </span>
+                                                        </div>
                                                     </div>
+
                                                     <div className="row">
-                                                        <div className="col-sm-12 col-md-4 col-lg-4">
-                                                            <div className="causes sm-col5-center ">
-                                                                <div className="thumb">
-                                                                    <img
-                                                                        loading="lazy"
-                                                                        decoding="async"
-                                                                        width="360"
-                                                                        height="220"
-                                                                        src="wp-content/uploads/2022/03/1-4-360x220.jpg"
-                                                                        className="full-width wp-post-image"
-                                                                        alt=""
-                                                                        srcset="https://fastwpdemo.com/demo/charityhome/wp-content/uploads/2022/03/1-4-360x220.jpg 360w, https://fastwpdemo.com/demo/charityhome/wp-content/uploads/2022/03/1-4-570x350.jpg 570w"
-                                                                        sizes="auto, (max-width: 360px) 100vw, 360px"
-                                                                    />{" "}
-                                                                    {/* <div className="donate-piechart">
-                                                                        <div className="piechart-block">
-                                                                            <div
-                                                                                className="piechart style-one"
-                                                                                data-fg-color="rgba(250,119,68,1)"
-                                                                                data-value=".35"
-                                                                            >
-                                                                                <span>
-                                                                                    .35
-                                                                                </span>
-                                                                            </div>
+                                                        {chapters.map(
+                                                            (chapter) => (
+                                                                <div
+                                                                    key={
+                                                                        chapter.id
+                                                                    }
+                                                                    className="col-sm-12 col-md-4 col-lg-4"
+                                                                >
+                                                                    <div className="causes sm-col5-center">
+                                                                        <div className="thumb">
+                                                                            <img
+                                                                                loading="lazy"
+                                                                                decoding="async"
+                                                                                src={`/storage/${chapter.image}`}
+                                                                                alt={
+                                                                                    chapter.name
+                                                                                }
+                                                                                className="full-width wp-post-image"
+                                                                                style={{
+                                                                                    width: "360px",
+                                                                                    height: "245px",
+                                                                                    objectFit:
+                                                                                        "cover",
+                                                                                }}
+                                                                            />
                                                                         </div>
-                                                                    </div> */}
-                                                                </div>
-                                                                <div className="causes-details clearfix">
-                                                                    <h4 className="title">
-                                                                        <a href="campaigns/sponsor-a-child-today/index.html">
-                                                                            Sponsor
-                                                                            a
-                                                                            child
-                                                                            today
-                                                                        </a>
-                                                                    </h4>
-                                                                    <ul className="about-causes list-inline clearfix">
-                                                                        <li className="causes-goal">
-                                                                            <span className="amount">
-                                                                                &#036;875.00
-                                                                            </span>{" "}
-                                                                            donated
-                                                                            of{" "}
-                                                                            <span className="goal-amount">
-                                                                                &#036;2,500.00
-                                                                            </span>{" "}
-                                                                            goal
-                                                                        </li>
-                                                                    </ul>
-                                                                    <p>
-                                                                        Lorem
-                                                                        ipsum
-                                                                        dolor
-                                                                        sit
-                                                                        amet,
-                                                                        consectetur
-                                                                        adipisicing
-                                                                        elit.
-                                                                        Esse
-                                                                        totam
-                                                                        praesentium
-                                                                        saepe
-                                                                        repudiandae,
-                                                                        eaque
-                                                                        ipsum
-                                                                        id,
-                                                                        inventore
-                                                                        vel
-                                                                        magnam
-                                                                        quod&hellip;
-                                                                    </p>
-                                                                    <div>
-                                                                        <a
-                                                                            href="campaigns/sponsor-a-child-today/donate/index.html"
-                                                                            className="thm-btn btn-xs"
-                                                                        >
-                                                                            <i className="fa fa-angle-double-right text-theme-colored"></i>{" "}
-                                                                            Donate
-                                                                            Now
-                                                                        </a>
-                                                                        <a
-                                                                            className="thm-btn inverse btn-xs"
-                                                                            href="campaigns/sponsor-a-child-today/index.html"
-                                                                        >
-                                                                            <i className="fa fa-angle-double-right text-theme-colored"></i>{" "}
-                                                                            Read
-                                                                            More
-                                                                        </a>
+
+                                                                        <div className="causes-details clearfix">
+                                                                            <h4 className="title">
+                                                                                <Link
+                                                                                    href={`/chapters/${chapter.id}`}
+                                                                                >
+                                                                                    {
+                                                                                        chapter.name
+                                                                                    }
+                                                                                </Link>
+                                                                            </h4>
+
+                                                                            <ul className="about-causes list-inline clearfix"></ul>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
-                                                            </div>
-                                                        </div>
-                                                        <div className="col-sm-12 col-md-4 col-lg-4">
-                                                            <div className="causes sm-col5-center ">
-                                                                <div className="thumb">
-                                                                    <img
-                                                                        loading="lazy"
-                                                                        decoding="async"
-                                                                        width="360"
-                                                                        height="220"
-                                                                        src="wp-content/uploads/2022/03/4-2-360x220.jpg"
-                                                                        className="full-width wp-post-image"
-                                                                        alt=""
-                                                                        srcset="https://fastwpdemo.com/demo/charityhome/wp-content/uploads/2022/03/4-2-360x220.jpg 360w, https://fastwpdemo.com/demo/charityhome/wp-content/uploads/2022/03/4-2-570x350.jpg 570w"
-                                                                        sizes="auto, (max-width: 360px) 100vw, 360px"
-                                                                    />{" "}
-                                                                    {/* <div className="donate-piechart">
-                                                                        <div className="piechart-block">
-                                                                            <div
-                                                                                className="piechart style-one"
-                                                                                data-fg-color="rgba(250,119,68,1)"
-                                                                                data-value=".60"
-                                                                            >
-                                                                                <span>
-                                                                                    .60
-                                                                                </span>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div> */}
-                                                                </div>
-                                                                <div className="causes-details clearfix">
-                                                                    <h4 className="title">
-                                                                        <a href="campaigns/sponsor-a-child-today-2/index.html">
-                                                                            Sponsor
-                                                                            a
-                                                                            child
-                                                                            today
-                                                                        </a>
-                                                                    </h4>
-                                                                    <ul className="about-causes list-inline clearfix">
-                                                                        <li className="causes-goal">
-                                                                            <span className="amount">
-                                                                                &#036;2,100.00
-                                                                            </span>{" "}
-                                                                            donated
-                                                                            of{" "}
-                                                                            <span className="goal-amount">
-                                                                                &#036;3,500.00
-                                                                            </span>{" "}
-                                                                            goal
-                                                                        </li>
-                                                                    </ul>
-                                                                    <p>
-                                                                        Lorem
-                                                                        ipsum
-                                                                        dolor
-                                                                        sit
-                                                                        amet,
-                                                                        consectetur
-                                                                        adipisicing
-                                                                        elit.
-                                                                        Esse
-                                                                        totam
-                                                                        praesentium
-                                                                        saepe
-                                                                        repudiandae,
-                                                                        eaque
-                                                                        ipsum
-                                                                        id,
-                                                                        inventore
-                                                                        vel
-                                                                        magnam
-                                                                        quod&hellip;
-                                                                    </p>
-                                                                    <div>
-                                                                        <a
-                                                                            href="campaigns/sponsor-a-child-today-2/donate/index.html"
-                                                                            className="thm-btn btn-xs"
-                                                                        >
-                                                                            <i className="fa fa-angle-double-right text-theme-colored"></i>{" "}
-                                                                            Donate
-                                                                            Now
-                                                                        </a>
-                                                                        <a
-                                                                            className="thm-btn inverse btn-xs"
-                                                                            href="campaigns/sponsor-a-child-today-2/index.html"
-                                                                        >
-                                                                            <i className="fa fa-angle-double-right text-theme-colored"></i>{" "}
-                                                                            Read
-                                                                            More
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div className="col-sm-12 col-md-4 col-lg-4">
-                                                            <div className="causes sm-col5-center ">
-                                                                <div className="thumb">
-                                                                    <img
-                                                                        loading="lazy"
-                                                                        decoding="async"
-                                                                        width="360"
-                                                                        height="220"
-                                                                        src="wp-content/uploads/2022/03/3-4-360x220.jpg"
-                                                                        className="full-width wp-post-image"
-                                                                        alt=""
-                                                                        srcset="https://fastwpdemo.com/demo/charityhome/wp-content/uploads/2022/03/3-4-360x220.jpg 360w, https://fastwpdemo.com/demo/charityhome/wp-content/uploads/2022/03/3-4-570x350.jpg 570w"
-                                                                        sizes="auto, (max-width: 360px) 100vw, 360px"
-                                                                    />{" "}
-                                                                    {/* <div className="donate-piechart">
-                                                                        <div className="piechart-block">
-                                                                            <div
-                                                                                className="piechart style-one"
-                                                                                data-fg-color="rgba(250,119,68,1)"
-                                                                                data-value=".45"
-                                                                            >
-                                                                                <span>
-                                                                                    .45
-                                                                                </span>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div> */}
-                                                                </div>
-                                                                <div className="causes-details clearfix">
-                                                                    <h4 className="title">
-                                                                        <a href="campaigns/sponsor-a-child-today-3/index.html">
-                                                                            Sponsor
-                                                                            a
-                                                                            child
-                                                                            today
-                                                                        </a>
-                                                                    </h4>
-                                                                    <ul className="about-causes list-inline clearfix">
-                                                                        <li className="causes-goal">
-                                                                            <span className="amount">
-                                                                                &#036;2,025.00
-                                                                            </span>{" "}
-                                                                            donated
-                                                                            of{" "}
-                                                                            <span className="goal-amount">
-                                                                                &#036;4,500.00
-                                                                            </span>{" "}
-                                                                            goal
-                                                                        </li>
-                                                                    </ul>
-                                                                    <p>
-                                                                        Lorem
-                                                                        ipsum
-                                                                        dolor
-                                                                        sit
-                                                                        amet,
-                                                                        consectetur
-                                                                        adipisicing
-                                                                        elit.
-                                                                        Esse
-                                                                        totam
-                                                                        praesentium
-                                                                        saepe
-                                                                        repudiandae,
-                                                                        eaque
-                                                                        ipsum
-                                                                        id,
-                                                                        inventore
-                                                                        vel
-                                                                        magnam
-                                                                        quod&hellip;
-                                                                    </p>
-                                                                    <div>
-                                                                        <a
-                                                                            href="campaigns/sponsor-a-child-today-3/donate/index.html"
-                                                                            className="thm-btn btn-xs"
-                                                                        >
-                                                                            <i className="fa fa-angle-double-right text-theme-colored"></i>{" "}
-                                                                            Donate
-                                                                            Now
-                                                                        </a>
-                                                                        <a
-                                                                            className="thm-btn inverse btn-xs"
-                                                                            href="campaigns/sponsor-a-child-today-3/index.html"
-                                                                        >
-                                                                            <i className="fa fa-angle-double-right text-theme-colored"></i>{" "}
-                                                                            Read
-                                                                            More
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                            ),
+                                                        )}
                                                     </div>
                                                 </div>
                                             </section>
@@ -1461,9 +1251,8 @@ const Home = () => {
                                                     <div className="row">
                                                         <div className="col-lg-8 offset-lg-2 promote-project text-center">
                                                             <h3>
-                                                                नारी चेतना का
-                                                                जागरण। विश्व का
-                                                                सशक्तिकरण।
+                                                                गतिविधियों की
+                                                                प्रतियां
                                                             </h3>
                                                             <div className="sec-title colored text-center">
                                                                 <span className="decor">
@@ -1471,53 +1260,27 @@ const Home = () => {
                                                                 </span>
                                                             </div>
                                                             <h2>
-                                                                वैश्विक नारी
-                                                                जागरण आंदोलन का
-                                                                हिस्सा बनें
+                                                                WWAO द्वारा की
+                                                                गयी गतिविधियां
+                                                                एवं पत्राचार
                                                             </h2>{" "}
-                                                            <p>
-                                                                वर्ल्ड वूमन
-                                                                अवेकनिंग
-                                                                ऑर्गेनाइजेशन एक
-                                                                वैश्विक पहल है,
-                                                                जो जागरूकता,
-                                                                शिक्षा, नेतृत्व
-                                                                और सामूहिक विकास
-                                                                के माध्यम से
-                                                                महिलाओं को सशक्त
-                                                                बनाने के लिए
-                                                                समर्पित है।
-                                                                हमारा विश्वास है
-                                                                कि जब महिलाएँ
-                                                                अपनी आंतरिक
-                                                                शक्ति और
-                                                                उद्देश्य को
-                                                                पहचानती हैं, तो
-                                                                परिवार सशक्त
-                                                                होते हैं, समाज
-                                                                समृद्ध होता है
-                                                                और दुनिया
-                                                                सकारात्मक रूप से
-                                                                बदलती है। आइए
-                                                                हमारे साथ मिलकर
-                                                                एक ऐसा भविष्य
-                                                                बनाएं, जहाँ हर
-                                                                महिला
-                                                                आत्मविश्वास,
-                                                                गरिमा और शक्ति
-                                                                के साथ आगे बढ़े।
-                                                            </p>
-                                                            {/* <a
-                                                                href="campaigns/charity-for-education/donate/index.html"
-                                                                className="thm-btn"
-                                                            >
-                                                                Donate Now
-                                                            </a> */}
                                                             <a
-                                                                href="/about"
+                                                                href="/front/pdf/pdf-1.pdf"
                                                                 className="thm-btn inverse"
                                                             >
-                                                                हमारे सदस्य बनें
+                                                                PDF-1
+                                                            </a>
+                                                            <a
+                                                                href="/front/pdf/pdf-2.pdf"
+                                                                className="thm-btn inverse"
+                                                            >
+                                                                PDF-2
+                                                            </a>
+                                                            <a
+                                                                href="/front/pdf/pdf-3.pdf"
+                                                                className="thm-btn inverse"
+                                                            >
+                                                                PDF-3
                                                             </a>
                                                         </div>
                                                     </div>
@@ -1530,7 +1293,110 @@ const Home = () => {
                         </div>
                     </section>
 
+                    {/* MEDIA COVERAGE */}
+                    {/* <section
+                        className="sec-padding founder-message-section"
+                        id="media"
+                    >
+                        <div className="container-msg">
+                            <div className="section-header">
+                                <h2> मीडिया कवरेज </h2>
+                                <div className="sec-title colored text-center">
+                                    <span className="decor">
+                                        <span className="inner"></span>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div className="media-container">
+                                <div className="media-card">
+                                    <img
+                                        src="/front/media-1.PNG"
+                                        alt="media1"
+                                    />
+                                </div>
+
+                                <div className="media-card">
+                                    <img
+                                        src="/front/media-2.PNG"
+                                        alt="media2"
+                                    />
+                                </div>
+
+                                <div className="media-card">
+                                    <img
+                                        src="/front/media-3.jpeg"
+                                        alt="media3"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </section> */}
+
+                    <section>
+                        <div className="container-msg">
+                            <div className="section-header">
+                                <h2>मीडिया कवरेज</h2>
+                                <div className="sec-title colored text-center">
+                                    <span className="decor">
+                                        <span className="inner"></span>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div className="media-container">
+                                {mediaCoverage?.length > 0 ? (
+                                    mediaCoverage.map((item) => (
+                                        <div
+                                            key={item.id}
+                                            className="col-lg-4 col-md-6 mb-4"
+                                        >
+                                            <div className="media-card">
+                                                <img
+                                                    src={`/storage/${item.image}`}
+                                                    alt={
+                                                        item.title ||
+                                                        "Media Coverage"
+                                                    }
+                                                    className="img-fluid"
+                                                />
+                                            </div>
+                                        </div>
+                                    ))
+                                ) : (
+                                    <div className="col-12 text-center">
+                                        No media coverage available.
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                    </section>
+                    {/* MEDIA-COVERAGE-END */}
+
+                    {/* Rashtriya */}
+                    <div style={{ padding: "40px" }}>
+                        {/* LEFT */}
+                        <AutoSliderSection
+                            title="
+राष्ट्रीय सम्मेलन"
+                            images={rashtriyaImages}
+                            reverse={false}
+                        />
+
+                        {/* RIGHT */}
+                        <AutoSliderSection
+                            title="
+2nd सेमिनार"
+                            images={seminarImages}
+                            reverse={true}
+                        />
+                    </div>
+
+                    {/* 
+                 Rashtriya section end */}
+                    {/* Gallery section start */}
                     <section
+                        id="gallery"
                         className="elementor-section elementor-top-section elementor-element elementor-element-f738864 elementor-section-full_width elementor-section-height-default elementor-section-height-default"
                         data-id="f738864"
                         data-element_type="section"
@@ -1549,19 +1415,21 @@ const Home = () => {
                                         data-widget_type="charityhome_gallery_v1.default"
                                     >
                                         <div className="elementor-widget-container">
-                                            <section className="gallery-section pb_2">
+                                            <section className="gallery-section pb_2 sec-padding founder-message-section">
                                                 <div className="container">
                                                     <div className="sec-title text-center">
-                                                        <h2>Our Gallery</h2>{" "}
-                                                        <p>
+                                                        <h2> गैलरी</h2>{" "}
+                                                        {/* <p>
                                                             Lorem ipsum is a
                                                             dummy text it will
                                                             use for subtitle
                                                             here
-                                                        </p>{" "}
-                                                        <span className="decor">
-                                                            <span className="inner"></span>
-                                                        </span>
+                                                        </p>{" "} */}
+                                                        <div className="sec-title colored text-center">
+                                                            <span className="decor">
+                                                                <span className="inner"></span>
+                                                            </span>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div className="row no-gutters ">
@@ -1576,2328 +1444,311 @@ const Home = () => {
                                                                     <img
                                                                         loading="lazy"
                                                                         decoding="async"
-                                                                        width="380"
-                                                                        height="320"
-                                                                        src="wp-content/uploads/2021/12/s1.jpg"
-                                                                        className="attachment-charityhome_380x320 size-charityhome_380x320 wp-post-image"
-                                                                        alt=""
-                                                                        srcset="https://fastwpdemo.com/demo/charityhome/wp-content/uploads/2021/12/s1.jpg 380w, https://fastwpdemo.com/demo/charityhome/wp-content/uploads/2021/12/s1-300x253.jpg 300w"
-                                                                        sizes="auto, (max-width: 380px) 100vw, 380px"
-                                                                    />
-                                                                </a>
-                                                            </figure>
-                                                            <div className="overlay">
-                                                                <div className="content">
-                                                                    <a
-                                                                        href="wp-content/uploads/2021/12/s1.jpg"
-                                                                        className="lightbox-image btn-zoom"
-                                                                    >
-                                                                        <span className="icon fa fa-search"></span>
-                                                                    </a>
-                                                                    <a href="#">
-                                                                        <i className="fa fa-link"></i>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    {/* <!--Image Box--> */}
-                                                    <div className="image-box col-xl-3 col-lg-6">
-                                                        <div className="inner-box">
-                                                            <figure className="image">
-                                                                <a
-                                                                    href="#"
-                                                                    className="lightbox-image"
-                                                                >
-                                                                    <img
-                                                                        loading="lazy"
-                                                                        decoding="async"
-                                                                        width="380"
-                                                                        height="320"
-                                                                        src="wp-content/uploads/2021/12/s2.jpg"
-                                                                        className="attachment-charityhome_380x320 size-charityhome_380x320 wp-post-image"
-                                                                        alt=""
-                                                                        srcset="https://fastwpdemo.com/demo/charityhome/wp-content/uploads/2021/12/s2.jpg 380w, https://fastwpdemo.com/demo/charityhome/wp-content/uploads/2021/12/s2-300x253.jpg 300w"
-                                                                        sizes="auto, (max-width: 380px) 100vw, 380px"
-                                                                    />
-                                                                </a>
-                                                            </figure>
-                                                            <div className="overlay">
-                                                                <div className="content">
-                                                                    <a
-                                                                        href="wp-content/uploads/2021/12/s2.jpg"
-                                                                        className="lightbox-image btn-zoom"
-                                                                    >
-                                                                        <span className="icon fa fa-search"></span>
-                                                                    </a>
-                                                                    <a href="#">
-                                                                        <i className="fa fa-link"></i>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    {/* <!--Image Box--> */}
-                                                    <div className="image-box col-xl-3 col-lg-6">
-                                                        <div className="inner-box">
-                                                            <figure className="image">
-                                                                <a
-                                                                    href="#"
-                                                                    className="lightbox-image"
-                                                                >
-                                                                    <img
-                                                                        loading="lazy"
-                                                                        decoding="async"
-                                                                        width="380"
-                                                                        height="320"
-                                                                        src="wp-content/uploads/2021/12/s3.jpg"
-                                                                        className="attachment-charityhome_380x320 size-charityhome_380x320 wp-post-image"
-                                                                        alt=""
-                                                                        srcset="https://fastwpdemo.com/demo/charityhome/wp-content/uploads/2021/12/s3.jpg 380w, https://fastwpdemo.com/demo/charityhome/wp-content/uploads/2021/12/s3-300x253.jpg 300w"
-                                                                        sizes="auto, (max-width: 380px) 100vw, 380px"
-                                                                    />
-                                                                </a>
-                                                            </figure>
-                                                            <div className="overlay">
-                                                                <div className="content">
-                                                                    <a
-                                                                        href="wp-content/uploads/2021/12/s3.jpg"
-                                                                        className="lightbox-image btn-zoom"
-                                                                    >
-                                                                        <span className="icon fa fa-search"></span>
-                                                                    </a>
-                                                                    <a href="#">
-                                                                        <i className="fa fa-link"></i>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    {/* <!--Image Box--> */}
-                                                    <div className="image-box col-xl-3 col-lg-6">
-                                                        <div className="inner-box">
-                                                            <figure className="image">
-                                                                <a
-                                                                    href="#"
-                                                                    className="lightbox-image"
-                                                                >
-                                                                    <img
-                                                                        loading="lazy"
-                                                                        decoding="async"
-                                                                        width="380"
-                                                                        height="320"
-                                                                        src="wp-content/uploads/2021/12/s4.jpg"
-                                                                        className="attachment-charityhome_380x320 size-charityhome_380x320 wp-post-image"
-                                                                        alt=""
-                                                                        srcset="https://fastwpdemo.com/demo/charityhome/wp-content/uploads/2021/12/s4.jpg 380w, https://fastwpdemo.com/demo/charityhome/wp-content/uploads/2021/12/s4-300x253.jpg 300w"
-                                                                        sizes="auto, (max-width: 380px) 100vw, 380px"
-                                                                    />
-                                                                </a>
-                                                            </figure>
-                                                            <div className="overlay">
-                                                                <div className="content">
-                                                                    <a
-                                                                        href="wp-content/uploads/2021/12/s4.jpg"
-                                                                        className="lightbox-image btn-zoom"
-                                                                    >
-                                                                        <span className="icon fa fa-search"></span>
-                                                                    </a>
-                                                                    <a href="#">
-                                                                        <i className="fa fa-link"></i>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    {/* <!--Image Box--> */}
-                                                    <div className="image-box col-xl-3 col-lg-6">
-                                                        <div className="inner-box">
-                                                            <figure className="image">
-                                                                <a
-                                                                    href="#"
-                                                                    className="lightbox-image"
-                                                                >
-                                                                    <img
-                                                                        loading="lazy"
-                                                                        decoding="async"
-                                                                        width="380"
-                                                                        height="320"
-                                                                        src="wp-content/uploads/2021/12/s5.jpg"
-                                                                        className="attachment-charityhome_380x320 size-charityhome_380x320 wp-post-image"
-                                                                        alt=""
-                                                                        srcset="https://fastwpdemo.com/demo/charityhome/wp-content/uploads/2021/12/s5.jpg 380w, https://fastwpdemo.com/demo/charityhome/wp-content/uploads/2021/12/s5-300x253.jpg 300w"
-                                                                        sizes="auto, (max-width: 380px) 100vw, 380px"
-                                                                    />
-                                                                </a>
-                                                            </figure>
-                                                            <div className="overlay">
-                                                                <div className="content">
-                                                                    <a
-                                                                        href="wp-content/uploads/2021/12/s5.jpg"
-                                                                        className="lightbox-image btn-zoom"
-                                                                    >
-                                                                        <span className="icon fa fa-search"></span>
-                                                                    </a>
-                                                                    <a href="#">
-                                                                        <i className="fa fa-link"></i>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    {/* <!--Image Box--> */}
-                                                    <div className="image-box col-xl-3 col-lg-6">
-                                                        <div className="inner-box">
-                                                            <figure className="image">
-                                                                <a
-                                                                    href="#"
-                                                                    className="lightbox-image"
-                                                                >
-                                                                    <img
-                                                                        loading="lazy"
-                                                                        decoding="async"
-                                                                        width="380"
-                                                                        height="320"
-                                                                        src="wp-content/uploads/2021/12/s6.jpg"
-                                                                        className="attachment-charityhome_380x320 size-charityhome_380x320 wp-post-image"
-                                                                        alt=""
-                                                                        srcset="https://fastwpdemo.com/demo/charityhome/wp-content/uploads/2021/12/s6.jpg 380w, https://fastwpdemo.com/demo/charityhome/wp-content/uploads/2021/12/s6-300x253.jpg 300w"
-                                                                        sizes="auto, (max-width: 380px) 100vw, 380px"
-                                                                    />
-                                                                </a>
-                                                            </figure>
-                                                            <div className="overlay">
-                                                                <div className="content">
-                                                                    <a
-                                                                        href="wp-content/uploads/2021/12/s6.jpg"
-                                                                        className="lightbox-image btn-zoom"
-                                                                    >
-                                                                        <span className="icon fa fa-search"></span>
-                                                                    </a>
-                                                                    <a href="#">
-                                                                        <i className="fa fa-link"></i>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    {/* <!--Image Box--> */}
-                                                    <div className="image-box col-xl-3 col-lg-6">
-                                                        <div className="inner-box">
-                                                            <figure className="image">
-                                                                <a
-                                                                    href="#"
-                                                                    className="lightbox-image"
-                                                                >
-                                                                    <img
-                                                                        loading="lazy"
-                                                                        decoding="async"
-                                                                        width="380"
-                                                                        height="320"
-                                                                        src="wp-content/uploads/2021/12/s7.jpg"
-                                                                        className="attachment-charityhome_380x320 size-charityhome_380x320 wp-post-image"
-                                                                        alt=""
-                                                                        srcset="https://fastwpdemo.com/demo/charityhome/wp-content/uploads/2021/12/s7.jpg 380w, https://fastwpdemo.com/demo/charityhome/wp-content/uploads/2021/12/s7-300x253.jpg 300w"
-                                                                        sizes="auto, (max-width: 380px) 100vw, 380px"
-                                                                    />
-                                                                </a>
-                                                            </figure>
-                                                            <div className="overlay">
-                                                                <div className="content">
-                                                                    <a
-                                                                        href="wp-content/uploads/2021/12/s7.jpg"
-                                                                        className="lightbox-image btn-zoom"
-                                                                    >
-                                                                        <span className="icon fa fa-search"></span>
-                                                                    </a>
-                                                                    <a href="#">
-                                                                        <i className="fa fa-link"></i>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    {/* <!--Image Box--> */}
-                                                    <div className="image-box col-xl-3 col-lg-6">
-                                                        <div className="inner-box">
-                                                            <figure className="image">
-                                                                <a
-                                                                    href="#"
-                                                                    className="lightbox-image"
-                                                                >
-                                                                    <img
-                                                                        loading="lazy"
-                                                                        decoding="async"
-                                                                        width="380"
-                                                                        height="320"
-                                                                        src="wp-content/uploads/2021/12/s8.jpg"
-                                                                        className="attachment-charityhome_380x320 size-charityhome_380x320 wp-post-image"
-                                                                        alt=""
-                                                                        srcset="https://fastwpdemo.com/demo/charityhome/wp-content/uploads/2021/12/s8.jpg 380w, https://fastwpdemo.com/demo/charityhome/wp-content/uploads/2021/12/s8-300x253.jpg 300w"
-                                                                        sizes="auto, (max-width: 380px) 100vw, 380px"
-                                                                    />
-                                                                </a>
-                                                            </figure>
-                                                            <div className="overlay">
-                                                                <div className="content">
-                                                                    <a
-                                                                        href="wp-content/uploads/2021/12/s8.jpg"
-                                                                        className="lightbox-image btn-zoom"
-                                                                    >
-                                                                        <span className="icon fa fa-search"></span>
-                                                                    </a>
-                                                                    <a href="#">
-                                                                        <i className="fa fa-link"></i>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </section>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section
-                        className="elementor-section elementor-top-section elementor-element elementor-element-8ccb5c3 elementor-section-full_width elementor-section-height-default elementor-section-height-default"
-                        data-id="8ccb5c3"
-                        data-element_type="section"
-                    >
-                        <div className="elementor-container elementor-column-gap-default">
-                            <div
-                                className="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-8f40c38"
-                                data-id="8f40c38"
-                                data-element_type="column"
-                            >
-                                <div className="elementor-widget-wrap elementor-element-populated">
-                                    <div
-                                        className="elementor-element elementor-element-c694dd8 elementor-widget elementor-widget-charityhome_call_to_action_two"
-                                        data-id="c694dd8"
-                                        data-element_type="widget"
-                                        data-widget_type="charityhome_call_to_action_two.default"
-                                    >
-                                        {/* <div className="elementor-widget-container">
-                                            <section className="footer-call-to-action">
-                                                <div className="container">
-                                                    <div className="row">
-                                                        <div className="col-lg-9 sm-text-center">
-                                                            <h3>
-                                                                Here will be any
-                                                                kind lorem ipsum
-                                                                heading
-                                                            </h3>{" "}
-                                                            <p>
-                                                                There are many
-                                                                variations of
-                                                                passages of
-                                                                Lorem Ipsum
-                                                                available, but
-                                                                the majority
-                                                                have lorem
-                                                            </p>{" "}
-                                                        </div>
-                                                        <div className="col-lg-3 text-right sm-text-center">
-                                                            <a
-                                                                href="gallery-style-one/index.html"
-                                                                className="thm-btn inverse m-tops15"
-                                                            >
-                                                                View Full
-                                                                Gallery
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </section>
-                                        </div> */}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    {/* <section
-                        className="elementor-section elementor-top-section elementor-element elementor-element-d5c9d2b elementor-section-full_width elementor-section-height-default elementor-section-height-default"
-                        data-id="d5c9d2b"
-                        data-element_type="section"
-                    >
-                        <div className="elementor-container elementor-column-gap-default">
-                            <div
-                                className="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-6627e5a"
-                                data-id="6627e5a"
-                                data-element_type="column"
-                            >
-                                <div className="elementor-widget-wrap elementor-element-populated">
-                                    <div
-                                        className="elementor-element elementor-element-fc9494e elementor-widget elementor-widget-charityhome_services_v1"
-                                        data-id="fc9494e"
-                                        data-element_type="widget"
-                                        data-widget_type="charityhome_services_v1.default"
-                                    >
-                                        <div className="elementor-widget-container">
-                                            <section className="home-serivce sec-padding">
-                                                <div className="container">
-                                                    <div className="sec-title text-center">
-                                                        <h2>Our Mission</h2>{" "}
-                                                        <p>
-                                                            Lorem ipsum is a
-                                                            dummy text it will
-                                                            use for subtitle
-                                                            here
-                                                        </p>{" "}
-                                                        <span className="decor">
-                                                            <span className="inner"></span>
-                                                        </span>
-                                                    </div>
-
-                                                    <div className="row">
-                                                        <div className="col-lg-4 col-sm-6">
-                                                            <div className="single-service-home">
-                                                                <div className="icon-box">
-                                                                    <div className="inner-box">
-                                                                        <i className=" flaticon-reading"></i>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="content">
-                                                                    <h3>
-                                                                        Charity
-                                                                        For
-                                                                        Education
-                                                                    </h3>
-                                                                    <p>
-                                                                        There
-                                                                        are many
-                                                                        variations
-                                                                        of lorem
-                                                                        passagei
-                                                                        of Lorem
-                                                                        Ipsum
-                                                                        available
-                                                                        but the
-                                                                        majority
-                                                                        have
-                                                                    </p>
-                                                                    <a href="#">
-                                                                        Read
-                                                                        More
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div className="col-lg-4 col-sm-6">
-                                                            <div className="single-service-home">
-                                                                <div className="icon-box">
-                                                                    <div className="inner-box">
-                                                                        <i className=" flaticon-harvest"></i>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="content">
-                                                                    <h3>
-                                                                        Feed For
-                                                                        Hungry
-                                                                        Child
-                                                                    </h3>
-                                                                    <p>
-                                                                        There
-                                                                        are many
-                                                                        variations
-                                                                        of lorem
-                                                                        passagei
-                                                                        of Lorem
-                                                                        Ipsum
-                                                                        available
-                                                                        but the
-                                                                        majority
-                                                                        have
-                                                                    </p>
-                                                                    <a href="#">
-                                                                        Read
-                                                                        More
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div className="col-lg-4 col-sm-6">
-                                                            <div className="single-service-home">
-                                                                <div className="icon-box">
-                                                                    <div className="inner-box">
-                                                                        <i className=" flaticon-heart-4"></i>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="content">
-                                                                    <h3>
-                                                                        Home For
-                                                                        Homeless
-                                                                    </h3>
-                                                                    <p>
-                                                                        There
-                                                                        are many
-                                                                        variations
-                                                                        of lorem
-                                                                        passagei
-                                                                        of Lorem
-                                                                        Ipsum
-                                                                        available
-                                                                        but the
-                                                                        majority
-                                                                        have
-                                                                    </p>
-                                                                    <a href="#">
-                                                                        Read
-                                                                        More
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div className="col-lg-4 col-sm-6">
-                                                            <div className="single-service-home">
-                                                                <div className="icon-box">
-                                                                    <div className="inner-box">
-                                                                        <i className=" flaticon-water-bottle"></i>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="content">
-                                                                    <h3>
-                                                                        Bringing
-                                                                        Clean
-                                                                        Water
-                                                                    </h3>
-                                                                    <p>
-                                                                        There
-                                                                        are many
-                                                                        variations
-                                                                        of lorem
-                                                                        passagei
-                                                                        of Lorem
-                                                                        Ipsum
-                                                                        available
-                                                                        but the
-                                                                        majority
-                                                                        have
-                                                                    </p>
-                                                                    <a href="#">
-                                                                        Read
-                                                                        More
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div className="col-lg-4 col-sm-6">
-                                                            <div className="single-service-home">
-                                                                <div className="icon-box">
-                                                                    <div className="inner-box">
-                                                                        <i className=" flaticon-money-2"></i>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="content">
-                                                                    <h3>
-                                                                        Help
-                                                                        Little
-                                                                        Hands
-                                                                    </h3>
-                                                                    <p>
-                                                                        There
-                                                                        are many
-                                                                        variations
-                                                                        of lorem
-                                                                        passagei
-                                                                        of Lorem
-                                                                        Ipsum
-                                                                        available
-                                                                        but the
-                                                                        majority
-                                                                        have
-                                                                    </p>
-                                                                    <a href="#">
-                                                                        Read
-                                                                        More
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div className="col-lg-4 col-sm-6">
-                                                            <div className="single-service-home">
-                                                                <div className="icon-box">
-                                                                    <div className="inner-box">
-                                                                        <i className=" flaticon-adoption"></i>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="content">
-                                                                    <h3>
-                                                                        Donate
-                                                                        For
-                                                                        Children
-                                                                    </h3>
-                                                                    <p>
-                                                                        There
-                                                                        are many
-                                                                        variations
-                                                                        of lorem
-                                                                        passagei
-                                                                        of Lorem
-                                                                        Ipsum
-                                                                        available
-                                                                        but the
-                                                                        majority
-                                                                        have
-                                                                    </p>
-                                                                    <a href="#">
-                                                                        Read
-                                                                        More
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </section>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section> */}
-
-                    {/* <section
-                        className="elementor-section elementor-top-section elementor-element elementor-element-81da69f elementor-section-full_width elementor-section-height-default elementor-section-height-default"
-                        data-id="81da69f"
-                        data-element_type="section"
-                    >
-                        <div className="elementor-container elementor-column-gap-default">
-                            <div
-                                className="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-fd1809d"
-                                data-id="fd1809d"
-                                data-element_type="column"
-                            >
-                                <div className="elementor-widget-wrap elementor-element-populated">
-                                    <div
-                                        className="elementor-element elementor-element-75887e1 elementor-widget elementor-widget-charityhome_funfacts_v1"
-                                        data-id="75887e1"
-                                        data-element_type="widget"
-                                        data-widget_type="charityhome_funfacts_v1.default"
-                                    >
-                                        <div className="elementor-widget-container">
-                                            <section className="fact-counter-wrapper sec-padding parallax-section">
-                                                <div className="container">
-                                                    <div className="row">
-                                                        <div className="col-xl-6 col-lg-12 md-text-center">
-                                                            <h2>
-                                                                We are served
-                                                                since{" "}
-                                                                <b>35 years</b>{" "}
-                                                                <br />
-                                                                to helpless
-                                                                people with
-                                                                trust and <br />
-                                                                we are happy
-                                                            </h2>
-                                                            <a
-                                                                href="about/index.html"
-                                                                className="thm-btn inverse m-btmm40"
-                                                            >
-                                                                Be a part of us
-                                                            </a>
-                                                        </div>
-                                                        <div className="col-xl-6 col-lg-12 md-text-center">
-                                                            <div className="single-fact">
-                                                                <div className="icon-box">
-                                                                    <i className="icon flaticon-trophy-1"></i>
-                                                                </div>
-                                                                <span
-                                                                    className="timer"
-                                                                    data-from="10"
-                                                                    data-to="365"
-                                                                    data-speed="5000"
-                                                                    data-refresh-interval="50"
-                                                                >
-                                                                    365
-                                                                </span>
-                                                                <p>
-                                                                    Total Awards
-                                                                </p>
-                                                            </div>
-                                                            <div className="single-fact">
-                                                                <div className="icon-box">
-                                                                    <i className="icon flaticon-users-1"></i>
-                                                                </div>
-                                                                <span
-                                                                    className="timer"
-                                                                    data-from="10"
-                                                                    data-to="2200"
-                                                                    data-speed="5000"
-                                                                    data-refresh-interval="50"
-                                                                >
-                                                                    2200
-                                                                </span>
-                                                                <p>
-                                                                    Total
-                                                                    Volunteer
-                                                                </p>
-                                                            </div>
-                                                            <div className="single-fact">
-                                                                <div className="icon-box">
-                                                                    <i className="icon flaticon-donation-2"></i>
-                                                                </div>
-                                                                <span
-                                                                    className="timer"
-                                                                    data-from="10"
-                                                                    data-to="155"
-                                                                    data-speed="5000"
-                                                                    data-refresh-interval="50"
-                                                                >
-                                                                    155
-                                                                </span>
-                                                                <p>
-                                                                    Total
-                                                                    Projects
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </section>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section> */}
-
-                    {/* <section
-                        className="elementor-section elementor-top-section elementor-element elementor-element-91be1ba elementor-section-full_width elementor-section-height-default elementor-section-height-default"
-                        data-id="91be1ba"
-                        data-element_type="section"
-                    >
-                        <div className="elementor-container elementor-column-gap-default">
-                            <div
-                                className="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-1a8a490"
-                                data-id="1a8a490"
-                                data-element_type="column"
-                            >
-                                <div className="elementor-widget-wrap elementor-element-populated">
-                                    <div
-                                        className="elementor-element elementor-element-059bed1 elementor-widget elementor-widget-charityhome_team_v1"
-                                        data-id="059bed1"
-                                        data-element_type="widget"
-                                        data-widget_type="charityhome_team_v1.default"
-                                    >
-                                        <div className="elementor-widget-container">
-                                            <section className="sec-padding meet-Volunteer">
-                                                <div className="container">
-                                                    <div className="row">
-                                                        <div className="col-sm-10">
-                                                            <div className="sec-title text-left">
-                                                                <h2>
-                                                                    Meet Our
-                                                                    Volunteers
-                                                                </h2>{" "}
-                                                                <p>
-                                                                    Lorem ipsum
-                                                                    is a dummy
-                                                                    text it will
-                                                                    use for
-                                                                    subtitle
-                                                                    here
-                                                                </p>{" "}
-                                                                <span className="decor">
-                                                                    <span className="inner"></span>
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div className="clearfix">
-                                                        <div className="team-carousel owl-carousel owl-theme">
-                                                            <div className="item">
-                                                                <div className="single-team-member">
-                                                                    <div className="img-box">
-                                                                        <img
-                                                                            loading="lazy"
-                                                                            decoding="async"
-                                                                            width="270"
-                                                                            height="250"
-                                                                            src="wp-content/uploads/2022/03/1-2.jpg"
-                                                                            className="attachment-charityhome_270x250 size-charityhome_270x250 wp-post-image"
-                                                                            alt=""
-                                                                        />{" "}
-                                                                        <div className="overlay">
-                                                                            <div className="box">
-                                                                                <div className="content">
-                                                                                    <ul>
-                                                                                        <li>
-                                                                                            <a
-                                                                                                href="https://www.facebook.com/"
-                                                                                                style={{
-                                                                                                    backgroundColor:
-                                                                                                        "rgb(255, 255, 255)",
-                                                                                                    color: "rgb(241, 75, 5)",
-                                                                                                }}
-                                                                                                target="_blank"
-                                                                                            >
-                                                                                                <i className="fa fa-facebook"></i>
-                                                                                            </a>
-                                                                                        </li>
-                                                                                        <li>
-                                                                                            <a
-                                                                                                href="https://www.googleplus.com/"
-                                                                                                style={{
-                                                                                                    backgroundColor:
-                                                                                                        "rgb(255, 255, 255)",
-                                                                                                    color: "rgb(241, 75, 5)",
-                                                                                                }}
-                                                                                                target="_blank"
-                                                                                            >
-                                                                                                <i className="fa fa-google-plus"></i>
-                                                                                            </a>
-                                                                                        </li>
-                                                                                        <li>
-                                                                                            <a
-                                                                                                href="https://www.linkedin.com/"
-                                                                                                style={{
-                                                                                                    backgroundColor:
-                                                                                                        "rgb(255, 255, 255)",
-                                                                                                    color: "rgb(241, 75, 5)",
-                                                                                                }}
-                                                                                                target="_blank"
-                                                                                            >
-                                                                                                <i className="fa fa-linkedin"></i>
-                                                                                            </a>
-                                                                                        </li>
-                                                                                        <li>
-                                                                                            <a
-                                                                                                href="https://www.twitter.com/"
-                                                                                                style={{
-                                                                                                    backgroundColor:
-                                                                                                        "rgb(255, 255, 255)",
-                                                                                                    color: "rgb(241, 75, 5)",
-                                                                                                }}
-                                                                                                target="_blank"
-                                                                                            >
-                                                                                                <i className="fa fa-twitter"></i>
-                                                                                            </a>
-                                                                                        </li>
-                                                                                    </ul>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <h3>
-                                                                        Muhibbur
-                                                                        Rashid
-                                                                    </h3>
-                                                                    <span>
-                                                                        Businessman
-                                                                    </span>
-                                                                    <p>
-                                                                        Lorem
-                                                                        ipsum
-                                                                        dolor
-                                                                        sit
-                                                                        amet,
-                                                                        sea
-                                                                        dolor
-                                                                        essent
-                                                                        nostrud
-                                                                        no, pro
-                                                                        no vidit
-                                                                        aterum
-                                                                        mediocritatem.
-                                                                    </p>
-                                                                    <a
-                                                                        href="volunteer-profile/index.html"
-                                                                        className="thm-btn"
-                                                                    >
-                                                                        View
-                                                                        Profile
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                            <div className="item">
-                                                                <div className="single-team-member">
-                                                                    <div className="img-box">
-                                                                        <img
-                                                                            loading="lazy"
-                                                                            decoding="async"
-                                                                            width="270"
-                                                                            height="250"
-                                                                            src="wp-content/uploads/2022/03/2-2.jpg"
-                                                                            className="attachment-charityhome_270x250 size-charityhome_270x250 wp-post-image"
-                                                                            alt=""
-                                                                        />{" "}
-                                                                        <div className="overlay">
-                                                                            <div className="box">
-                                                                                <div className="content">
-                                                                                    <ul>
-                                                                                        <li>
-                                                                                            <a
-                                                                                                href="https://www.facebook.com/"
-                                                                                                style={{
-                                                                                                    backgroundColor:
-                                                                                                        "rgb(255, 255, 255)",
-                                                                                                    color: "rgb(241, 75, 5)",
-                                                                                                }}
-                                                                                                target="_blank"
-                                                                                            >
-                                                                                                <i className="fa fa-facebook"></i>
-                                                                                            </a>
-                                                                                        </li>
-                                                                                        <li>
-                                                                                            <a
-                                                                                                href="https://www.googleplus.com/"
-                                                                                                style={{
-                                                                                                    backgroundColor:
-                                                                                                        "rgb(255, 255, 255)",
-                                                                                                    color: "rgb(241, 75, 5)",
-                                                                                                }}
-                                                                                                target="_blank"
-                                                                                            >
-                                                                                                <i className="fa fa-google-plus"></i>
-                                                                                            </a>
-                                                                                        </li>
-                                                                                        <li>
-                                                                                            <a
-                                                                                                href="https://www.linkedin.com/"
-                                                                                                style={{
-                                                                                                    backgroundColor:
-                                                                                                        "rgb(255, 255, 255)",
-                                                                                                    color: "rgb(241, 75, 5)",
-                                                                                                }}
-                                                                                                target="_blank"
-                                                                                            >
-                                                                                                <i className="fa fa-linkedin"></i>
-                                                                                            </a>
-                                                                                        </li>
-                                                                                        <li>
-                                                                                            <a
-                                                                                                href="https://www.twitter.com/"
-                                                                                                style={{
-                                                                                                    backgroundColor:
-                                                                                                        "rgb(255, 255, 255)",
-                                                                                                    color: "rgb(241, 75, 5)",
-                                                                                                }}
-                                                                                                target="_blank"
-                                                                                            >
-                                                                                                <i className="fa fa-twitter"></i>
-                                                                                            </a>
-                                                                                        </li>
-                                                                                    </ul>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <h3>
-                                                                        Rashed
-                                                                        Kabir
-                                                                    </h3>
-                                                                    <span>
-                                                                        Businessman
-                                                                    </span>
-                                                                    <p>
-                                                                        Lorem
-                                                                        ipsum
-                                                                        dolor
-                                                                        sit
-                                                                        amet,
-                                                                        sea
-                                                                        dolor
-                                                                        essent
-                                                                        nostrud
-                                                                        no, pro
-                                                                        no vidit
-                                                                        aterum
-                                                                        mediocritatem.
-                                                                    </p>
-                                                                    <a
-                                                                        href="volunteer-profile/index.html"
-                                                                        className="thm-btn"
-                                                                    >
-                                                                        View
-                                                                        Profile
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                            <div className="item">
-                                                                <div className="single-team-member">
-                                                                    <div className="img-box">
-                                                                        <img
-                                                                            loading="lazy"
-                                                                            decoding="async"
-                                                                            width="270"
-                                                                            height="250"
-                                                                            src="wp-content/uploads/2022/03/3-2.jpg"
-                                                                            className="attachment-charityhome_270x250 size-charityhome_270x250 wp-post-image"
-                                                                            alt=""
-                                                                        />{" "}
-                                                                        <div className="overlay">
-                                                                            <div className="box">
-                                                                                <div className="content">
-                                                                                    <ul>
-                                                                                        <li>
-                                                                                            <a
-                                                                                                href="https://www.facebook.com/"
-                                                                                                style={{
-                                                                                                    backgroundColor:
-                                                                                                        "rgb(255, 255, 255)",
-                                                                                                    color: "rgb(241, 75, 5)",
-                                                                                                }}
-                                                                                                target="_blank"
-                                                                                            >
-                                                                                                <i className="fa fa-facebook"></i>
-                                                                                            </a>
-                                                                                        </li>
-                                                                                        <li>
-                                                                                            <a
-                                                                                                href="https://www.googleplus.com/"
-                                                                                                style={{
-                                                                                                    backgroundColor:
-                                                                                                        "rgb(255, 255, 255)",
-                                                                                                    color: "rgb(241, 75, 5)",
-                                                                                                }}
-                                                                                                target="_blank"
-                                                                                            >
-                                                                                                <i className="fa fa-google-plus"></i>
-                                                                                            </a>
-                                                                                        </li>
-                                                                                        <li>
-                                                                                            <a
-                                                                                                href="https://www.linkedin.com/"
-                                                                                                style={{
-                                                                                                    backgroundColor:
-                                                                                                        "rgb(255, 255, 255)",
-                                                                                                    color: "rgb(241, 75, 5)",
-                                                                                                }}
-                                                                                                target="_blank"
-                                                                                            >
-                                                                                                <i className="fa fa-linkedin"></i>
-                                                                                            </a>
-                                                                                        </li>
-                                                                                        <li>
-                                                                                            <a
-                                                                                                href="https://www.twitter.com/"
-                                                                                                style={{
-                                                                                                    backgroundColor:
-                                                                                                        "rgb(255, 255, 255)",
-                                                                                                    color: "rgb(241, 75, 5)",
-                                                                                                }}
-                                                                                                target="_blank"
-                                                                                            >
-                                                                                                <i className="fa fa-twitter"></i>
-                                                                                            </a>
-                                                                                        </li>
-                                                                                    </ul>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <h3>
-                                                                        Jannatul
-                                                                        Ferdous
-                                                                    </h3>
-                                                                    <span>
-                                                                        Businessman
-                                                                    </span>
-                                                                    <p>
-                                                                        Lorem
-                                                                        ipsum
-                                                                        dolor
-                                                                        sit
-                                                                        amet,
-                                                                        sea
-                                                                        dolor
-                                                                        essent
-                                                                        nostrud
-                                                                        no, pro
-                                                                        no vidit
-                                                                        aterum
-                                                                        mediocritatem.
-                                                                    </p>
-                                                                    <a
-                                                                        href="volunteer-profile/index.html"
-                                                                        className="thm-btn"
-                                                                    >
-                                                                        View
-                                                                        Profile
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                            <div className="item">
-                                                                <div className="single-team-member">
-                                                                    <div className="img-box">
-                                                                        <img
-                                                                            loading="lazy"
-                                                                            decoding="async"
-                                                                            width="270"
-                                                                            height="250"
-                                                                            src="wp-content/uploads/2022/03/2-2.jpg"
-                                                                            className="attachment-charityhome_270x250 size-charityhome_270x250 wp-post-image"
-                                                                            alt=""
-                                                                        />{" "}
-                                                                        <div className="overlay">
-                                                                            <div className="box">
-                                                                                <div className="content">
-                                                                                    <ul>
-                                                                                        <li>
-                                                                                            <a
-                                                                                                href="https://www.facebook.com/"
-                                                                                                style={{
-                                                                                                    backgroundColor:
-                                                                                                        "rgb(255, 255, 255)",
-                                                                                                    color: "rgb(241, 75, 5)",
-                                                                                                }}
-                                                                                                target="_blank"
-                                                                                            >
-                                                                                                <i className="fa fa-facebook"></i>
-                                                                                            </a>
-                                                                                        </li>
-                                                                                        <li>
-                                                                                            <a
-                                                                                                href="https://www.googleplus.com/"
-                                                                                                style={{
-                                                                                                    backgroundColor:
-                                                                                                        "rgb(255, 255, 255)",
-                                                                                                    color: "rgb(241, 75, 5)",
-                                                                                                }}
-                                                                                                target="_blank"
-                                                                                            >
-                                                                                                <i className="fa fa-google-plus"></i>
-                                                                                            </a>
-                                                                                        </li>
-                                                                                        <li>
-                                                                                            <a
-                                                                                                href="https://www.linkedin.com/"
-                                                                                                style={{
-                                                                                                    backgroundColor:
-                                                                                                        "rgb(255, 255, 255)",
-                                                                                                    color: "rgb(241, 75, 5)",
-                                                                                                }}
-                                                                                                target="_blank"
-                                                                                            >
-                                                                                                <i className="fa fa-linkedin"></i>
-                                                                                            </a>
-                                                                                        </li>
-                                                                                        <li>
-                                                                                            <a
-                                                                                                href="https://www.twitter.com/"
-                                                                                                style={{
-                                                                                                    backgroundColor:
-                                                                                                        "rgb(255, 255, 255)",
-                                                                                                    color: "rgb(241, 75, 5)",
-                                                                                                }}
-                                                                                                target="_blank"
-                                                                                            >
-                                                                                                <i className="fa fa-twitter"></i>
-                                                                                            </a>
-                                                                                        </li>
-                                                                                    </ul>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <h3>
-                                                                        Lora
-                                                                        Fenty
-                                                                    </h3>
-                                                                    <span>
-                                                                        Businessman
-                                                                    </span>
-                                                                    <p>
-                                                                        Lorem
-                                                                        ipsum
-                                                                        dolor
-                                                                        sit
-                                                                        amet,
-                                                                        sea
-                                                                        dolor
-                                                                        essent
-                                                                        nostrud
-                                                                        no, pro
-                                                                        no vidit
-                                                                        aterum
-                                                                        mediocritatem.
-                                                                    </p>
-                                                                    <a
-                                                                        href="volunteer-profile/index.html"
-                                                                        className="thm-btn"
-                                                                    >
-                                                                        View
-                                                                        Profile
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                            <div className="item">
-                                                                <div className="single-team-member">
-                                                                    <div className="img-box">
-                                                                        <img
-                                                                            loading="lazy"
-                                                                            decoding="async"
-                                                                            width="270"
-                                                                            height="250"
-                                                                            src="wp-content/uploads/2022/03/3-2.jpg"
-                                                                            className="attachment-charityhome_270x250 size-charityhome_270x250 wp-post-image"
-                                                                            alt=""
-                                                                        />{" "}
-                                                                        <div className="overlay">
-                                                                            <div className="box">
-                                                                                <div className="content">
-                                                                                    <ul>
-                                                                                        <li>
-                                                                                            <a
-                                                                                                href="https://www.facebook.com/"
-                                                                                                style={{
-                                                                                                    backgroundColor:
-                                                                                                        "rgb(255, 255, 255)",
-                                                                                                    color: "rgb(241, 75, 5)",
-                                                                                                }}
-                                                                                                target="_blank"
-                                                                                            >
-                                                                                                <i className="fa fa-facebook"></i>
-                                                                                            </a>
-                                                                                        </li>
-                                                                                        <li>
-                                                                                            <a
-                                                                                                href="https://www.googleplus.com/"
-                                                                                                style={{
-                                                                                                    backgroundColor:
-                                                                                                        "rgb(255, 255, 255)",
-                                                                                                    color: "rgb(241, 75, 5)",
-                                                                                                }}
-                                                                                                target="_blank"
-                                                                                            >
-                                                                                                <i className="fa fa-google-plus"></i>
-                                                                                            </a>
-                                                                                        </li>
-                                                                                        <li>
-                                                                                            <a
-                                                                                                href="https://www.linkedin.com/"
-                                                                                                style={{
-                                                                                                    backgroundColor:
-                                                                                                        "rgb(255, 255, 255)",
-                                                                                                    color: "rgb(241, 75, 5)",
-                                                                                                }}
-                                                                                                target="_blank"
-                                                                                            >
-                                                                                                <i className="fa fa-linkedin"></i>
-                                                                                            </a>
-                                                                                        </li>
-                                                                                        <li>
-                                                                                            <a
-                                                                                                href="https://www.twitter.com/"
-                                                                                                style={{
-                                                                                                    backgroundColor:
-                                                                                                        "rgb(255, 255, 255)",
-                                                                                                    color: "rgb(241, 75, 5)",
-                                                                                                }}
-                                                                                                target="_blank"
-                                                                                            >
-                                                                                                <i className="fa fa-twitter"></i>
-                                                                                            </a>
-                                                                                        </li>
-                                                                                    </ul>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <h3>
-                                                                        James
-                                                                        Henry
-                                                                    </h3>
-                                                                    <span>
-                                                                        Businessman
-                                                                    </span>
-                                                                    <p>
-                                                                        Lorem
-                                                                        ipsum
-                                                                        dolor
-                                                                        sit
-                                                                        amet,
-                                                                        sea
-                                                                        dolor
-                                                                        essent
-                                                                        nostrud
-                                                                        no, pro
-                                                                        no vidit
-                                                                        aterum
-                                                                        mediocritatem.
-                                                                    </p>
-                                                                    <a
-                                                                        href="volunteer-profile/index.html"
-                                                                        className="thm-btn"
-                                                                    >
-                                                                        View
-                                                                        Profile
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                            <div className="item">
-                                                                <div className="single-team-member">
-                                                                    <div className="img-box">
-                                                                        <img
-                                                                            loading="lazy"
-                                                                            decoding="async"
-                                                                            width="270"
-                                                                            height="250"
-                                                                            src="wp-content/uploads/2022/03/4.jpg"
-                                                                            className="attachment-charityhome_270x250 size-charityhome_270x250 wp-post-image"
-                                                                            alt=""
-                                                                        />{" "}
-                                                                        <div className="overlay">
-                                                                            <div className="box">
-                                                                                <div className="content">
-                                                                                    <ul>
-                                                                                        <li>
-                                                                                            <a
-                                                                                                href="https://www.facebook.com/"
-                                                                                                style={{
-                                                                                                    backgroundColor:
-                                                                                                        "rgb(255, 255, 255)",
-                                                                                                    color: "rgb(241, 75, 5)",
-                                                                                                }}
-                                                                                                target="_blank"
-                                                                                            >
-                                                                                                <i className="fa fa-facebook"></i>
-                                                                                            </a>
-                                                                                        </li>
-                                                                                        <li>
-                                                                                            <a
-                                                                                                href="https://www.googleplus.com/"
-                                                                                                style={{
-                                                                                                    backgroundColor:
-                                                                                                        "rgb(255, 255, 255)",
-                                                                                                    color: "rgb(241, 75, 5)",
-                                                                                                }}
-                                                                                                target="_blank"
-                                                                                            >
-                                                                                                <i className="fa fa-google-plus"></i>
-                                                                                            </a>
-                                                                                        </li>
-                                                                                        <li>
-                                                                                            <a
-                                                                                                href="https://www.linkedin.com/"
-                                                                                                style={{
-                                                                                                    backgroundColor:
-                                                                                                        "rgb(255, 255, 255)",
-                                                                                                    color: "rgb(241, 75, 5)",
-                                                                                                }}
-                                                                                                target="_blank"
-                                                                                            >
-                                                                                                <i className="fa fa-linkedin"></i>
-                                                                                            </a>
-                                                                                        </li>
-                                                                                        <li>
-                                                                                            <a
-                                                                                                href="https://www.twitter.com/"
-                                                                                                style={{
-                                                                                                    backgroundColor:
-                                                                                                        "rgb(255, 255, 255)",
-                                                                                                    color: "rgb(241, 75, 5)",
-                                                                                                }}
-                                                                                                target="_blank"
-                                                                                            >
-                                                                                                <i className="fa fa-twitter"></i>
-                                                                                            </a>
-                                                                                        </li>
-                                                                                    </ul>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <h3>
-                                                                        Ashikur
-                                                                        Rahman
-                                                                    </h3>
-                                                                    <span>
-                                                                        Businessman
-                                                                    </span>
-                                                                    <p>
-                                                                        Lorem
-                                                                        ipsum
-                                                                        dolor
-                                                                        sit
-                                                                        amet,
-                                                                        sea
-                                                                        dolor
-                                                                        essent
-                                                                        nostrud
-                                                                        no, pro
-                                                                        no vidit
-                                                                        aterum
-                                                                        mediocritatem.
-                                                                    </p>
-                                                                    <a
-                                                                        href="volunteer-profile/index.html"
-                                                                        className="thm-btn"
-                                                                    >
-                                                                        View
-                                                                        Profile
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                            <div className="item">
-                                                                <div className="single-team-member">
-                                                                    <div className="img-box">
-                                                                        <img
-                                                                            loading="lazy"
-                                                                            decoding="async"
-                                                                            width="270"
-                                                                            height="250"
-                                                                            src="wp-content/uploads/2022/03/4.jpg"
-                                                                            className="attachment-charityhome_270x250 size-charityhome_270x250 wp-post-image"
-                                                                            alt=""
-                                                                        />{" "}
-                                                                        <div className="overlay">
-                                                                            <div className="box">
-                                                                                <div className="content">
-                                                                                    <ul>
-                                                                                        <li>
-                                                                                            <a
-                                                                                                href="https://www.facebook.com/"
-                                                                                                style={{
-                                                                                                    backgroundColor:
-                                                                                                        "rgb(255, 255, 255)",
-                                                                                                    color: "rgb(241, 75, 5)",
-                                                                                                }}
-                                                                                                target="_blank"
-                                                                                            >
-                                                                                                <i className="fa fa-facebook"></i>
-                                                                                            </a>
-                                                                                        </li>
-                                                                                        <li>
-                                                                                            <a
-                                                                                                href="https://www.googleplus.com/"
-                                                                                                style={{
-                                                                                                    backgroundColor:
-                                                                                                        "rgb(255, 255, 255)",
-                                                                                                    color: "rgb(241, 75, 5)",
-                                                                                                }}
-                                                                                                target="_blank"
-                                                                                            >
-                                                                                                <i className="fa fa-google-plus"></i>
-                                                                                            </a>
-                                                                                        </li>
-                                                                                        <li>
-                                                                                            <a
-                                                                                                href="https://www.linkedin.com/"
-                                                                                                style={{
-                                                                                                    backgroundColor:
-                                                                                                        "rgb(255, 255, 255)",
-                                                                                                    color: "rgb(241, 75, 5)",
-                                                                                                }}
-                                                                                                target="_blank"
-                                                                                            >
-                                                                                                <i className="fa fa-linkedin"></i>
-                                                                                            </a>
-                                                                                        </li>
-                                                                                        <li>
-                                                                                            <a
-                                                                                                href="https://www.twitter.com/"
-                                                                                                style={{
-                                                                                                    backgroundColor:
-                                                                                                        "rgb(255, 255, 255)",
-                                                                                                    color: "rgb(241, 75, 5)",
-                                                                                                }}
-                                                                                                target="_blank"
-                                                                                            >
-                                                                                                <i className="fa fa-twitter"></i>
-                                                                                            </a>
-                                                                                        </li>
-                                                                                    </ul>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <h3>
-                                                                        Luke
-                                                                        Fray
-                                                                    </h3>
-                                                                    <span>
-                                                                        Businessman
-                                                                    </span>
-                                                                    <p>
-                                                                        Lorem
-                                                                        ipsum
-                                                                        dolor
-                                                                        sit
-                                                                        amet,
-                                                                        sea
-                                                                        dolor
-                                                                        essent
-                                                                        nostrud
-                                                                        no, pro
-                                                                        no vidit
-                                                                        aterum
-                                                                        mediocritatem.
-                                                                    </p>
-                                                                    <a
-                                                                        href="volunteer-profile/index.html"
-                                                                        className="thm-btn"
-                                                                    >
-                                                                        View
-                                                                        Profile
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                            <div className="item">
-                                                                <div className="single-team-member">
-                                                                    <div className="img-box">
-                                                                        <img
-                                                                            loading="lazy"
-                                                                            decoding="async"
-                                                                            width="270"
-                                                                            height="250"
-                                                                            src="wp-content/uploads/2022/03/1-2.jpg"
-                                                                            className="attachment-charityhome_270x250 size-charityhome_270x250 wp-post-image"
-                                                                            alt=""
-                                                                        />{" "}
-                                                                        <div className="overlay">
-                                                                            <div className="box">
-                                                                                <div className="content">
-                                                                                    <ul>
-                                                                                        <li>
-                                                                                            <a
-                                                                                                href="https://www.facebook.com/"
-                                                                                                style={{
-                                                                                                    backgroundColor:
-                                                                                                        "rgb(255, 255, 255)",
-                                                                                                    color: "rgb(241, 75, 5)",
-                                                                                                }}
-                                                                                                target="_blank"
-                                                                                            >
-                                                                                                <i className="fa fa-facebook"></i>
-                                                                                            </a>
-                                                                                        </li>
-                                                                                        <li>
-                                                                                            <a
-                                                                                                href="https://www.googleplus.com/"
-                                                                                                style={{
-                                                                                                    backgroundColor:
-                                                                                                        "rgb(255, 255, 255)",
-                                                                                                    color: "rgb(241, 75, 5)",
-                                                                                                }}
-                                                                                                target="_blank"
-                                                                                            >
-                                                                                                <i className="fa fa-google-plus"></i>
-                                                                                            </a>
-                                                                                        </li>
-                                                                                        <li>
-                                                                                            <a
-                                                                                                href="https://www.linkedin.com/"
-                                                                                                style={{
-                                                                                                    backgroundColor:
-                                                                                                        "rgb(255, 255, 255)",
-                                                                                                    color: "rgb(241, 75, 5)",
-                                                                                                }}
-                                                                                                target="_blank"
-                                                                                            >
-                                                                                                <i className="fa fa-linkedin"></i>
-                                                                                            </a>
-                                                                                        </li>
-                                                                                        <li>
-                                                                                            <a
-                                                                                                href="https://www.twitter.com/"
-                                                                                                style={{
-                                                                                                    backgroundColor:
-                                                                                                        "rgb(255, 255, 255)",
-                                                                                                    color: "rgb(241, 75, 5)",
-                                                                                                }}
-                                                                                                target="_blank"
-                                                                                            >
-                                                                                                <i className="fa fa-twitter"></i>
-                                                                                            </a>
-                                                                                        </li>
-                                                                                    </ul>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <h3>
-                                                                        John
-                                                                        Peter
-                                                                    </h3>
-                                                                    <span>
-                                                                        Businessman
-                                                                    </span>
-                                                                    <p>
-                                                                        Lorem
-                                                                        ipsum
-                                                                        dolor
-                                                                        sit
-                                                                        amet,
-                                                                        sea
-                                                                        dolor
-                                                                        essent
-                                                                        nostrud
-                                                                        no, pro
-                                                                        no vidit
-                                                                        aterum
-                                                                        mediocritatem.
-                                                                    </p>
-                                                                    <a
-                                                                        href="volunteer-profile/index.html"
-                                                                        className="thm-btn"
-                                                                    >
-                                                                        View
-                                                                        Profile
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </section>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section> */}
-
-                    {/* <section
-                        className="elementor-section elementor-top-section elementor-element elementor-element-bcb0c4b elementor-section-full_width elementor-section-height-default elementor-section-height-default"
-                        data-id="bcb0c4b"
-                        data-element_type="section"
-                    >
-                        <div className="elementor-container elementor-column-gap-default">
-                            <div
-                                className="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-b25e646"
-                                data-id="b25e646"
-                                data-element_type="column"
-                            >
-                                <div className="elementor-widget-wrap elementor-element-populated">
-                                    <div
-                                        className="elementor-element elementor-element-8ea5770 elementor-widget elementor-widget-charityhome_testimonials_v1"
-                                        data-id="8ea5770"
-                                        data-element_type="widget"
-                                        data-widget_type="charityhome_testimonials_v1.default"
-                                    >
-                                        <div className="elementor-widget-container">
-                                            <section className="sec-padding testimonials-wrapper parallax-section">
-                                                <div className="container">
-                                                    <div className="sec-title colored light text-center">
-                                                        <h2>Testimonials</h2>
-                                                        <span className="decor">
-                                                            <span className="inner"></span>
-                                                        </span>
-                                                    </div>
-
-                                                    <div className="testimonaials-carousel owl-carousel owl-theme">
-                                                        <div className="item">
-                                                            <div className="single-testimonaials">
-                                                                <div className="qoute-box">
-                                                                    <i className="qoute">
-                                                                        "
-                                                                    </i>
-                                                                </div>
-                                                                <p>
-                                                                    Lorem ipsum
-                                                                    dolor sit
-                                                                    amet, per
-                                                                    justo
-                                                                    iracundia
-                                                                    an. Inani
-                                                                    tation
-                                                                    tritani mea
-                                                                    ut. Mundi
-                                                                    scriptorem
-                                                                </p>
-                                                                <h3>
-                                                                    Roberto
-                                                                    Carlos
-                                                                </h3>
-                                                                <span>
-                                                                    Patient of
-                                                                    Asthama
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                        <div className="item">
-                                                            <div className="single-testimonaials">
-                                                                <div className="qoute-box">
-                                                                    <i className="qoute">
-                                                                        "
-                                                                    </i>
-                                                                </div>
-                                                                <p>
-                                                                    Lorem ipsum
-                                                                    dolor sit
-                                                                    amet, per
-                                                                    justo
-                                                                    iracundia
-                                                                    an. Inani
-                                                                    tation
-                                                                    tritani mea
-                                                                    ut. Mundi
-                                                                    scriptorem
-                                                                </p>
-                                                                <h3>
-                                                                    John Doe
-                                                                </h3>
-                                                                <span>
-                                                                    Patient of
-                                                                    Asthama
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                        <div className="item">
-                                                            <div className="single-testimonaials">
-                                                                <div className="qoute-box">
-                                                                    <i className="qoute">
-                                                                        "
-                                                                    </i>
-                                                                </div>
-                                                                <p>
-                                                                    Lorem ipsum
-                                                                    dolor sit
-                                                                    amet, per
-                                                                    justo
-                                                                    iracundia
-                                                                    an. Inani
-                                                                    tation
-                                                                    tritani mea
-                                                                    ut. Mundi
-                                                                    scriptorem
-                                                                </p>
-                                                                <h3>
-                                                                    Peter Mark
-                                                                </h3>
-                                                                <span>
-                                                                    Patient of
-                                                                    Asthama
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                        <div className="item">
-                                                            <div className="single-testimonaials">
-                                                                <div className="qoute-box">
-                                                                    <i className="qoute">
-                                                                        "
-                                                                    </i>
-                                                                </div>
-                                                                <p>
-                                                                    Lorem ipsum
-                                                                    dolor sit
-                                                                    amet, per
-                                                                    justo
-                                                                    iracundia
-                                                                    an. Inani
-                                                                    tation
-                                                                    tritani mea
-                                                                    ut. Mundi
-                                                                    scriptorem
-                                                                </p>
-                                                                <h3>
-                                                                    Henry Joe
-                                                                </h3>
-                                                                <span>
-                                                                    Patient of
-                                                                    Asthama
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                        <div className="item">
-                                                            <div className="single-testimonaials">
-                                                                <div className="qoute-box">
-                                                                    <i className="qoute">
-                                                                        "
-                                                                    </i>
-                                                                </div>
-                                                                <p>
-                                                                    Lorem ipsum
-                                                                    dolor sit
-                                                                    amet, per
-                                                                    justo
-                                                                    iracundia
-                                                                    an. Inani
-                                                                    tation
-                                                                    tritani mea
-                                                                    ut. Mundi
-                                                                    scriptorem
-                                                                </p>
-                                                                <h3>
-                                                                    Belli Ellish
-                                                                </h3>
-                                                                <span>
-                                                                    Patient of
-                                                                    Asthama
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                        <div className="item">
-                                                            <div className="single-testimonaials">
-                                                                <div className="qoute-box">
-                                                                    <i className="qoute">
-                                                                        "
-                                                                    </i>
-                                                                </div>
-                                                                <p>
-                                                                    Lorem ipsum
-                                                                    dolor sit
-                                                                    amet, per
-                                                                    justo
-                                                                    iracundia
-                                                                    an. Inani
-                                                                    tation
-                                                                    tritani mea
-                                                                    ut. Mundi
-                                                                    scriptorem
-                                                                </p>
-                                                                <h3>
-                                                                    Akcent Fray
-                                                                </h3>
-                                                                <span>
-                                                                    Patient of
-                                                                    Asthama
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                        <div className="item">
-                                                            <div className="single-testimonaials">
-                                                                <div className="qoute-box">
-                                                                    <i className="qoute">
-                                                                        "
-                                                                    </i>
-                                                                </div>
-                                                                <p>
-                                                                    Lorem ipsum
-                                                                    dolor sit
-                                                                    amet, per
-                                                                    justo
-                                                                    iracundia
-                                                                    an. Inani
-                                                                    tation
-                                                                    tritani mea
-                                                                    ut. Mundi
-                                                                    scriptorem
-                                                                </p>
-                                                                <h3>
-                                                                    Sarah Lenty
-                                                                </h3>
-                                                                <span>
-                                                                    Patient of
-                                                                    Asthama
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                        <div className="item">
-                                                            <div className="single-testimonaials">
-                                                                <div className="qoute-box">
-                                                                    <i className="qoute">
-                                                                        "
-                                                                    </i>
-                                                                </div>
-                                                                <p>
-                                                                    Lorem ipsum
-                                                                    dolor sit
-                                                                    amet, per
-                                                                    justo
-                                                                    iracundia
-                                                                    an. Inani
-                                                                    tation
-                                                                    tritani mea
-                                                                    ut. Mundi
-                                                                    scriptorem
-                                                                </p>
-                                                                <h3>
-                                                                    Michael
-                                                                    Stark
-                                                                </h3>
-                                                                <span>
-                                                                    Patient of
-                                                                    Asthama
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                        <div className="item">
-                                                            <div className="single-testimonaials">
-                                                                <div className="qoute-box">
-                                                                    <i className="qoute">
-                                                                        "
-                                                                    </i>
-                                                                </div>
-                                                                <p>
-                                                                    Lorem ipsum
-                                                                    dolor sit
-                                                                    amet, per
-                                                                    justo
-                                                                    iracundia
-                                                                    an. Inani
-                                                                    tation
-                                                                    tritani mea
-                                                                    ut. Mundi
-                                                                    scriptorem
-                                                                </p>
-                                                                <h3>
-                                                                    Snow White
-                                                                </h3>
-                                                                <span>
-                                                                    Patient of
-                                                                    Asthama
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                        <div className="item">
-                                                            <div className="single-testimonaials">
-                                                                <div className="qoute-box">
-                                                                    <i className="qoute">
-                                                                        "
-                                                                    </i>
-                                                                </div>
-                                                                <p>
-                                                                    Lorem ipsum
-                                                                    dolor sit
-                                                                    amet, per
-                                                                    justo
-                                                                    iracundia
-                                                                    an. Inani
-                                                                    tation
-                                                                    tritani mea
-                                                                    ut. Mundi
-                                                                    scriptorem
-                                                                </p>
-                                                                <h3>
-                                                                    Luke Wright
-                                                                </h3>
-                                                                <span>
-                                                                    Patient of
-                                                                    Asthama
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                        <div className="item">
-                                                            <div className="single-testimonaials">
-                                                                <div className="qoute-box">
-                                                                    <i className="qoute">
-                                                                        "
-                                                                    </i>
-                                                                </div>
-                                                                <p>
-                                                                    Lorem ipsum
-                                                                    dolor sit
-                                                                    amet, per
-                                                                    justo
-                                                                    iracundia
-                                                                    an. Inani
-                                                                    tation
-                                                                    tritani mea
-                                                                    ut. Mundi
-                                                                    scriptorem
-                                                                </p>
-                                                                <h3>
-                                                                    Paul Merry
-                                                                </h3>
-                                                                <span>
-                                                                    Patient of
-                                                                    Asthama
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                        <div className="item">
-                                                            <div className="single-testimonaials">
-                                                                <div className="qoute-box">
-                                                                    <i className="qoute">
-                                                                        "
-                                                                    </i>
-                                                                </div>
-                                                                <p>
-                                                                    Lorem ipsum
-                                                                    dolor sit
-                                                                    amet, per
-                                                                    justo
-                                                                    iracundia
-                                                                    an. Inani
-                                                                    tation
-                                                                    tritani mea
-                                                                    ut. Mundi
-                                                                    scriptorem
-                                                                </p>
-                                                                <h3>
-                                                                    Naura Lavy
-                                                                </h3>
-                                                                <span>
-                                                                    Patient of
-                                                                    Asthama
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </section>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section> */}
-
-                    {/* <section
-                        className="elementor-section elementor-top-section elementor-element elementor-element-5c18e72 elementor-section-full_width elementor-section-height-default elementor-section-height-default"
-                        data-id="5c18e72"
-                        data-element_type="section"
-                    >
-                        <div className="elementor-container elementor-column-gap-default">
-                            <div
-                                className="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-2696f6f"
-                                data-id="2696f6f"
-                                data-element_type="column"
-                            >
-                                <div className="elementor-widget-wrap elementor-element-populated">
-                                    <div
-                                        className="elementor-element elementor-element-f989030 elementor-widget elementor-widget-charityhome_blogs_v1"
-                                        data-id="f989030"
-                                        data-element_type="widget"
-                                        data-widget_type="charityhome_blogs_v1.default"
-                                    >
-                                        <div className="elementor-widget-container">
-                                            <section className="blog-home sec-padding">
-                                                <div className="container">
-                                                    <div className="sec-title text-center">
-                                                        <h2>Latest News</h2>{" "}
-                                                        <p>
-                                                            Lorem ipsum is a
-                                                            dummy text it will
-                                                            use for subtitle
-                                                            here
-                                                        </p>{" "}
-                                                        <span className="decor">
-                                                            <span className="inner"></span>
-                                                        </span>
-                                                    </div>
-                                                    <div className="row">
-                                                        <div className="col-md-4 col-sm-12 sm-col5-center m-btms40">
-                                                            <div className="single-blog-post">
-                                                                <div className="img-box">
-                                                                    <img
-                                                                        loading="lazy"
-                                                                        decoding="async"
-                                                                        width="360"
-                                                                        height="270"
-                                                                        src="wp-content/uploads/2022/02/2-360x270.jpg"
+                                                                        src="/front/g4.jpeg"
+                                                                        // srcSet="/front/chapters/jammu/event-1.jpg 360w, /front/chapters/jammu/event-1-large.jpg 570w"
+                                                                        sizes="(max-width: 360px) 100vw, 360px"
                                                                         className="full-width wp-post-image"
-                                                                        alt=""
-                                                                    />{" "}
-                                                                    <div className="overlay">
-                                                                        <div className="box">
-                                                                            <div className="content">
-                                                                                <ul>
-                                                                                    <li>
-                                                                                        <a href="2021/12/lates-blog-post-with-image/index.html">
-                                                                                            <i className="fa fa-link"></i>
-                                                                                        </a>
-                                                                                    </li>
-                                                                                </ul>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="content-box">
-                                                                    <div className="date-box">
-                                                                        <div className="inner">
-                                                                            <div className="date">
-                                                                                <b>
-                                                                                    09
-                                                                                </b>
-                                                                                Dec{" "}
-                                                                            </div>
-                                                                            <div className="comment">
-                                                                                <i className="flaticon-interface-1"></i>{" "}
-                                                                                0{" "}
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className="content">
-                                                                        <a href="2021/12/lates-blog-post-with-image/index.html">
-                                                                            <h3>
-                                                                                Lates
-                                                                                blog
-                                                                                post
-                                                                                with
-                                                                                image
-                                                                            </h3>
-                                                                        </a>
-                                                                        <p>
-                                                                            Lorem
-                                                                            ipsum
-                                                                            dolor
-                                                                            sit
-                                                                            amet,
-                                                                            his
-                                                                            ea
-                                                                            unum
-                                                                            ponderum,
-                                                                            detracto&hellip;{" "}
-                                                                        </p>
-                                                                        <a
-                                                                            className="btn-details"
-                                                                            href="2021/12/lates-blog-post-with-image/index.html"
-                                                                        >
-                                                                            Read
-                                                                            More
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div className="col-md-4 col-sm-12 sm-col5-center m-btms40">
-                                                            <div className="single-blog-post">
-                                                                <div className="img-box">
-                                                                    <img
-                                                                        loading="lazy"
-                                                                        decoding="async"
-                                                                        width="360"
-                                                                        height="270"
-                                                                        src="wp-content/uploads/2022/02/3-360x270.jpg"
-                                                                        className="full-width wp-post-image"
-                                                                        alt=""
-                                                                    />{" "}
-                                                                    <div className="overlay">
-                                                                        <div className="box">
-                                                                            <div className="content">
-                                                                                <ul>
-                                                                                    <li>
-                                                                                        <a href="2021/12/lates-blog-post-with-image-2/index.html">
-                                                                                            <i className="fa fa-link"></i>
-                                                                                        </a>
-                                                                                    </li>
-                                                                                </ul>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="content-box">
-                                                                    <div className="date-box">
-                                                                        <div className="inner">
-                                                                            <div className="date">
-                                                                                <b>
-                                                                                    09
-                                                                                </b>
-                                                                                Dec{" "}
-                                                                            </div>
-                                                                            <div className="comment">
-                                                                                <i className="flaticon-interface-1"></i>{" "}
-                                                                                0{" "}
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className="content">
-                                                                        <a href="2021/12/lates-blog-post-with-image-2/index.html">
-                                                                            <h3>
-                                                                                Lates
-                                                                                blog
-                                                                                post
-                                                                                with
-                                                                                image
-                                                                            </h3>
-                                                                        </a>
-                                                                        <p>
-                                                                            Lorem
-                                                                            ipsum
-                                                                            dolor
-                                                                            sit
-                                                                            amet,
-                                                                            his
-                                                                            ea
-                                                                            unum
-                                                                            ponderum,
-                                                                            detracto&hellip;{" "}
-                                                                        </p>
-                                                                        <a
-                                                                            className="btn-details"
-                                                                            href="2021/12/lates-blog-post-with-image-2/index.html"
-                                                                        >
-                                                                            Read
-                                                                            More
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div className="col-md-4 col-sm-12 sm-col5-center m-btms40">
-                                                            <div className="single-blog-post">
-                                                                <div className="img-box">
-                                                                    <img
-                                                                        loading="lazy"
-                                                                        decoding="async"
-                                                                        width="360"
-                                                                        height="270"
-                                                                        src="wp-content/uploads/2022/02/4-360x270.jpg"
-                                                                        className="full-width wp-post-image"
-                                                                        alt=""
-                                                                    />{" "}
-                                                                    <div className="overlay">
-                                                                        <div className="box">
-                                                                            <div className="content">
-                                                                                <ul>
-                                                                                    <li>
-                                                                                        <a href="2021/12/lates-blog-post-with-image-3/index.html">
-                                                                                            <i className="fa fa-link"></i>
-                                                                                        </a>
-                                                                                    </li>
-                                                                                </ul>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="content-box">
-                                                                    <div className="date-box">
-                                                                        <div className="inner">
-                                                                            <div className="date">
-                                                                                <b>
-                                                                                    09
-                                                                                </b>
-                                                                                Dec{" "}
-                                                                            </div>
-                                                                            <div className="comment">
-                                                                                <i className="flaticon-interface-1"></i>{" "}
-                                                                                0{" "}
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className="content">
-                                                                        <a href="2021/12/lates-blog-post-with-image-3/index.html">
-                                                                            <h3>
-                                                                                Lates
-                                                                                blog
-                                                                                post
-                                                                                with
-                                                                                image
-                                                                            </h3>
-                                                                        </a>
-                                                                        <p>
-                                                                            Lorem
-                                                                            ipsum
-                                                                            dolor
-                                                                            sit
-                                                                            amet,
-                                                                            his
-                                                                            ea
-                                                                            unum
-                                                                            ponderum,
-                                                                            detracto&hellip;{" "}
-                                                                        </p>
-                                                                        <a
-                                                                            className="btn-details"
-                                                                            href="2021/12/lates-blog-post-with-image-3/index.html"
-                                                                        >
-                                                                            Read
-                                                                            More
-                                                                        </a>
-                                                                    </div>
+                                                                        style={{
+                                                                            width: "360px",
+                                                                            height: "280px",
+                                                                            objectFit:
+                                                                                "cover",
+                                                                        }}
+                                                                    />
+                                                                </a>
+                                                            </figure>
+                                                            <div className="overlay">
+                                                                <div className="content">
+                                                                    <p
+                                                                        style={{
+                                                                            color: "white",
+                                                                            fontSize:
+                                                                                "20px",
+                                                                        }}
+                                                                    ></p>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </section>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section> */}
 
-                    <section
-                        className="elementor-section elementor-top-section elementor-element elementor-element-0a9ae87 elementor-section-full_width elementor-section-height-default elementor-section-height-default"
-                        data-id="0a9ae87"
-                        data-element_type="section"
-                    >
-                        <div className="elementor-container elementor-column-gap-default">
-                            <div
-                                className="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-fc7f294"
-                                data-id="fc7f294"
-                                data-element_type="column"
-                            >
-                                <div className="elementor-widget-wrap elementor-element-populated">
-                                    <div
-                                        className="elementor-element elementor-element-eec2a03 elementor-widget elementor-widget-charityhome_partners_v1"
-                                        data-id="eec2a03"
-                                        data-element_type="widget"
-                                        data-widget_type="charityhome_partners_v1.default"
-                                    >
-                                        <div className="elementor-widget-container">
-                                            <section className="bg-color-eee p_40">
-                                                <div className="container">
-                                                    <div className="row">
-                                                        <div className="col-lg-12">
-                                                            <div className="clients-carousel owl-carousel owl-theme">
-                                                                <div className="item">
-                                                                    <div className="img-box">
-                                                                        <img
-                                                                            decoding="async"
-                                                                            src="wp-content/uploads/2021/12/logo-6.png"
-                                                                            alt="Awesome Image"
-                                                                        />
-                                                                    </div>
+                                                    {/* <!--Image Box--> */}
+                                                    <div className="image-box col-xl-3 col-lg-6">
+                                                        <div className="inner-box">
+                                                            <figure className="image">
+                                                                <a
+                                                                    href="#"
+                                                                    className="lightbox-image"
+                                                                >
+                                                                    <img
+                                                                        loading="lazy"
+                                                                        decoding="async"
+                                                                        src="/front/g1.jpeg"
+                                                                        // srcSet="/front/chapters/jammu/event-2.jpg 360w, /front/chapters/jammu/event-2-large.jpg 570w"
+                                                                        sizes="(max-width: 360px) 100vw, 360px"
+                                                                        className="full-width wp-post-image"
+                                                                        style={{
+                                                                            width: "360px",
+                                                                            height: "280px",
+                                                                            objectFit:
+                                                                                "cover",
+                                                                        }}
+                                                                    />
+                                                                </a>
+                                                            </figure>
+                                                            <div className="overlay">
+                                                                <div className="content">
+                                                                    <p
+                                                                        style={{
+                                                                            color: "white",
+                                                                            fontSize:
+                                                                                "20px",
+                                                                        }}
+                                                                    ></p>
                                                                 </div>
-                                                                <div className="item">
-                                                                    <div className="img-box">
-                                                                        <img
-                                                                            decoding="async"
-                                                                            src="wp-content/uploads/2021/12/logo-7.png"
-                                                                            alt="Awesome Image"
-                                                                        />
-                                                                    </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    {/* <!--Image Box--> */}
+                                                    <div className="image-box col-xl-3 col-lg-6">
+                                                        <div className="inner-box">
+                                                            <figure className="image">
+                                                                <a
+                                                                    href="#"
+                                                                    className="lightbox-image"
+                                                                >
+                                                                    <img
+                                                                        loading="lazy"
+                                                                        decoding="async"
+                                                                        src="/front/g2.jpeg"
+                                                                        // srcSet="/front/chapters/jammu/event-11.jpg 360w, /front/chapters/jammu/event-11-large.jpg 570w"
+                                                                        sizes="(max-width: 360px) 100vw, 360px"
+                                                                        className="full-width wp-post-image"
+                                                                        style={{
+                                                                            width: "360px",
+                                                                            height: "280px",
+                                                                            objectFit:
+                                                                                "cover",
+                                                                        }}
+                                                                    />
+                                                                </a>
+                                                            </figure>
+                                                            <div className="overlay">
+                                                                <div className="content">
+                                                                    <p
+                                                                        style={{
+                                                                            color: "white",
+                                                                            fontSize:
+                                                                                "20px",
+                                                                        }}
+                                                                    ></p>
                                                                 </div>
-                                                                <div className="item">
-                                                                    <div className="img-box">
-                                                                        <img
-                                                                            decoding="async"
-                                                                            src="wp-content/uploads/2021/12/logo-8.png"
-                                                                            alt="Awesome Image"
-                                                                        />
-                                                                    </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    {/* <!--Image Box--> */}
+                                                    <div className="image-box col-xl-3 col-lg-6">
+                                                        <div className="inner-box">
+                                                            <figure className="image">
+                                                                <a
+                                                                    href="#"
+                                                                    className="lightbox-image"
+                                                                >
+                                                                    <img
+                                                                        loading="lazy"
+                                                                        decoding="async"
+                                                                        src="/front/g3.jpeg"
+                                                                        // srcSet="/front/chapters/jammu/event-21.jpg 360w, /front/chapters/jammu/event-21-large.jpg 570w"
+                                                                        sizes="(max-width: 360px) 100vw, 360px"
+                                                                        className="full-width wp-post-image"
+                                                                        style={{
+                                                                            width: "360px",
+                                                                            height: "280px",
+                                                                            objectFit:
+                                                                                "cover",
+                                                                        }}
+                                                                    />
+                                                                </a>
+                                                            </figure>
+                                                            <div className="overlay">
+                                                                <div className="content">
+                                                                    <p
+                                                                        style={{
+                                                                            color: "white",
+                                                                            fontSize:
+                                                                                "20px",
+                                                                        }}
+                                                                    ></p>
                                                                 </div>
-                                                                <div className="item">
-                                                                    <div className="img-box">
-                                                                        <img
-                                                                            decoding="async"
-                                                                            src="wp-content/uploads/2021/12/logo-9.png"
-                                                                            alt="Awesome Image"
-                                                                        />
-                                                                    </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    {/* <!--Image Box--> */}
+                                                    <div className="image-box col-xl-3 col-lg-6">
+                                                        <div className="inner-box">
+                                                            <figure className="image">
+                                                                <a
+                                                                    href="#"
+                                                                    className="lightbox-image"
+                                                                >
+                                                                    <img
+                                                                        loading="lazy"
+                                                                        decoding="async"
+                                                                        src="/front/b2.jpeg"
+                                                                        // srcSet="/front/chapters/jammu/event-21.jpg 360w, /front/chapters/jammu/event-21-large.jpg 570w"
+                                                                        sizes="(max-width: 360px) 100vw, 360px"
+                                                                        className="full-width wp-post-image"
+                                                                        style={{
+                                                                            width: "360px",
+                                                                            height: "280px",
+                                                                            objectFit:
+                                                                                "cover",
+                                                                        }}
+                                                                    />
+                                                                </a>
+                                                            </figure>
+                                                            <div className="overlay">
+                                                                <div className="content">
+                                                                    <p
+                                                                        style={{
+                                                                            color: "white",
+                                                                            fontSize:
+                                                                                "20px",
+                                                                        }}
+                                                                    >
+                                                                        वाराणसी
+                                                                        के मेयर
+                                                                        के साथ
+                                                                        फोटो
+                                                                    </p>
                                                                 </div>
-                                                                <div className="item">
-                                                                    <div className="img-box">
-                                                                        <img
-                                                                            decoding="async"
-                                                                            src="wp-content/uploads/2021/12/logo-10.png"
-                                                                            alt="Awesome Image"
-                                                                        />
-                                                                    </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    {/* <!--Image Box--> */}
+                                                    <div className="image-box col-xl-3 col-lg-6">
+                                                        <div className="inner-box">
+                                                            <figure className="image">
+                                                                <a
+                                                                    href="#"
+                                                                    className="lightbox-image"
+                                                                >
+                                                                    <img
+                                                                        loading="lazy"
+                                                                        decoding="async"
+                                                                        src="/front/chapters/jammu/event-5.jpg"
+                                                                        // srcSet="/front/chapters/jammu/event-5.jpg 360w, /front/chapters/jammu/event-5-large.jpg 570w"
+                                                                        sizes="(max-width: 360px) 100vw, 360px"
+                                                                        className="full-width wp-post-image"
+                                                                        style={{
+                                                                            width: "360px",
+                                                                            height: "280px",
+                                                                            objectFit:
+                                                                                "cover",
+                                                                        }}
+                                                                    />
+                                                                </a>
+                                                            </figure>
+                                                            <div className="overlay">
+                                                                <div className="content">
+                                                                    <p
+                                                                        style={{
+                                                                            color: "white",
+                                                                            fontSize:
+                                                                                "20px",
+                                                                        }}
+                                                                    >
+                                                                        सम्मान
+                                                                        एवं
+                                                                        उप्लभ्धियाँ
+                                                                    </p>
                                                                 </div>
-                                                                <div className="item">
-                                                                    <div className="img-box">
-                                                                        <img
-                                                                            decoding="async"
-                                                                            src="wp-content/uploads/2021/12/logo-6.png"
-                                                                            alt="Awesome Image"
-                                                                        />
-                                                                    </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    {/* <!--Image Box--> */}
+                                                    <div className="image-box col-xl-3 col-lg-6">
+                                                        <div className="inner-box ">
+                                                            <figure className="image">
+                                                                <a
+                                                                    href="#"
+                                                                    className="lightbox-image"
+                                                                >
+                                                                    <img
+                                                                        loading="lazy"
+                                                                        decoding="async"
+                                                                        src="/front/chapters/jammu/event-22.jpg"
+                                                                        // srcSet="/front/chapters/jammu/event-22.jpg 360w, /front/chapters/jammu/event-22-large.jpg 570w"
+                                                                        sizes="(max-width: 360px) 100vw, 360px"
+                                                                        className="full-width wp-post-image"
+                                                                        style={{
+                                                                            width: "360px",
+                                                                            height: "280px",
+                                                                            objectFit:
+                                                                                "cover",
+                                                                        }}
+                                                                    />
+                                                                </a>
+                                                            </figure>
+                                                            <div className="overlay">
+                                                                <div className="content">
+                                                                    <p
+                                                                        style={{
+                                                                            color: "white",
+                                                                            fontSize:
+                                                                                "20px",
+                                                                        }}
+                                                                    >
+                                                                        राहत एवं
+                                                                        मानवीय
+                                                                        सहायता
+                                                                    </p>
                                                                 </div>
-                                                                <div className="item">
-                                                                    <div className="img-box">
-                                                                        <img
-                                                                            decoding="async"
-                                                                            src="wp-content/uploads/2021/12/logo-8.png"
-                                                                            alt="Awesome Image"
-                                                                        />
-                                                                    </div>
-                                                                </div>
-                                                                <div className="item">
-                                                                    <div className="img-box">
-                                                                        <img
-                                                                            decoding="async"
-                                                                            src="wp-content/uploads/2021/12/logo-7.png"
-                                                                            alt="Awesome Image"
-                                                                        />
-                                                                    </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    {/* <!--Image Box--> */}
+                                                    <div className="image-box col-xl-3 col-lg-6">
+                                                        <div className="inner-box">
+                                                            <figure className="image">
+                                                                <a
+                                                                    href="#"
+                                                                    className="lightbox-image"
+                                                                >
+                                                                    <img
+                                                                        loading="lazy"
+                                                                        decoding="async"
+                                                                        src="/front/chapters/jammu/event-7.jpg"
+                                                                        // srcSet="/front/chapters/jammu/event-7.jpg 360w, /front/chapters/jammu/event-7-large.jpg 570w"
+                                                                        sizes="(max-width: 360px) 100vw, 360px"
+                                                                        className="full-width wp-post-image"
+                                                                        style={{
+                                                                            width: "360px",
+                                                                            height: "280px",
+                                                                            objectFit:
+                                                                                "cover",
+                                                                        }}
+                                                                    />
+                                                                </a>
+                                                            </figure>
+                                                            <div className="overlay">
+                                                                <div className="content">
+                                                                    <p
+                                                                        style={{
+                                                                            color: "white",
+                                                                            fontSize:
+                                                                                "20px",
+                                                                        }}
+                                                                    >
+                                                                        सम्मान
+                                                                        एवं
+                                                                        उप्लभ्धियाँ
+                                                                    </p>
                                                                 </div>
                                                             </div>
                                                         </div>

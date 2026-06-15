@@ -1,6 +1,6 @@
 import React from "react";
 
-const Slider = () => {
+const Sliders = () => {
     return (
         <div>
             {" "}
@@ -12,7 +12,7 @@ const Slider = () => {
                         id="rev_slider_1_1_wrapper"
                         data-source="gallery"
                         style={{
-                            visibility: "hidden",
+                            visibility: "visible",
                             background: "transparent",
                             padding: "0",
                             margin: "0px auto",
@@ -34,13 +34,13 @@ const Slider = () => {
                                     <img
                                         fetchpriority="high"
                                         decoding="async"
-                                        src="wp-content/plugins/revslider/public/assets/assets/dummy.png"
+                                        src="/front/slide-1.jpeg"
                                         alt=""
                                         title="1"
                                         width="1920"
                                         height="785"
-                                        className="rev-slidebg tp-rs-img rs-lazyload"
-                                        data-lazyload="//fastwpdemo.com/demo/charityhome/wp-content/uploads/2021/12/1-3.jpg"
+                                        className="rev-slidebg"
+                                        // data-lazyload="//fastwpdemo.com/demo/charityhome/wp-content/uploads/2021/12/1-3.jpg"
                                         data-no-retina
                                     />
 
@@ -49,49 +49,49 @@ const Slider = () => {
                                         data-type="text"
                                         data-rsp_ch="on"
                                         data-xy="xo:51px,42px,31px,19px;y:m;yo:-151px,-134px,-151px,-150px;"
-                                        data-text="w:normal;s:42,42,42,34;l:55,55,50,44;fw:300;"
-                                        data-dim="w:auto,auto,auto,420px;"
+                                        data-text="w:normal;s:42,42,42,20;l:55,55,50,44;fw:300;"
+                                        data-dim="w:auto,auto,auto,auto;"
                                         data-padding="t:5,4,3,2;r:10,8,6,4;b:5,4,3,2;l:10,8,6,4;"
                                         data-frame_0="o:1;"
-                                        data-frame_0_chars="d:5;y:-100%;o:0;rZ:35deg;"
+                                        // data-frame_0_chars="d:5;y:-100%;o:0;rZ:35deg;"
                                         data-frame_0_mask="u:t;"
                                         data-frame_1="sp:1200;"
-                                        data-frame_1_chars="e:power4.inOut;d:10;rZ:0deg;"
+                                        // data-frame_1_chars="e:power4.inOut;d:10;rZ:0deg;"
                                         data-frame_1_mask="u:t;"
                                         data-frame_999="o:0;st:w;"
                                         style={{
                                             zIndex: "6",
-                                            backgroundColor: "#f14b05",
+                                            backgroundColor: "#f93213",
                                             fontFamily: "Raleway",
+
                                             // textTransform: "uppercase",
-                                            fontFamily: "Noto Sans Devanagari",
                                         }}
                                     >
-                            सशक्त करे  • शिक्षित करें • उन्नति करें                             
-  </rs-layer>
+                                        सशक्त करें • शिक्षित करें • उन्नति करें
+                                    </rs-layer>
 
                                     <rs-layer
                                         id="slider-1-slide-1-layer-2"
                                         data-type="text"
                                         data-rsp_ch="on"
                                         data-xy="xo:49px,40px,30px,18px;y:m;yo:-71px,-58px,-74px,-80px;"
-                                        data-text="w:normal;s:50,50,50,34;l:60,60,60,50;fw:900;"
+                                        data-text="w:normal;s:42,36,28,20;l:50,44,36,28;fw:900;"
                                         data-padding="t:5,4,3,2;r:10,8,6,4;b:5,4,3,2;l:10,8,6,4;"
                                         data-frame_1="e:power4.inOut;sp:1200;"
                                         data-frame_1_sfx="se:blocktoright;"
                                         data-frame_999="o:0;st:w;"
                                         style={{
-                                            zIindex: "7",
+                                            zIndex: "7",
                                             backgroundColor: "#262f36",
                                             fontFamily: "Raleway",
+
                                             textTransform: "uppercase",
                                         }}
                                     >
-                                       नारी चेतना का जागरण। जीवन का रूपांतरण।
+                                        नारी चेतना का जागरण। जीवन का रूपांतरण।
                                     </rs-layer>
 
-
-                                         {/* <rs-layer
+                                    {/* <rs-layer
                                         id="slider-1-slide-1-layer-2"
                                         data-type="text"
                                         data-rsp_ch="on"
@@ -127,13 +127,15 @@ const Slider = () => {
                                             fontFamily: "Roboto",
                                         }}
                                     >
-                                     शिक्षा, नेतृत्व और सामाजिक परिवर्तन के माध्यम से महिलाओं को सशक्त बनाकर एक अधिक समान भविष्य का निर्माण।
+                                        शिक्षा, नेतृत्व और सामाजिक परिवर्तन के
+                                        माध्यम से महिलाओं को सशक्त बनाकर एक अधिक
+                                        समान भविष्य का निर्माण।
                                     </rs-layer>
 
                                     <a
                                         id="slider-1-slide-1-layer-4"
                                         className="rs-layer rev-btn"
-                                        href="campaigns/charity-for-education/donate/index.html"
+                                        href="/contact"
                                         target="_self"
                                         data-type="button"
                                         data-rsp_ch="on"
@@ -149,23 +151,23 @@ const Slider = () => {
                                         data-frame_1_chars="e:power4.inOut;dir:backward;d:10;rZ:0deg;"
                                         data-frame_1_mask="u:t;"
                                         data-frame_999="o:0;st:w;"
-                                        data-frame_hover="c:#f14b05;bgc:#fff;boc:rgba(241,75,5,0.75);bor:30px,30px,30px,30px;bos:solid;bow:2px,2px,2px,2px;e:power1.inOut;"
+                                        data-frame_hover="c:#f93213;bgc:#fff;boc:rgba(241,75,5,0.75);bor:30px,30px,30px,30px;bos:solid;bow:2px,2px,2px,2px;e:power1.inOut;"
                                         style={{
                                             zIndex: "9",
-                                            backgroundColor: "#f14b05",
+                                            backgroundColor: "#f93213",
                                             fontFamily: "Roboto",
                                         }}
                                     >
-                                        DONATE NOW
+                                        JOIN US
                                     </a>
 
                                     <a
                                         id="slider-1-slide-1-layer-5"
                                         className="rs-layer rev-btn"
-                                        href="about/index.html"
+                                        href="/about"
                                         target="_self"
                                         data-type="button"
-                                        data-color="#f14b05"
+                                        data-color="#f93213"
                                         data-rsp_ch="on"
                                         data-xy="xo:212px,204px,194px,179px;y:m;yo:157px,167px,156px,136px;"
                                         data-text="w:normal;s:12,14,14,14;l:34,40,40,40;fw:700;"
@@ -192,10 +194,10 @@ const Slider = () => {
                                     <rs-layer
                                         id="slider-1-slide-1-layer-6"
                                         data-type="text"
-                                        data-color="#f14b05"
+                                        data-color="#f93213"
                                         data-rsp_ch="on"
                                         data-xy="xo:50px,41px,31px,19px;y:m;yo:6px,14px,0,-16px;"
-                                        data-text="w:normal;s:30,32,30,24;l:45,46,46,38;fw:500;"
+                                        data-text="w:normal;s:30,32,30,18;l:45,46,46,38;fw:500;"
                                         data-padding="t:5,4,3,2;r:10,8,6,4;b:5,4,3,2;l:10,8,6,4;"
                                         data-frame_0="x:175%;o:1;"
                                         data-frame_0_mask="u:t;x:-100%;"
@@ -208,8 +210,11 @@ const Slider = () => {
                                             fontFamily: "Raleway",
                                         }}
                                     >
-महिला सशक्तिकरण के लिए एक वैश्विक आंदोलन से जुड़ें                                  </rs-layer>
+                                        महिला सशक्तिकरण के लिए एक वैश्विक आंदोलन
+                                        से जुड़ें{" "}
+                                    </rs-layer>
                                 </rs-slide>
+
                                 <rs-slide
                                     style={{ position: "absolute" }}
                                     data-key="rs-7"
@@ -221,13 +226,13 @@ const Slider = () => {
                                 >
                                     <img
                                         decoding="async"
-                                        src="wp-content/plugins/revslider/public/assets/assets/dummy.png"
+                                        src="/front/slide-2.jpeg"
                                         alt=""
                                         title="3"
                                         width="1920"
                                         height="1000"
-                                        className="rev-slidebg tp-rs-img rs-lazyload"
-                                        data-lazyload="//fastwpdemo.com/demo/charityhome/wp-content/uploads/2021/12/3-3.jpg"
+                                        className="rev-slidebg"
+                                        // data-lazyload="//fastwpdemo.com/demo/charityhome/wp-content/uploads/2021/12/3-3.jpg"
                                         data-no-retina
                                     />
 
@@ -236,24 +241,24 @@ const Slider = () => {
                                         data-type="text"
                                         data-rsp_ch="on"
                                         data-xy="x:c;y:m;yo:-151px,-134px,-151px,-150px;"
-                                        data-text="w:normal;s:42,42,42,34;l:55,55,50,44;fw:300;"
-                                        data-dim="w:auto,auto,auto,420px;"
+                                        data-text="w:normal;s:42,42,42,18;l:55,55,50,44;fw:300;"
+                                        data-dim="w:auto,auto,auto,auto;"
                                         data-padding="t:5,4,3,2;r:10,8,6,4;b:5,4,3,2;l:10,8,6,4;"
                                         data-frame_0="o:1;"
-                                        data-frame_0_chars="d:5;y:-100%;o:0;rZ:35deg;"
+                                        // data-frame_0_chars="d:5;y:-100%;o:0;rZ:35deg;"
                                         data-frame_0_mask="u:t;"
                                         data-frame_1="sp:1200;"
-                                        data-frame_1_chars="e:power4.inOut;d:10;rZ:0deg;"
+                                        // data-frame_1_chars="e:power4.inOut;d:10;rZ:0deg;"
                                         data-frame_1_mask="u:t;"
                                         data-frame_999="o:0;st:w;"
                                         style={{
                                             zIndex: "6",
-                                            backgroundColor: "#f14b05",
+                                            backgroundColor: "#f93213",
                                             fontFamily: "Raleway",
                                             textTransform: "uppercase",
                                         }}
                                     >
-                                     सशक्त करें • शिक्षित करें • उन्नति करें
+                                        सशक्त करें • शिक्षित करें • उन्नति करें
                                     </rs-layer>
 
                                     <rs-layer
@@ -261,7 +266,7 @@ const Slider = () => {
                                         data-type="text"
                                         data-rsp_ch="on"
                                         data-xy="x:c;y:m;yo:-71px,-58px,-74px,-80px;"
-                                        data-text="w:normal;s:50,50,50,34;l:60,60,60,50;fw:900;"
+                                        data-text="w:normal;s:42,36,28,20;l:50,44,36,28;fw:900;"
                                         data-padding="t:5,4,3,2;r:10,8,6,4;b:5,4,3,2;l:10,8,6,4;"
                                         data-frame_1="e:power4.inOut;sp:1200;"
                                         data-frame_1_sfx="se:blocktoright;"
@@ -292,13 +297,15 @@ const Slider = () => {
                                             fontFamily: "Roboto",
                                         }}
                                     >
-                                     शिक्षा, नेतृत्व और सामाजिक परिवर्तन के माध्यम से महिलाओं को सशक्त बनाकर एक अधिक समान भविष्य का निर्माण।
+                                        शिक्षा, नेतृत्व और सामाजिक परिवर्तन के
+                                        माध्यम से महिलाओं को सशक्त बनाकर एक अधिक
+                                        समान भविष्य का निर्माण।
                                     </rs-layer>
 
                                     <a
                                         id="slider-1-slide-7-layer-4"
                                         className="rs-layer rev-btn"
-                                        href="campaigns/charity-for-education/donate/index.html"
+                                        href="/contact"
                                         target="_self"
                                         data-type="button"
                                         data-rsp_ch="on"
@@ -314,23 +321,23 @@ const Slider = () => {
                                         data-frame_1_chars="e:power4.inOut;dir:backward;d:10;rZ:0deg;"
                                         data-frame_1_mask="u:t;"
                                         data-frame_999="o:0;st:w;"
-                                        data-frame_hover="c:#f14b05;bgc:#fff;boc:rgba(241,75,5,0.75);bor:30px,30px,30px,30px;bos:solid;bow:2px,2px,2px,2px;e:power1.inOut;"
+                                        data-frame_hover="c:#f93213;bgc:#fff;boc:rgba(241,75,5,0.75);bor:30px,30px,30px,30px;bos:solid;bow:2px,2px,2px,2px;e:power1.inOut;"
                                         style={{
                                             zIndex: "9",
-                                            backgroundColor: "#f14b05",
+                                            backgroundColor: "#f93213",
                                             fontFamily: "Roboto",
                                         }}
                                     >
-                                        DONATE NOW
+                                        JOIN US
                                     </a>
 
                                     <a
                                         id="slider-1-slide-7-layer-5"
                                         className="rs-layer rev-btn"
-                                        href="about/index.html"
+                                        href="/contact"
                                         target="_self"
                                         data-type="button"
-                                        data-color="#f14b05"
+                                        data-color="#f93213"
                                         data-rsp_ch="on"
                                         data-xy="x:c;xo:85px;y:m;yo:157px,167px,156px,136px;"
                                         data-text="w:normal;s:12,14,14,14;l:34,40,40,40;fw:700;"
@@ -357,10 +364,10 @@ const Slider = () => {
                                     <rs-layer
                                         id="slider-1-slide-7-layer-6"
                                         data-type="text"
-                                        data-color="#f14b05"
+                                        data-color="#f93213"
                                         data-rsp_ch="on"
                                         data-xy="x:c;y:m;yo:6px,17px,0,-16px;"
-                                        data-text="w:normal;s:30,32,30,24;l:45,46,46,38;fw:500;"
+                                        data-text="w:normal;s:30,32,30,18;l:45,46,46,38;fw:500;"
                                         data-padding="t:5,4,3,2;r:10,8,6,4;b:5,4,3,2;l:10,8,6,4;"
                                         data-frame_0="x:175%;o:1;"
                                         data-frame_0_mask="u:t;x:-100%;"
@@ -373,9 +380,11 @@ const Slider = () => {
                                             fontFamily: "Raleway",
                                         }}
                                     >
-                                       महिला सशक्तिकरण के लिए एक वैश्विक आंदोलन से जुड़ें
+                                        महिला सशक्तिकरण के लिए एक वैश्विक आंदोलन
+                                        से जुड़ें
                                     </rs-layer>
                                 </rs-slide>
+
                                 <rs-slide
                                     style={{ position: "absolute" }}
                                     data-key="rs-5"
@@ -387,13 +396,13 @@ const Slider = () => {
                                 >
                                     <img
                                         decoding="async"
-                                        src="wp-content/plugins/revslider/public/assets/assets/dummy.png"
+                                        src="/front/slide-3.jpeg"
                                         alt=""
                                         title="2"
                                         width="1920"
                                         height="1000"
                                         className="rev-slidebg tp-rs-img rs-lazyload"
-                                        data-lazyload="//fastwpdemo.com/demo/charityhome/wp-content/uploads/2021/12/2-3.jpg"
+                                        // data-lazyload="//fastwpdemo.com/demo/charityhome/wp-content/uploads/2021/12/2-3.jpg"
                                         data-no-retina
                                     />
                                     <rs-layer
@@ -401,32 +410,31 @@ const Slider = () => {
                                         data-type="text"
                                         data-rsp_ch="on"
                                         data-xy="x:r,r,r,c;xo:134px,132px,156px,0;y:m;yo:-151px,-134px,-151px,-150px;"
-                                        data-text="w:normal;s:42,42,42,34;l:55,55,50,44;fw:300;"
-                                        data-dim="w:auto,auto,auto,420px;"
+                                        data-text="w:normal;s:42,42,42,18;l:55,55,50,44;fw:300;"
+                                        data-dim="w:auto,auto,auto,auto;"
                                         data-padding="t:5,4,3,2;r:10,8,6,4;b:5,4,3,2;l:10,8,6,4;"
                                         data-frame_0="o:1;"
-                                        data-frame_0_chars="d:5;y:-100%;o:0;rZ:35deg;"
+                                        // data-frame_0_chars="d:5;y:-100%;o:0;rZ:35deg;"
                                         data-frame_0_mask="u:t;"
                                         data-frame_1="sp:1200;"
-                                        data-frame_1_chars="e:power4.inOut;d:10;rZ:0deg;"
+                                        // data-frame_1_chars="e:power4.inOut;d:10;rZ:0deg;"
                                         data-frame_1_mask="u:t;"
                                         data-frame_999="o:0;st:w;"
                                         style={{
                                             zIndex: "6",
-                                            backgroundColor:
-                                                "rgba(241,75,5,0.79)",
+                                            backgroundColor: "#f93213",
                                             fontFamily: "Raleway",
                                             textTransform: "uppercase",
                                         }}
                                     >
-                                   सशक्त करें • शिक्षित करें • उन्नति करें
+                                        सशक्त करें • शिक्षित करें • उन्नति करें
                                     </rs-layer>
                                     <rs-layer
                                         id="slider-1-slide-5-layer-2"
                                         data-type="text"
                                         data-rsp_ch="on"
                                         data-xy="x:r,r,r,c;xo:4px,3px,30px,0;y:m;yo:-71px,-58px,-74px,-80px;"
-                                        data-text="w:normal;s:50,50,50,34;l:60,60,60,50;fw:900;"
+                                        data-text="w:normal;s:50,50,50,18;l:60,60,60,50;fw:900;"
                                         data-padding="t:5,4,3,2;r:10,8,6,4;b:5,4,3,2;l:10,8,6,4;"
                                         data-frame_1="e:power4.inOut;sp:1200;"
                                         data-frame_1_sfx="se:blocktoright;"
@@ -447,7 +455,7 @@ const Slider = () => {
                                         data-rsp_ch="on"
                                         data-xy="x:r,r,r,c;xo:40px,40px,60px,0;y:m;yo:82px,91px,79px,57px;"
                                         data-text="w:normal;s:15,16,16,17;l:27,30,30,28;fw:500;a:left,left,left,center;"
-                                        data-dim="w:600px,600px,600px,420px;"
+                                        data-dim="w:600px,600px,600px,auto;"
                                         data-frame_0="sX:0.9;sY:0.9;"
                                         data-frame_1="sp:1000;"
                                         data-frame_999="o:0;st:w;"
@@ -456,12 +464,14 @@ const Slider = () => {
                                             fontFamily: "Roboto",
                                         }}
                                     >
-                                       शिक्षा, नेतृत्व और सामाजिक परिवर्तन के माध्यम से महिलाओं को सशक्त बनाकर एक अधिक समान भविष्य का निर्माण।
+                                        शिक्षा, नेतृत्व और सामाजिक परिवर्तन के 
+                                        माध्यम से महिलाओं को सशक्त <br/> बनाकर एक अधिक 
+                                        समान भविष्य का निर्माण।
                                     </rs-layer>
                                     <a
                                         id="slider-1-slide-5-layer-4"
                                         className="rs-layer rev-btn"
-                                        href="campaigns/charity-for-education/donate/index.html"
+                                        href="/contact"
                                         target="_self"
                                         data-type="button"
                                         data-rsp_ch="on"
@@ -477,22 +487,22 @@ const Slider = () => {
                                         data-frame_1_chars="e:power4.inOut;dir:backward;d:10;rZ:0deg;"
                                         data-frame_1_mask="u:t;"
                                         data-frame_999="o:0;st:w;"
-                                        data-frame_hover="c:#f14b05;bgc:#fff;boc:rgba(241,75,5,0.75);bor:30px,30px,30px,30px;bos:solid;bow:2px,2px,2px,2px;e:power1.inOut;"
+                                        data-frame_hover="c:#f93213;bgc:#fff;boc:rgba(241,75,5,0.75);bor:30px,30px,30px,30px;bos:solid;bow:2px,2px,2px,2px;e:power1.inOut;"
                                         style={{
                                             zIndex: "9",
-                                            backgroundColor: "#f14b05",
+                                            backgroundColor: "#f93213",
                                             fontFamily: "Roboto",
                                         }}
                                     >
-                                        DONATE NOW
+                                        JOIN US
                                     </a>
                                     <a
                                         id="slider-1-slide-5-layer-5"
                                         className="rs-layer rev-btn"
-                                        href="about/index.html"
+                                        href="/about"
                                         target="_self"
                                         data-type="button"
-                                        data-color="#f14b05"
+                                        data-color="#f93213"
                                         data-rsp_ch="on"
                                         data-xy="x:c;xo:210px,113px,-60px,85px;y:m;yo:157px,167px,156px,136px;"
                                         data-text="w:normal;s:12,14,14,14;l:34,40,40,40;fw:700;"
@@ -518,10 +528,10 @@ const Slider = () => {
                                     <rs-layer
                                         id="slider-1-slide-5-layer-6"
                                         data-type="text"
-                                        data-color="#f14b05"
+                                        data-color="#f93213"
                                         data-rsp_ch="on"
                                         data-xy="x:r,r,r,c;xo:130px,97px,156px,0;y:m;yo:6px,14px,0,-16px;"
-                                        data-text="w:normal;s:30,32,30,24;l:45,46,46,38;fw:500;"
+                                        data-text="w:normal;s:30,32,30,18;l:45,46,46,38;fw:500;"
                                         data-padding="t:5,4,3,2;r:10,8,6,4;b:5,4,3,2;l:10,8,6,4;"
                                         data-frame_0="x:175%;o:1;"
                                         data-frame_0_mask="u:t;x:-100%;"
@@ -534,7 +544,8 @@ const Slider = () => {
                                             fontFamily: "Raleway",
                                         }}
                                     >
-                                        महिला सशक्तिकरण के लिए एक वैश्विक आंदोलन से जुड़ें
+                                        महिला सशक्तिकरण के लिए एक वैश्विक आंदोलन
+                                        से जुड़ें
                                     </rs-layer>{" "}
                                 </rs-slide>
                             </rs-slides>
@@ -547,4 +558,4 @@ const Slider = () => {
     );
 };
 
-export default Slider;
+export default Sliders;

@@ -23,7 +23,8 @@ class RegisteredUserController extends Controller
         return Inertia::render('Auth/Register');
     }
 
-    /**
+
+ /**
      * Handle an incoming registration request.
      *
      * @throws \Illuminate\Validation\ValidationException
@@ -46,6 +47,6 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect(route('dashboard', absolute: false));
+        return redirect(route('admin/dashboard', absolute: false));
     }
 }

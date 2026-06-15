@@ -1,0 +1,185 @@
+import React, { useState } from 'react'
+import {  useForm } from '@inertiajs/react'
+import Header from './Header'
+import Sidebar from './Sidebar'
+import Footer from './Footer'
+// Bootstrap CSS
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+// Bootstrap JS + Popper
+import 'bootstrap/dist/js/bootstrap.bundle.min.js'; 
+import { Head } from '@inertiajs/react';
+
+
+
+
+const AddSlider = ({status}) => {
+     const [sidebarOpen, setSidebarOpen] = useState(false);
+ const { data, setData, post, errors, processing } = useForm({
+    top_text: "",
+    title_white: "",
+    title_highlight: "",
+    Status: 1,
+  });
+
+  const submit = e => {
+    e.preventDefault();
+    post("/admin/slider-store");
+  };
+  return (
+    <>
+
+<Head title='Add Slider'></Head>
+    
+         <div className="body-container">
+             
+    <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
+        <div className="main-container bgc-white">
+
+        <div id="sidebar" className={`sidebar sidebar-fixed expandable sidebar-light ${ sidebarOpen ? "sidebar-open" : ""   }`}>
+          <div className="sidebar-inner">
+
+
+        <Sidebar sidebarOpen={sidebarOpen} />
+            {/* <!-- /.sidebar scroll --> */}
+
+
+            <div className="sidebar-section">
+              <div className="sidebar-section-item fadeable-bottom">
+                <div className="fadeinable">
+                  {/* <!-- shows this when collapsed --> */}
+                  <div className="pos-rel">
+                    <img alt="Alexa's Photo" src="assets/image/avatar/avatar3.jpg" width="42" className="px-1px radius-round mx-2 border-2 brc-default-m2" />
+                    <span className="bgc-success radius-round border-2 brc-white p-1 position-tr mr-1 mt-2px"></span>
+                  </div>
+                </div>
+
+                <div className="fadeable hideable w-100 bg-transparent shadow-none border-0">
+                  {/* <!-- shows this when full-width --> */}
+                  
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div role="main" className="main-content">
+{/* form */}
+
+
+        <div role="main" className="main-content">
+
+          <div className="page-content container container-plus">
+             {status && (
+                <div className="mb-4 text-sm font-medium text-green-600">
+                    {status}
+                </div>
+            )}
+            <div className="card acard mt-2 mt-lg-3">
+              <div className="card-header">
+                <h3 className="card-title text-125 text-primary-d2">
+                  <i className="far fa-edit text-dark-l3 mr-1"></i>
+                  Add   Slider
+                </h3>
+              </div>
+
+              <div className="card-body px-3 pb-1">
+                 <form className="mt-lg-3" onSubmit={submit} encType="multipart/form-data">
+                  <div className="form-group row">
+                    <div className="col-sm-3 col-form-label text-sm-right pr-0">
+                      <label for="id-form-field-1" className="mb-0">
+                       Top Title
+                      </label>
+                    </div>
+
+                    <div className="col-sm-9">
+                      <input value={data.top_text} onChange={e=>setData("top_text",e.target.value)} type="text" name='top_text' className="form-control col-sm-8 col-md-6" placeholder='Enter Top Title' id="TopTitle" />
+                   {errors.top_text && <div className='text-danger'>{errors.top_text}</div>}
+                    </div>
+                  </div>
+
+
+                  <div className="form-group row">
+                    <div className="col-sm-3 col-form-label text-sm-right pr-0">
+                      <label for="id-form-field-focus-1" className="mb-0">
+                        Mid Title
+                      </label>
+                    </div>
+
+                    <div className="col-sm-9">
+                      <input value={data.title_white} onChange={e=>setData("title_white",e.target.value)} type="text" name='title_white' className="form-control brc-on-focus brc-success-m1 col-sm-8 col-md-6" placeholder='Enter Mid Title' id="title_white" />
+                   {errors.title_white && <div className='text-danger'>{errors.title_white}</div>}
+                    </div>
+                  </div>
+
+
+                  <div className="form-group row">
+                    <div className="col-sm-3 col-form-label text-sm-right pr-0">
+                      <label for="id-form-field-focus-1" className="mb-0">
+                       Title Highlight
+                      </label>
+                    </div>
+
+                    <div className="col-sm-9">
+                      <input value={data.title_highlight} onChange={e=>setData('title_highlight', e.target.value)} type="text" name='title_highlight' className="form-control brc-on-focus brc-success-m1 col-sm-8 col-md-6" placeholder='Enter Title Highlight' id="title_highlight" />
+                 {errors.title_highlight && <div className='text-danger'>{errors.title_highlight}</div>}
+                    </div>
+                  </div>
+
+              
+
+
+ <div className="form-group row">
+                    <div className="col-sm-3 col-form-label text-sm-right pr-0">
+                      <label for="id-form-field-password-toggle" className="mb-0">
+                      photo
+                      </label>
+                    </div>
+
+                    <div className="col-sm-9">
+                     
+                        <input onChange={e=>setData('photo',e.target.files[0])} type="file" name='photo' className="form-control brc-on-focus col-sm-8 col-md-6 d-inline-block" placeholder="Enter photo"  id="photo" />
+                        
+                     
+                    </div>
+                  </div>
+
+
+
+                 
+
+
+                  <div className="mt-5 border-t-1 bgc-secondary-l4 brc-secondary-l2 py-35 mx-n25">
+                    <div className="offset-md-3 col-md-9 text-nowrap">
+                      <button className="btn btn-info btn-bold px-4" type="submit" disabled={processing}>
+                        <i className="fa fa-check mr-1"></i>
+                           {processing ? "Uploading..." : "Submit"}
+                      </button>
+
+                      <button className="btn btn-outline-lightgrey btn-bgc-white btn-bold ml-2 px-4" type="reset">
+                        <i className="fa fa-undo mr-1"></i>
+                        Reset
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            
+            </div>
+        </div>
+        {/* end form */}
+
+       <Footer/>
+        </div>
+
+       
+        {/* <!-- .modal-aside --> */}
+      </div>
+    </div> 
+    </>
+  )
+}
+
+export default AddSlider

@@ -1,0 +1,223 @@
+import React, { useState } from 'react'
+import {  useForm } from '@inertiajs/react'
+import Header from './Header'
+import Sidebar from './Sidebar'
+import Footer from './Footer'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js'; 
+import { Head } from '@inertiajs/react';
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
+
+
+const AddBlogs = ({status}) => {
+         const [sidebarOpen, setSidebarOpen] = useState(false);
+         const quillModules = {
+  toolbar: [
+    [{ header: [1, 2, 3, false] }],
+    ["bold", "italic", "underline"],
+    [{ list: "ordered" }, { list: "bullet" }],
+    ["link", "image"],
+    ["clean"],
+  ],
+};
+     const { data, setData, post, errors, processing } = useForm({
+         title: "",
+        category: "",
+        activity_date: "",
+        photo:null,
+        description: "",
+       
+        Status: 1,
+      });
+    
+      const submit = e => {
+        e.preventDefault();
+        post("/admin/blogs-store");
+      };
+
+
+ return (
+    <>
+
+<Head title='Add Blogs'></Head>
+    
+         <div className="body-container">
+             
+    <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
+      
+ <div className="main-container bgc-white">
+
+        <div id="sidebar" className={`sidebar sidebar-fixed expandable sidebar-light ${ sidebarOpen ? "sidebar-open" : ""   }`}>
+          <div className="sidebar-inner">
+
+
+        <Sidebar sidebarOpen={sidebarOpen} />
+            {/* <!-- /.sidebar scroll --> */}
+
+
+            <div className="sidebar-section">
+              <div className="sidebar-section-item fadeable-bottom">
+                <div className="fadeinable">
+                  {/* <!-- shows this when collapsed --> */}
+                  <div className="pos-rel">
+                    <img alt="Alexa's Photo" src="assets/image/avatar/avatar3.jpg" width="42" className="px-1px radius-round mx-2 border-2 brc-default-m2" />
+                    <span className="bgc-success radius-round border-2 brc-white p-1 position-tr mr-1 mt-2px"></span>
+                  </div>
+                </div>
+
+                <div className="fadeable hideable w-100 bg-transparent shadow-none border-0">
+                  {/* <!-- shows this when full-width --> */}
+                  
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div role="main" className="main-content">
+{/* form */}
+
+
+        <div role="main" className="main-content">
+
+          <div className="page-content container container-plus">
+             {status && (
+                <div className="mb-4 text-sm font-medium text-green-600">
+                    {status}
+                </div>
+            )}
+            <div className="card acard mt-2 mt-lg-3">
+              <div className="card-header">
+                <h3 className="card-title text-125 text-primary-d2">
+                  <i className="far fa-edit text-dark-l3 mr-1"></i>
+                  Add   Blogs
+                </h3>
+              </div>
+
+              <div className="card-body px-3 pb-1">
+                 <form className="mt-lg-3" onSubmit={submit} encType="multipart/form-data">
+                  <div className="form-group row">
+                    <div className="col-sm-3 col-form-label text-sm-right pr-0">
+                      <label for="id-form-field-1" className="mb-0">
+                        Title
+                      </label>
+                    </div>
+
+                    <div className="col-sm-9">
+                      <input value={data.title} onChange={e=>setData("title",e.target.value)} type="text" name='title' className="form-control col-sm-8 col-md-6" placeholder='Enter Top Title' id="TopTitle" />
+                   {errors.title && <div className='text-danger'>{errors.title}</div>}
+                    </div>
+                  </div>
+
+
+                  <div className="form-group row">
+                    <div className="col-sm-3 col-form-label text-sm-right pr-0">
+                      <label for="id-form-field-focus-1" className="mb-0">
+                        Category
+                      </label>
+                    </div>
+
+                    <div className="col-sm-9">
+                      <input value={data.category} onChange={e=>setData("category",e.target.value)} type="text" name='category' className="form-control brc-on-focus brc-success-m1 col-sm-8 col-md-6" placeholder='Enter Mid Title' id="category" />
+                   {errors.category && <div className='text-danger'>{errors.category}</div>}
+                    </div>
+                  </div>
+
+
+                  <div className="form-group row">
+                    <div className="col-sm-3 col-form-label text-sm-right pr-0">
+                      <label for="id-form-field-focus-1" className="mb-0">
+                       Activity Date
+                      </label>
+                    </div>
+
+                    <div className="col-sm-9">
+                      <input value={data.activity_date} onChange={e=>setData('activity_date', e.target.value)} type="date" name='activity_date' className="form-control brc-on-focus brc-success-m1 col-sm-8 col-md-6" placeholder='Enter Title Highlight' id="activity_date" />
+                 {errors.activity_date && <div className='text-danger'>{errors.activity_date}</div>}
+                    </div>
+                  </div>
+                  <div className="form-group row">
+                    <div className="col-sm-3 col-form-label text-sm-right pr-0">
+                      <label for="id-form-field-password-toggle" className="mb-0">
+                      photo
+                      </label>
+                    </div>
+
+                    <div className="col-sm-9">
+                     
+                        <input onChange={e=>setData('photo',e.target.files[0])} type="file" name='photo' className="form-control brc-on-focus col-sm-8 col-md-6 d-inline-block" placeholder="Enter photo"  id="photo" />
+                        
+                     
+                    </div>
+                  </div>
+
+              
+<div className="form-group row">
+  <div className="col-sm-3 col-form-label text-sm-right pr-0">
+    <label className="mb-0">
+      Description
+    </label>
+  </div>
+
+  <div className="col-sm-9 col-md-6">
+
+    <ReactQuill
+      theme="snow"
+      value={data.description}
+      onChange={(value) => setData("description", value)}
+      modules={quillModules}
+      placeholder="Enter Description"
+      style={{ height: "200px", marginBottom: "50px" }}
+    />
+
+    {errors.description && (
+      <div className="text-danger mt-1">
+        {errors.description}
+      </div>
+    )}
+
+  </div>
+</div>
+
+
+
+
+
+                 
+
+
+                  <div className="mt-5 border-t-1 bgc-secondary-l4 brc-secondary-l2 py-35 mx-n25">
+                    <div className="offset-md-3 col-md-9 text-nowrap">
+                      <button className="btn btn-info btn-bold px-4" type="submit" disabled={processing}>
+                        <i className="fa fa-check mr-1"></i>
+                           {processing ? "Uploading..." : "Submit"}
+                      </button>
+
+                      <button className="btn btn-outline-lightgrey btn-bgc-white btn-bold ml-2 px-4" type="reset">
+                        <i className="fa fa-undo mr-1"></i>
+                        Reset
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            
+            </div>
+        </div>
+        {/* end form */}
+
+       <Footer/>
+        </div>
+
+       
+        {/* <!-- .modal-aside --> */}
+      </div>
+    </div> 
+    </>
+  )
+}
+
+export default AddBlogs

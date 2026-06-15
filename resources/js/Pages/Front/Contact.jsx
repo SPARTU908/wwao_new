@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import Header from "./include/Header";
 import Footer from "./include/Footer";
 import axios from "axios";
+import { usePage } from "@inertiajs/react";
 
 const Contact = () => {
+    const { Chapter_menu } = usePage().props;
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -39,16 +41,17 @@ const Contact = () => {
 
     return (
         <div>
-            <Header />
+            <Header Chapter_menu={Chapter_menu} />
+
 
             <section className="inner-header">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12 sec-title colored text-center">
-                            <h2>Contact</h2>
+                            <h2>Join Us</h2>
                             <ul className="breadcumb">
                                 <li><a href="/">Home</a></li>
-                                <li>Contact</li>
+                                <li>Join Us</li>
                             </ul>
                         </div>
                     </div>
@@ -60,7 +63,7 @@ const Contact = () => {
                     <div className="row justify-content-center">
                         <div className="col-lg-8">
                             <div className="contact-form-wrapper shadow p-4 rounded">
-                                <h3 className="text-center mb-4">Get in Touch</h3>
+                                <h3 className="text-center mb-4">Join Us</h3>
 
                                 <form onSubmit={handleSubmit}>
                                     <div className="row">
@@ -105,7 +108,7 @@ const Contact = () => {
                                         <textarea
                                             className="form-control"
                                             rows="5"
-                                            placeholder="Your Message"
+                                            placeholder="Your reason for joining"
                                             name="message"
                                             value={formData.message}
                                             onChange={handleChange}

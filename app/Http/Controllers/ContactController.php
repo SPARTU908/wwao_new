@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Contact;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use App\Models\Chapter_menu;
 
 class ContactController extends Controller
 {
@@ -24,17 +25,25 @@ class ContactController extends Controller
         ], 201);
     }
     public function index()
-    {
-      return Inertia::render('Front/Contact');
-    }
+{
+    $Chapter_menu = Chapter_menu::all();
+
+    return Inertia::render('Front/Contact', [
+        'Chapter_menu' => $Chapter_menu
+    ]);
+}
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
-    {
-       return Inertia::render('Front/Contact');
-    }
+   public function create()
+{
+    $Chapter_menu = Chapter_menu::all();
+
+    return Inertia::render('Front/Contact', [
+        'Chapter_menu' => $Chapter_menu
+    ]);
+}
 
     /**
      * Store a newly created resource in storage.

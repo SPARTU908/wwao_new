@@ -5,16 +5,21 @@ namespace App\Http\Controllers;
 use App\Models\About;
 use Inertia\Inertia;
 use Illuminate\Http\Request;
+use App\Models\Chapter_menu;
 
 class AboutController extends Controller
 {
     /**
      * Display a listing of the resource.
-     */
+     */                                     
     public function index()
-    {
-        return Inertia::render('Front/About');
-    }
+{
+    $Chapter_menu = Chapter_menu::all();
+
+    return Inertia::render('Front/About', [
+        'Chapter_menu' => $Chapter_menu
+    ]);
+}
 
     /**
      * Show the form for creating a new resource.
